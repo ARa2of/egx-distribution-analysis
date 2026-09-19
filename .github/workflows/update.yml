@@ -23,7 +23,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install tvdatafeed pandas numpy plotly
+        run: |
+          pip install requests setuptools websocket-client pandas numpy plotly
+          pip install git+https://github.com/rongardF/tvdatafeed.git
 
       - name: Run analysis
         run: python analyze.py
