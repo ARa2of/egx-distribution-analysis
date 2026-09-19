@@ -23,7 +23,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install tvDatafeed pandas numpy plotly
+        run: pip install tvdatafeed pandas numpy plotly
 
       - name: Run analysis
         run: python analyze.py
