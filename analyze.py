@@ -385,6 +385,10 @@ def create_volume_chart(data, stats):
         fig.add_vline(x=val, line=dict(color=color, width=1.5, dash=dash), opacity=0.8,
                       annotation=dict(text=label, font=dict(color=color, size=10), yshift=15, showarrow=False))
 
+    current = stats['current']
+    fig.add_vline(x=current, line=dict(color='white', width=2, dash='solid'), opacity=0.9,
+                  annotation=dict(text='Current {:.2f}'.format(current), font=dict(color='white', size=11, family='Arial Black'), yshift=-15, showarrow=False))
+
     fig.update_layout(
         title=dict(text='{} - Volume Concentration (1M + 5D)'.format(stats['ticker']), font=dict(color='white', size=14)),
         paper_bgcolor=DARK_BG, plot_bgcolor=DARK_BG2,
