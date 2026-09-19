@@ -645,7 +645,7 @@ def main():
 
     print("\nGenerating combined HTML...")
     html = build_combined_html(results)
-    output_path = os.path.join(OUTPUT_DIR, "EGX_all_tickers.html")
+    output_path = os.path.join(OUTPUT_DIR, "index.html")
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
     print("Saved: {}".format(output_path))
