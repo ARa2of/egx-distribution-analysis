@@ -316,11 +316,12 @@ def create_price_chart(data, stats):
         paper_bgcolor=DARK_BG, plot_bgcolor=DARK_BG2,
         xaxis=dict(title='Price (EGP)', color='white', gridcolor='#2a2a4a'),
         yaxis=dict(title='Number of Occurrences', color='white', gridcolor='#2a2a4a'),
-        legend=dict(bgcolor='rgba(22,33,62,0.8)', bordercolor='#2a2a4a', font=dict(color='white', size=10), x=0.01, y=0.99, xanchor='left', yanchor='top'),
+        legend=dict(bgcolor='rgba(22,33,62,0.8)', bordercolor='#2a2a4a', font=dict(color='white', size=10), x=0.99, y=0.99, xanchor='right', yanchor='top'),
         barmode='overlay', height=400, margin=dict(l=60, r=65, t=50, b=40),
+        dragmode=False,
     )
 
-    return fig.to_html(full_html=False, include_plotlyjs=False)
+    return fig.to_html(full_html=False, include_plotlyjs=False, config={'scrollZoom': True, 'displayModeBar': False})
 
 
 def create_volume_chart(data, stats):
@@ -389,11 +390,12 @@ def create_volume_chart(data, stats):
         paper_bgcolor=DARK_BG, plot_bgcolor=DARK_BG2,
         xaxis=dict(title='Price (EGP)', color='white', gridcolor='#2a2a4a'),
         yaxis=dict(title='Total Volume', color='white', gridcolor='#2a2a4a', tickformat=',.0f'),
-        legend=dict(bgcolor='rgba(22,33,62,0.8)', bordercolor='#2a2a4a', font=dict(color='white', size=10), x=0.01, y=0.99, xanchor='left', yanchor='top'),
-        barmode='overlay', height=350, margin=dict(l=50, r=20, t=50, b=40),
+        legend=dict(bgcolor='rgba(22,33,62,0.8)', bordercolor='#2a2a4a', font=dict(color='white', size=10), x=0.99, y=0.99, xanchor='right', yanchor='top'),
+        barmode='overlay', height=350, margin=dict(l=50, r=65, t=50, b=40),
+        dragmode=False,
     )
 
-    return fig.to_html(full_html=False, include_plotlyjs=False)
+    return fig.to_html(full_html=False, include_plotlyjs=False, config={'scrollZoom': True, 'displayModeBar': False})
 
 
 
