@@ -656,6 +656,52 @@ def main():
         f.write(html)
     print("Saved: {}".format(output_path))
 
+    import json
+    json_data = {
+        'generated': pd.Timestamp.now().strftime('%Y-%m-%d %H:%M'),
+        'tickers': []
+    }
+    for r in results:
+        s = r['stats']
+        p = r['plan']
+        json_data['tickers'].append({
+            'ticker': s['ticker'],
+            'current_price': round(s['current'], 2),
+            'signal': p['action'],
+            'strategy': p['strategy'],
+            'confidence': p['confidence'],
+            'entry': round(p['entry'], 2),
+            'exit_target': round(p['exit_target'], 2),
+            'stop_loss': round(p['stop_loss'], 2),
+            'net_gain_pct': round(p['net_gain_pct'], 2),
+            'rr_ratio': round(p['rr_ratio'], 1),
+            'hold_sessions': p['est_sessions'],
+            'fees_pct': p['fees_pct'],
+            'stats': {
+                'mean_5d': round(s['mean_5d'], 2),
+                'std_5d': round(s['std_5d'], 2),
+                'min_5d': round(s['min_5d'], 2),
+                'max_5d': round(s['max_5d'], 2),
+                'cv_5d': round(s['cv_5d'], 2),
+                'cv_1m': round(s['cv'], 2),
+                'mean_shift': round(((s['mean_5d'] - s['mean']) / s['mean']) * 100, 2),
+                'period': s['period'],
+                'sessions': s['sessions'],
+                'bars': s['bars'],
+            },
+            'levels': {
+                'support_2': round(p['support_2'], 2),
+                'support_1': round(p['support_1'], 2),
+                'mean': round(s['mean_5d'], 2),
+                'resistance_1': round(p['resistance_1'], 2),
+                'resistance_2': round(p['resistance_2'], 2),
+            },
+        })
+    json_path = os.path.join(OUTPUT_DIR, "data.json")
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, indent=2)
+    print("Saved: {}".format(json_path))
+
     print("\n" + "=" * 65)
     print("SUMMARY (BUY signals first, then WAIT, then AVOID)")
     print("=" * 65)
