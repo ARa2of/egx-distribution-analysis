@@ -426,7 +426,7 @@ def build_ticker_section(stats, price_chart, volume_chart, plan, mean_shift):
     <div class="ticker-header" onclick="toggleSection(this)">
       <span class="ticker-name">{ticker}</span>
       <span class="sigma-badge" style="color:{action_color};background:{action_bg}">{action}</span>
-      <span class="current-price">{current:.2f} EGX</span>
+      <span class="current-price">{current:.2f} EGP</span>
       <span class="pct-badge" style="color:{pos_color}">{pct:+.2f}%</span>
       <span class="arrow">&#9660;</span>
     </div>
