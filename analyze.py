@@ -5,6 +5,9 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import os
 import time
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from backtest import run_backtest, backtest_fragment
 
 TICKERS = ['MFPC', 'MASR', 'ETEL', 'EFIH', 'ORHD', 'CPCI', 'RMDA', 'ARCC', 'OBRI', 'EGAS', 'ADIB', 'EGAL', 'BONY', 'ENGC']
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -503,7 +506,7 @@ def build_ticker_section(stats, price_chart, volume_chart, plan, mean_shift):
     return section
 
 
-def build_combined_html(ticker_results):
+def build_combined_html(ticker_results, data_date='', backtest_html=''):
     sections = []
     for r in ticker_results:
         sections.append(r['section'])
@@ -552,10 +555,28 @@ def build_combined_html(ticker_results):
   .invest-bar input:focus {{ outline: none; border-color: #ffd93d; }}
   .invest-bar span {{ color: #888; font-size: 0.85em; }}
   .calc-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #2a2a4a; }}
+  .data-date {{ text-align: center; color: #ffd93d; font-size: 0.85em; margin-bottom: 10px; }}
+  .backtest-section {{ background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 8px; margin: 15px 0; overflow: hidden; }}
+  .backtest-header {{ display: flex; align-items: center; padding: 12px 15px; cursor: pointer; gap: 15px; }}
+  .backtest-header:hover {{ background: #16213e; }}
+  .bt-summary {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin: 10px 0; }}
+  .bt-box {{ background: #16213e; padding: 10px; border-radius: 6px; border-left: 3px solid #2a2a4a; text-align: center; }}
+  .bt-label {{ font-size: 0.7em; color: #888; text-transform: uppercase; }}
+  .bt-value {{ font-size: 1.1em; font-weight: 700; margin-top: 2px; }}
+  .bt-table {{ width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 10px; }}
+  .bt-table th {{ background: #16213e; color: #ffd93d; padding: 6px 4px; text-align: center; border-bottom: 2px solid #2a2a4a; }}
+  .bt-table td {{ padding: 5px 4px; text-align: center; border-bottom: 1px solid #2a2a4a; }}
+  .bt-table tr:hover {{ background: #16213e; }}
+  .ease-badge {{ padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.8em; }}
+  .ease-Easy {{ background: rgba(107,203,119,0.2); color: #6bcb77; }}
+  .ease-Moderate {{ background: rgba(255,217,61,0.2); color: #ffd93d; }}
+  .ease-Difficult {{ background: rgba(255,159,67,0.2); color: #ff9f43; }}
+  .ease-Very-Difficult {{ background: rgba(238,90,36,0.2); color: #ee5a24; }}
 </style>
 </head>
 <body>
 <h1>EGX Distribution Analysis Report</h1>
+<p class="data-date">Data retrieved: {data_date}</p>
 <p class="subtitle">Sorted by Signal: BUY (high conf) first, then WAIT, then AVOID | 5-min data | 1M + 5D overlay</p>
 <div class="invest-bar">
   <label>Investment Amount:</label>
@@ -563,6 +584,7 @@ def build_combined_html(ticker_results):
   <span>EGP</span>
 </div>
 {sections}
+{backtest_html}
 <script>
 function toggleSection(header) {{
   var content = header.nextElementSibling;
@@ -604,7 +626,7 @@ function calculateAll() {{
 calculateAll();
 </script>
 </body>
-</html>""".format(sections=sections_html)
+</html>""".format(sections=sections_html, data_date=data_date, backtest_html=backtest_html)
     return html
 
 
@@ -618,6 +640,7 @@ def analyze_ticker(ticker, data):
     return {
         'stats': stats, 'plan': plan, 'section': section,
         'confidence': plan['confidence'], 'action': plan['action'],
+        'data': data,
     }
 
 
@@ -649,8 +672,15 @@ def main():
 
     results.sort(key=sort_key)
 
+    data_date = pd.Timestamp.now().strftime('%Y-%m-%d %H:%M')
+
+    print("\nRunning backtest...")
+    fetched_data = {r['stats']['ticker']: r['data'] for r in results}
+    bt_results, narrow_key, mid_key, loose_key = run_backtest(TICKERS, fetched_data=fetched_data)
+    bt_html = backtest_fragment(bt_results, narrow_key, mid_key, loose_key)
+
     print("\nGenerating combined HTML...")
-    html = build_combined_html(results)
+    html = build_combined_html(results, data_date=data_date, backtest_html=bt_html)
     output_path = os.path.join(OUTPUT_DIR, "index.html")
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
