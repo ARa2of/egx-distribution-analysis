@@ -572,6 +572,11 @@ def build_combined_html(ticker_results, data_date='', backtest_html=''):
   .ease-Moderate {{ background: rgba(255,217,61,0.2); color: #ffd93d; }}
   .ease-Difficult {{ background: rgba(255,159,67,0.2); color: #ff9f43; }}
   .ease-Very-Difficult {{ background: rgba(238,90,36,0.2); color: #ee5a24; }}
+  .bt-detail-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; padding: 8px 0; }}
+  .bt-detail-card {{ background: #1a1a2e; border-radius: 6px; padding: 10px; }}
+  .bt-detail-title {{ font-weight: 700; margin-bottom: 6px; font-size: 0.9em; }}
+  .bt-detail-row {{ display: flex; justify-content: space-between; padding: 2px 0; font-size: 0.82em; }}
+  .bt-detail-row span:first-child {{ color: #888; }}
 </style>
 </head>
 <body>
@@ -624,6 +629,19 @@ function calculateAll() {{
   }});
 }}
 calculateAll();
+function toggleBtDetail(row) {{
+  var detail = row.nextElementSibling;
+  var arrow = row.querySelector('td:first-child');
+  if (detail && detail.classList.contains('bt-detail')) {{
+    if (detail.style.display === 'table-row') {{
+      detail.style.display = 'none';
+      arrow.innerHTML = '&#9654;';
+    }} else {{
+      detail.style.display = 'table-row';
+      arrow.innerHTML = '&#9660;';
+    }}
+  }}
+}}
 </script>
 </body>
 </html>""".format(sections=sections_html, data_date=data_date, backtest_html=backtest_html)

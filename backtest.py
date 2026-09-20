@@ -538,13 +538,15 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
   </div>
   <div class="accordion" style="padding:0 15px 15px">
     <div class="bt-summary">
-      <div class="bt-box"><div class="bt-label">Narrow (0.5s) Total</div><div class="bt-value" style="color:#6bcb77">{narrow:+,.0f} EGP</div></div>
-      <div class="bt-box"><div class="bt-label">Mid (1s) Total</div><div class="bt-value" style="color:#ffd93d">{mid:+,.0f} EGP</div></div>
-      <div class="bt-box"><div class="bt-label">Loose (2s) Total</div><div class="bt-value" style="color:#ff9f43">{loose:+,.0f} EGP</div></div>
-      <div class="bt-box" style="border-color:#6bcb77"><div class="bt-label" style="color:#6bcb77">Best Combo Total</div><div class="bt-value" style="color:#6bcb77;font-size:1.3em">{best:+,.0f} EGP</div></div>
+      <div class="bt-box"><div class="bt-label">Narrow (0.5s) Total</div><div class="bt-value" style="color:#6bcb77">+{narrow:,.0f} EGP</div></div>
+      <div class="bt-box"><div class="bt-label">Mid (1s) Total</div><div class="bt-value" style="color:#ffd93d">+{mid:,.0f} EGP</div></div>
+      <div class="bt-box"><div class="bt-label">Loose (2s) Total</div><div class="bt-value" style="color:#ff9f43">+{loose:,.0f} EGP</div></div>
+      <div class="bt-box" style="border-color:#6bcb77"><div class="bt-label" style="color:#6bcb77">Best Combo Total</div><div class="bt-value" style="color:#6bcb77;font-size:1.3em">+{best:,.0f} EGP</div></div>
     </div>
     <table class="bt-table">
-      <tr><th>Ticker</th><th>Price</th><th>Narrow</th><th>Mid</th><th>Loose</th><th>Best</th><th>Best Strategy</th><th>Ease</th></tr>"""
+      <tr><th></th><th>Ticker</th><th>Price</th><th>Narrow</th><th>Mid</th><th>Loose</th><th>Best</th><th>Best Strategy</th><th>Ease</th></tr>""".format(
+            narrow=narrow_total, mid=mid_total, loose=loose_total, best=best_total)
+
     for r in results:
         s = r['strategies']
         best = r['best_strategy']
@@ -552,8 +554,28 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
         mid_ret = s[mid_key]['total_return_pct']
         loose_ret = s[loose_key]['total_return_pct']
         best_ret = s[best]['total_return_pct']
+        narrow_profit = s[narrow_key]['total_profit']
+        mid_profit = s[mid_key]['total_profit']
+        loose_profit = s[loose_key]['total_profit']
+        best_profit = s[best]['total_profit']
+        narrow_trades = s[narrow_key]['total_trades']
+        mid_trades = s[mid_key]['total_trades']
+        loose_trades = s[loose_key]['total_trades']
+        narrow_wr = s[narrow_key]['win_rate']
+        mid_wr = s[mid_key]['win_rate']
+        loose_wr = s[loose_key]['win_rate']
+        narrow_atd = s[narrow_key]['avg_trades_per_day']
+        mid_atd = s[mid_key]['avg_trades_per_day']
+        loose_atd = s[loose_key]['avg_trades_per_day']
+
+        nc = 'profit-pos' if narrow_ret > 0 else 'profit-neg'
+        mc = 'profit-pos' if mid_ret > 0 else 'profit-neg'
+        lc = 'profit-pos' if loose_ret > 0 else 'profit-neg'
+        bc = 'profit-pos' if best_ret > 0 else 'profit-neg'
+
         html += """
-      <tr>
+      <tr class="bt-row" onclick="toggleBtDetail(this)" style="cursor:pointer">
+        <td style="color:#888;font-size:0.8em">&#9654;</td>
         <td><strong>{ticker}</strong></td><td>{price:.2f}</td>
         <td class="{nc}">{nr:+.1f}%</td>
         <td class="{mc}">{mr:+.1f}%</td>
@@ -561,13 +583,50 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
         <td class="{bc}">{br:+.1f}%</td>
         <td>{best}</td>
         <td><span class="ease-badge ease-{ease}">{ease}</span></td>
+      </tr>
+      <tr class="bt-detail" style="display:none">
+        <td colspan="9">
+          <div class="bt-detail-grid">
+            <div class="bt-detail-card">
+              <div class="bt-detail-title" style="color:#6bcb77">Narrow (0.5s)</div>
+              <div class="bt-detail-row"><span>Buy Level:</span><span>{nb:.4f}</span></div>
+              <div class="bt-detail-row"><span>Sell Level:</span><span>{ns:.4f}</span></div>
+              <div class="bt-detail-row"><span>Trades:</span><span>{nt}</span></div>
+              <div class="bt-detail-row"><span>Win Rate:</span><span>{nw:.1f}%</span></div>
+              <div class="bt-detail-row"><span>Trades/Day:</span><span>{nad:.1f}</span></div>
+              <div class="bt-detail-row"><span>Profit:</span><span class="{nc}">{np:+,.2f} EGP</span></div>
+            </div>
+            <div class="bt-detail-card">
+              <div class="bt-detail-title" style="color:#ffd93d">Mid (1s)</div>
+              <div class="bt-detail-row"><span>Buy Level:</span><span>{mb:.4f}</span></div>
+              <div class="bt-detail-row"><span>Sell Level:</span><span>{ms:.4f}</span></div>
+              <div class="bt-detail-row"><span>Trades:</span><span>{mt}</span></div>
+              <div class="bt-detail-row"><span>Win Rate:</span><span>{mw:.1f}%</span></div>
+              <div class="bt-detail-row"><span>Trades/Day:</span><span>{mad:.1f}</span></div>
+              <div class="bt-detail-row"><span>Profit:</span><span class="{mc}">{mp:+,.2f} EGP</span></div>
+            </div>
+            <div class="bt-detail-card">
+              <div class="bt-detail-title" style="color:#ff9f43">Loose (2s)</div>
+              <div class="bt-detail-row"><span>Buy Level:</span><span>{lb:.4f}</span></div>
+              <div class="bt-detail-row"><span>Sell Level:</span><span>{ls:.4f}</span></div>
+              <div class="bt-detail-row"><span>Trades:</span><span>{lt}</span></div>
+              <div class="bt-detail-row"><span>Win Rate:</span><span>{lw:.1f}%</span></div>
+              <div class="bt-detail-row"><span>Trades/Day:</span><span>{lad:.1f}</span></div>
+              <div class="bt-detail-row"><span>Profit:</span><span class="{lc}">{lp:+,.2f} EGP</span></div>
+            </div>
+          </div>
+        </td>
       </tr>""".format(
             ticker=r['ticker'], price=r['current_price'],
-            nc='profit-pos' if narrow_ret > 0 else 'profit-neg', nr=narrow_ret,
-            mc='profit-pos' if mid_ret > 0 else 'profit-neg', mr=mid_ret,
-            lc='profit-pos' if loose_ret > 0 else 'profit-neg', lr=loose_ret,
-            bc='profit-pos' if best_ret > 0 else 'profit-neg', br=best_ret,
-            best=best, ease=r['ease_label'])
+            nc=nc, nr=narrow_ret, mc=mc, mr=mid_ret, lc=lc, lr=loose_ret, bc=bc, br=best_ret,
+            best=best, ease=r['ease_label'],
+            nb=s[narrow_key]['buy_level'], ns=s[narrow_key]['sell_level'],
+            nt=narrow_trades, nw=narrow_wr, nad=narrow_atd, np=narrow_profit,
+            mb=s[mid_key]['buy_level'], ms=s[mid_key]['sell_level'],
+            mt=mid_trades, mw=mid_wr, mad=mid_atd, mp=mid_profit,
+            lb=s[loose_key]['buy_level'], ls=s[loose_key]['sell_level'],
+            lt=loose_trades, lw=loose_wr, lad=loose_atd, lp=loose_profit)
+
     html += """
     </table>
   </div>
