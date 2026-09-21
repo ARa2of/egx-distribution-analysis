@@ -2,8 +2,9 @@ name: Update EGX Report
 
 on:
   schedule:
-    # 4 PM UK time (3 PM UTC in summer/BST, weekdays only - EGX trades Sun-Thu)
-    - cron: '0 15 * * 1-5'
+    # Every 30 min during EGX sessions (Sun-Thu, 7 AM - 5 PM UK time / BST)
+    # BST = UTC+1, so 7AM BST = 6AM UTC, 5PM BST = 4PM UTC
+    - cron: '0,30 6-16 * * 0-4'
   workflow_dispatch:  # Allow manual trigger
 
 permissions:
