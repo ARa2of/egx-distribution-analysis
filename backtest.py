@@ -538,14 +538,17 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
   </div>
   <div class="accordion" style="padding:0 15px 15px">
     <div class="bt-summary">
-      <div class="bt-box"><div class="bt-label">Narrow (0.5s) Total</div><div class="bt-value" style="color:#6bcb77">+{narrow:,.0f} EGP</div></div>
-      <div class="bt-box"><div class="bt-label">Mid (1s) Total</div><div class="bt-value" style="color:#ffd93d">+{mid:,.0f} EGP</div></div>
-      <div class="bt-box"><div class="bt-label">Loose (2s) Total</div><div class="bt-value" style="color:#ff9f43">+{loose:,.0f} EGP</div></div>
-      <div class="bt-box" style="border-color:#6bcb77"><div class="bt-label" style="color:#6bcb77">Best Combo Total</div><div class="bt-value" style="color:#6bcb77;font-size:1.3em">+{best:,.0f} EGP</div></div>
+      <div class="bt-box"><div class="bt-label">Narrow (0.5s) Total</div><div class="bt-value" style="color:{narrow_color}">{narrow_str} EGP</div></div>
+      <div class="bt-box"><div class="bt-label">Mid (1s) Total</div><div class="bt-value" style="color:{mid_color}">{mid_str} EGP</div></div>
+      <div class="bt-box"><div class="bt-label">Loose (2s) Total</div><div class="bt-value" style="color:{loose_color}">{loose_str} EGP</div></div>
+      <div class="bt-box" style="border-color:#6bcb77"><div class="bt-label" style="color:#6bcb77">Best Combo Total</div><div class="bt-value" style="color:#6bcb77;font-size:1.3em">{best_str} EGP</div></div>
     </div>
     <table class="bt-table">
       <tr><th></th><th>Ticker</th><th>Price</th><th>Narrow</th><th>Mid</th><th>Loose</th><th>Best</th><th>Best Strategy</th><th>Ease</th></tr>""".format(
-            narrow=narrow_total, mid=mid_total, loose=loose_total, best=best_total)
+            narrow_str='{:+,.0f}'.format(narrow_total), narrow_color='#6bcb77' if narrow_total >= 0 else '#ee5a24',
+            mid_str='{:+,.0f}'.format(mid_total), mid_color='#ffd93d' if mid_total >= 0 else '#ee5a24',
+            loose_str='{:+,.0f}'.format(loose_total), loose_color='#ff9f43' if loose_total >= 0 else '#ee5a24',
+            best_str='{:+,.0f}'.format(best_total))
 
     for r in results:
         s = r['strategies']
@@ -591,27 +594,27 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
               <div class="bt-detail-title" style="color:#6bcb77">Narrow (0.5s)</div>
               <div class="bt-detail-row"><span>Buy Level:</span><span>{nb:.4f}</span></div>
               <div class="bt-detail-row"><span>Sell Level:</span><span>{ns:.4f}</span></div>
-              <div class="bt-detail-row"><span>Trades:</span><span>{nt}</span></div>
+              <div class="bt-detail-row"><span>Completed Trades:</span><span>{nt}</span></div>
               <div class="bt-detail-row"><span>Win Rate:</span><span>{nw:.1f}%</span></div>
-              <div class="bt-detail-row"><span>Trades/Day:</span><span>{nad:.1f}</span></div>
+              <div class="bt-detail-row"><span>Band Width:</span><span>{nbw:.2f} EGP</span></div>
               <div class="bt-detail-row"><span>Profit:</span><span class="{nc}">{np:+,.2f} EGP</span></div>
             </div>
             <div class="bt-detail-card">
               <div class="bt-detail-title" style="color:#ffd93d">Mid (1s)</div>
               <div class="bt-detail-row"><span>Buy Level:</span><span>{mb:.4f}</span></div>
               <div class="bt-detail-row"><span>Sell Level:</span><span>{ms:.4f}</span></div>
-              <div class="bt-detail-row"><span>Trades:</span><span>{mt}</span></div>
+              <div class="bt-detail-row"><span>Completed Trades:</span><span>{mt}</span></div>
               <div class="bt-detail-row"><span>Win Rate:</span><span>{mw:.1f}%</span></div>
-              <div class="bt-detail-row"><span>Trades/Day:</span><span>{mad:.1f}</span></div>
+              <div class="bt-detail-row"><span>Band Width:</span><span>{mbw:.2f} EGP</span></div>
               <div class="bt-detail-row"><span>Profit:</span><span class="{mc}">{mp:+,.2f} EGP</span></div>
             </div>
             <div class="bt-detail-card">
               <div class="bt-detail-title" style="color:#ff9f43">Loose (2s)</div>
               <div class="bt-detail-row"><span>Buy Level:</span><span>{lb:.4f}</span></div>
               <div class="bt-detail-row"><span>Sell Level:</span><span>{ls:.4f}</span></div>
-              <div class="bt-detail-row"><span>Trades:</span><span>{lt}</span></div>
+              <div class="bt-detail-row"><span>Completed Trades:</span><span>{lt}</span></div>
               <div class="bt-detail-row"><span>Win Rate:</span><span>{lw:.1f}%</span></div>
-              <div class="bt-detail-row"><span>Trades/Day:</span><span>{lad:.1f}</span></div>
+              <div class="bt-detail-row"><span>Band Width:</span><span>{lbw:.2f} EGP</span></div>
               <div class="bt-detail-row"><span>Profit:</span><span class="{lc}">{lp:+,.2f} EGP</span></div>
             </div>
           </div>
@@ -621,16 +624,20 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
             nc=nc, nr=narrow_ret, mc=mc, mr=mid_ret, lc=lc, lr=loose_ret, bc=bc, br=best_ret,
             best=best, ease=r['ease_label'],
             nb=s[narrow_key]['buy_level'], ns=s[narrow_key]['sell_level'],
-            nt=narrow_trades, nw=narrow_wr, nad=narrow_atd, np=narrow_profit,
+            nt=narrow_trades, nw=narrow_wr, nbw=s[narrow_key]['band_width'], np=narrow_profit,
             mb=s[mid_key]['buy_level'], ms=s[mid_key]['sell_level'],
-            mt=mid_trades, mw=mid_wr, mad=mid_atd, mp=mid_profit,
+            mt=mid_trades, mw=mid_wr, mbw=s[mid_key]['band_width'], mp=mid_profit,
             lb=s[loose_key]['buy_level'], ls=s[loose_key]['sell_level'],
-            lt=loose_trades, lw=loose_wr, lad=loose_atd, lp=loose_profit)
+            lt=loose_trades, lw=loose_wr, lbw=s[loose_key]['band_width'], lp=loose_profit)
 
     html += """
     </table>
   </div>
-</div>"""
+</div>""".format(
+            narrow_str=('{:+,.0f}'.format(narrow_total)), narrow_color='#6bcb77' if narrow_total >= 0 else '#ee5a24',
+            mid_str=('{:+,.0f}'.format(mid_total)), mid_color='#ffd93d' if mid_total >= 0 else '#ee5a24',
+            loose_str=('{:+,.0f}'.format(loose_total)), loose_color='#ff9f43' if loose_total >= 0 else '#ee5a24',
+            best_str=('{:+,.0f}'.format(best_total)))
     return html
 
 
