@@ -577,6 +577,13 @@ def build_combined_html(ticker_results, data_date='', backtest_html=''):
   .bt-detail-title {{ font-weight: 700; margin-bottom: 6px; font-size: 0.9em; }}
   .bt-detail-row {{ display: flex; justify-content: space-between; padding: 2px 0; font-size: 0.82em; }}
   .bt-detail-row span:first-child {{ color: #888; }}
+  .bt-trades-list {{ margin-top: 8px; border-top: 1px solid #2a2a4a; padding-top: 6px; }}
+  .bt-trades-empty {{ color: #888; font-style: italic; font-size: 0.8em; margin-top: 8px; }}
+  .bt-trade-row {{ display: flex; gap: 8px; padding: 3px 0; font-size: 0.78em; align-items: center; flex-wrap: wrap; }}
+  .bt-trade-num {{ color: #888; min-width: 20px; }}
+  .bt-trade-time {{ color: #aaa; min-width: 220px; }}
+  .bt-trade-prices {{ color: #ccc; min-width: 140px; }}
+  .bt-trade-profit {{ font-weight: 600; min-width: 100px; text-align: right; }}
 </style>
 </head>
 <body>

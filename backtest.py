@@ -48,6 +48,7 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
     budget = BUDGET
     shares = 0
     buy_price = 0
+    buy_time = None
     trades = []
     daily_trades = {}
     in_trade = False
@@ -67,6 +68,7 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
                 if max_shares > 0 and vol >= max_shares:
                     shares = max_shares
                     buy_price = price
+                    buy_time = bar_time
                     cost = shares * price
                     fee = cost * FEE_PER_SIDE
                     budget -= (cost + fee)
@@ -80,8 +82,8 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
                 budget += net_revenue
 
                 trades.append({
-                    'entry_time': str(bar_time),
-                    'exit_time': str(bar_time),
+                    'entry_time': buy_time.strftime('%Y-%m-%d %H:%M'),
+                    'exit_time': bar_time.strftime('%Y-%m-%d %H:%M'),
                     'entry_price': round(buy_price, 4),
                     'exit_price': round(price, 4),
                     'shares': shares,
@@ -92,6 +94,7 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
                 daily_trades[day] += 1
                 shares = 0
                 buy_price = 0
+                buy_time = None
                 in_trade = False
 
     if in_trade:
@@ -102,8 +105,8 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
         profit = net_revenue - (shares * buy_price + shares * buy_price * FEE_PER_SIDE)
         budget += net_revenue
         trades.append({
-            'entry_time': str(dates[-1]),
-            'exit_time': str(dates[-1]),
+            'entry_time': buy_time.strftime('%Y-%m-%d %H:%M'),
+            'exit_time': dates[-1].strftime('%Y-%m-%d %H:%M'),
             'entry_price': round(buy_price, 4),
             'exit_price': round(final_price, 4),
             'shares': shares,
@@ -112,6 +115,7 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
             'open_position': True,
         })
         shares = 0
+        buy_time = None
         in_trade = False
 
     total_profit = sum(t['profit'] for t in trades)
@@ -523,6 +527,27 @@ def run_backtest(tickers=None, fetched_data=None):
     return results, narrow_key, mid_key, loose_key
 
 
+def format_trades_list(trades, color):
+    if not trades:
+        return '<div class="bt-trades-empty">No completed trades</div>'
+    html = '<div class="bt-trades-list">'
+    for i, t in enumerate(trades):
+        open_tag = ' <span style="color:#ffd93d;font-size:0.75em">(OPEN)</span>' if t.get('open_position') else ''
+        profit_cls = 'profit-pos' if t['profit'] > 0 else 'profit-neg'
+        html += """
+      <div class="bt-trade-row">
+        <span class="bt-trade-num">#{}</span>
+        <span class="bt-trade-time">{} &rarr; {}</span>
+        <span class="bt-trade-prices">{} &rarr; {}</span>
+        <span class="bt-trade-profit {}">{:+,.2f} EGP{}</span>
+      </div>""".format(
+            i + 1, t['entry_time'], t['exit_time'],
+            t['entry_price'], t['exit_price'],
+            profit_cls, t['profit'], open_tag)
+    html += '</div>'
+    return html
+
+
 def backtest_fragment(results, narrow_key, mid_key, loose_key):
     narrow_total = sum(r['strategies'][narrow_key]['total_profit'] for r in results)
     mid_total = sum(r['strategies'][mid_key]['total_profit'] for r in results)
@@ -598,6 +623,7 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
               <div class="bt-detail-row"><span>Win Rate:</span><span>{nw:.1f}%</span></div>
               <div class="bt-detail-row"><span>Band Width:</span><span>{nbw:.2f} EGP</span></div>
               <div class="bt-detail-row"><span>Profit:</span><span class="{nc}">{np:+,.2f} EGP</span></div>
+              {narrow_trades}
             </div>
             <div class="bt-detail-card">
               <div class="bt-detail-title" style="color:#ffd93d">Mid (1s)</div>
@@ -607,6 +633,7 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
               <div class="bt-detail-row"><span>Win Rate:</span><span>{mw:.1f}%</span></div>
               <div class="bt-detail-row"><span>Band Width:</span><span>{mbw:.2f} EGP</span></div>
               <div class="bt-detail-row"><span>Profit:</span><span class="{mc}">{mp:+,.2f} EGP</span></div>
+              {mid_trades}
             </div>
             <div class="bt-detail-card">
               <div class="bt-detail-title" style="color:#ff9f43">Loose (2s)</div>
@@ -616,6 +643,7 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
               <div class="bt-detail-row"><span>Win Rate:</span><span>{lw:.1f}%</span></div>
               <div class="bt-detail-row"><span>Band Width:</span><span>{lbw:.2f} EGP</span></div>
               <div class="bt-detail-row"><span>Profit:</span><span class="{lc}">{lp:+,.2f} EGP</span></div>
+              {loose_trades}
             </div>
           </div>
         </td>
@@ -625,10 +653,13 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
             best=best, ease=r['ease_label'],
             nb=s[narrow_key]['buy_level'], ns=s[narrow_key]['sell_level'],
             nt=narrow_trades, nw=narrow_wr, nbw=s[narrow_key]['band_width'], np=narrow_profit,
+            narrow_trades=format_trades_list(s[narrow_key]['trades'], '#6bcb77'),
             mb=s[mid_key]['buy_level'], ms=s[mid_key]['sell_level'],
             mt=mid_trades, mw=mid_wr, mbw=s[mid_key]['band_width'], mp=mid_profit,
+            mid_trades=format_trades_list(s[mid_key]['trades'], '#ffd93d'),
             lb=s[loose_key]['buy_level'], ls=s[loose_key]['sell_level'],
-            lt=loose_trades, lw=loose_wr, lbw=s[loose_key]['band_width'], lp=loose_profit)
+            lt=loose_trades, lw=loose_wr, lbw=s[loose_key]['band_width'], lp=loose_profit,
+            loose_trades=format_trades_list(s[loose_key]['trades'], '#ff9f43'))
 
     html += """
     </table>
