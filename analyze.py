@@ -714,7 +714,21 @@ def main():
     import json
     json_data = {
         'generated': pd.Timestamp.now().strftime('%Y-%m-%d %H:%M'),
-        'tickers': []
+        'data_date': data_date,
+        'fees_per_side_pct': 0.3,
+        'round_trip_fees_pct': 0.6,
+        'backtest_budget_egp': 10000,
+        'backtest_max_trades_per_day': 3,
+        'tickers': [],
+        'backtest': {
+            'strategy_definitions': {
+                'narrow': {'buy': 'mean - 0.5*std', 'sell': 'mean + 0.5*std'},
+                'mid': {'buy': 'mean - 1*std', 'sell': 'mean + 1*std'},
+                'loose': {'buy': 'mean - 2*std', 'sell': 'mean + 2*std'},
+            },
+            'portfolio_totals_egp': {},
+            'tickers': []
+        }
     }
     for r in results:
         s = r['stats']
@@ -752,6 +766,48 @@ def main():
                 'resistance_2': round(p['resistance_2'], 2),
             },
         })
+    narrow_total = sum(r['strategies'][narrow_key]['total_profit'] for r in bt_results)
+    mid_total = sum(r['strategies'][mid_key]['total_profit'] for r in bt_results)
+    loose_total = sum(r['strategies'][loose_key]['total_profit'] for r in bt_results)
+    best_total = sum(r['strategies'][r['best_strategy']]['total_profit'] for r in bt_results)
+    json_data['backtest']['portfolio_totals_egp'] = {
+        'narrow_0_5sigma': round(narrow_total, 2),
+        'mid_1sigma': round(mid_total, 2),
+        'loose_2sigma': round(loose_total, 2),
+        'best_combo': round(best_total, 2),
+    }
+    for bt in bt_results:
+        ticker_bt = {
+            'ticker': bt['ticker'],
+            'current_price': bt['current_price'],
+            'mean': bt['mean'],
+            'std': bt['std'],
+            'best_strategy': bt['best_strategy'],
+            'ease_of_trading': bt['ease_label'],
+            'strategies': {}
+        }
+        for sname, sd in bt['strategies'].items():
+            key = 'narrow' if 'Narrow' in sname else 'mid' if 'Mid' in sname else 'loose'
+            ticker_bt['strategies'][key] = {
+                'label': sname,
+                'buy_level': sd['buy_level'],
+                'sell_level': sd['sell_level'],
+                'band_width': sd['band_width'],
+                'completed_trades': sd['total_trades'],
+                'total_profit_egp': sd['total_profit'],
+                'total_return_pct': sd['total_return_pct'],
+                'win_rate_pct': sd['win_rate'],
+                'crosses_buy': sd['crosses_buy'],
+                'crosses_sell': sd['crosses_sell'],
+                'trades': [
+                    {'entry_time': t['entry_time'], 'exit_time': t['exit_time'],
+                     'entry_price': t['entry_price'], 'exit_price': t['exit_price'],
+                     'shares': t['shares'], 'profit_egp': t['profit'], 'return_pct': t['return_pct'],
+                     'open_position': t.get('open_position', False)}
+                    for t in sd['trades']
+                ]
+            }
+        json_data['backtest']['tickers'].append(ticker_bt)
     json_path = os.path.join(OUTPUT_DIR, "data.json")
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(json_data, f, indent=2)
