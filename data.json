@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-04 18:51",
-  "data_date": "2026-10-04 18:51",
+  "generated": "2026-10-05 12:49",
+  "data_date": "2026-10-05 12:49",
   "fees_per_side_pct": 0.3,
   "round_trip_fees_pct": 0.6,
   "backtest_budget_egp": 10000,
@@ -8,464 +8,464 @@
   "tickers": [
     {
       "ticker": "ORHD",
-      "current_price": 39.27,
-      "signal": "WAIT",
-      "strategy": "Above Mean - Wait for Pullback",
-      "confidence": 49,
-      "entry": 38.31,
-      "exit_target": 39.89,
-      "stop_loss": 37.79,
-      "net_gain_pct": 3.51,
-      "rr_ratio": 3.0,
-      "hold_sessions": 0,
+      "current_price": 38.5,
+      "signal": "BUY",
+      "strategy": "Below Mean - Good Entry",
+      "confidence": 76,
+      "entry": 38.5,
+      "exit_target": 39.32,
+      "stop_loss": 37.81,
+      "net_gain_pct": 1.52,
+      "rr_ratio": 1.2,
+      "hold_sessions": 1,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 38.84,
-        "std_5d": 0.52,
+        "mean_5d": 38.81,
+        "std_5d": 0.5,
         "min_5d": 37.59,
-        "max_5d": 39.75,
-        "cv_5d": 1.35,
-        "cv_1m": 4.26,
-        "mean_shift": -5.97,
-        "period": "2026-09-07 to 2026-10-04",
+        "max_5d": 39.54,
+        "cv_5d": 1.29,
+        "cv_1m": 4.37,
+        "mean_shift": -5.6,
+        "period": "2026-09-08 to 2026-10-05",
         "sessions": 20,
         "bars": 1000
       },
       "levels": {
-        "support_2": 37.79,
+        "support_2": 37.81,
         "support_1": 38.31,
-        "mean": 38.84,
-        "resistance_1": 39.36,
-        "resistance_2": 39.89
+        "mean": 38.81,
+        "resistance_1": 39.32,
+        "resistance_2": 39.82
       }
     },
     {
       "ticker": "ADIB",
-      "current_price": 49.9,
-      "signal": "WAIT",
-      "strategy": "At Mean - Wait for Pullback",
-      "confidence": 45,
-      "entry": 49.26,
-      "exit_target": 50.93,
-      "stop_loss": 48.43,
-      "net_gain_pct": 2.79,
+      "current_price": 49.11,
+      "signal": "BUY",
+      "strategy": "Below Mean - Good Entry",
+      "confidence": 74,
+      "entry": 49.11,
+      "exit_target": 50.35,
+      "stop_loss": 48.48,
+      "net_gain_pct": 1.93,
       "rr_ratio": 2.0,
-      "hold_sessions": 0,
+      "hold_sessions": 1,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 50.1,
-        "std_5d": 0.83,
+        "mean_5d": 49.73,
+        "std_5d": 0.63,
         "min_5d": 48.42,
-        "max_5d": 51.9,
-        "cv_5d": 1.67,
-        "cv_1m": 2.09,
-        "mean_shift": -2.67,
-        "period": "2026-09-07 to 2026-10-04",
+        "max_5d": 51.39,
+        "cv_5d": 1.26,
+        "cv_1m": 2.27,
+        "mean_shift": -3.13,
+        "period": "2026-09-08 to 2026-10-05",
         "sessions": 20,
         "bars": 1000
       },
       "levels": {
-        "support_2": 48.43,
-        "support_1": 49.26,
-        "mean": 50.1,
-        "resistance_1": 50.93,
-        "resistance_2": 51.77
-      }
-    },
-    {
-      "ticker": "EGAL",
-      "current_price": 345.0,
-      "signal": "WAIT",
-      "strategy": "At Mean - Wait for Pullback",
-      "confidence": 41,
-      "entry": 340.0,
-      "exit_target": 351.04,
-      "stop_loss": 334.48,
-      "net_gain_pct": 2.65,
-      "rr_ratio": 2.0,
-      "hold_sessions": 0,
-      "fees_pct": 0.6,
-      "stats": {
-        "mean_5d": 345.52,
-        "std_5d": 5.52,
-        "min_5d": 331.66,
-        "max_5d": 359.0,
-        "cv_5d": 1.6,
-        "cv_1m": 3.1,
-        "mean_shift": -4.35,
-        "period": "2026-09-07 to 2026-10-04",
-        "sessions": 20,
-        "bars": 1000
-      },
-      "levels": {
-        "support_2": 334.48,
-        "support_1": 340.0,
-        "mean": 345.52,
-        "resistance_1": 351.04,
-        "resistance_2": 356.57
-      }
-    },
-    {
-      "ticker": "ENGC",
-      "current_price": 37.88,
-      "signal": "WAIT",
-      "strategy": "Above Mean - Wait for Pullback",
-      "confidence": 32,
-      "entry": 35.01,
-      "exit_target": 40.4,
-      "stop_loss": 33.22,
-      "net_gain_pct": 14.8,
-      "rr_ratio": 3.0,
-      "hold_sessions": 0,
-      "fees_pct": 0.6,
-      "stats": {
-        "mean_5d": 36.81,
-        "std_5d": 1.8,
-        "min_5d": 33.33,
-        "max_5d": 39.99,
-        "cv_5d": 4.88,
-        "cv_1m": 7.46,
-        "mean_shift": -11.0,
-        "period": "2026-09-06 to 2026-10-04",
-        "sessions": 21,
-        "bars": 1000
-      },
-      "levels": {
-        "support_2": 33.22,
-        "support_1": 35.01,
-        "mean": 36.81,
-        "resistance_1": 38.61,
-        "resistance_2": 40.4
+        "support_2": 48.48,
+        "support_1": 49.1,
+        "mean": 49.73,
+        "resistance_1": 50.35,
+        "resistance_2": 50.98
       }
     },
     {
       "ticker": "RMDA",
-      "current_price": 5.55,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 39,
-      "entry": 5.26,
-      "exit_target": 5.5,
-      "stop_loss": 5.15,
-      "net_gain_pct": 3.88,
-      "rr_ratio": 2.0,
+      "current_price": 5.48,
+      "signal": "WAIT",
+      "strategy": "Above Mean - Wait for Pullback",
+      "confidence": 47,
+      "entry": 5.28,
+      "exit_target": 5.63,
+      "stop_loss": 5.16,
+      "net_gain_pct": 6.07,
+      "rr_ratio": 3.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 5.38,
+        "mean_5d": 5.4,
         "std_5d": 0.12,
         "min_5d": 5.09,
         "max_5d": 5.6,
-        "cv_5d": 2.19,
-        "cv_1m": 6.47,
-        "mean_shift": -9.37,
-        "period": "2026-09-07 to 2026-10-04",
+        "cv_5d": 2.18,
+        "cv_1m": 6.5,
+        "mean_shift": -8.33,
+        "period": "2026-09-08 to 2026-10-05",
         "sessions": 20,
         "bars": 1000
       },
       "levels": {
-        "support_2": 5.15,
-        "support_1": 5.26,
-        "mean": 5.38,
-        "resistance_1": 5.5,
-        "resistance_2": 5.62
+        "support_2": 5.16,
+        "support_1": 5.28,
+        "mean": 5.4,
+        "resistance_1": 5.52,
+        "resistance_2": 5.63
       }
     },
     {
       "ticker": "BONY",
-      "current_price": 4.18,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 39,
-      "entry": 3.91,
-      "exit_target": 4.09,
-      "stop_loss": 3.81,
-      "net_gain_pct": 4.16,
-      "rr_ratio": 2.0,
+      "current_price": 4.08,
+      "signal": "WAIT",
+      "strategy": "Above Mean - Wait for Pullback",
+      "confidence": 47,
+      "entry": 3.92,
+      "exit_target": 4.22,
+      "stop_loss": 3.82,
+      "net_gain_pct": 6.93,
+      "rr_ratio": 3.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 4.0,
-        "std_5d": 0.09,
+        "mean_5d": 4.02,
+        "std_5d": 0.1,
         "min_5d": 3.8,
         "max_5d": 4.18,
-        "cv_5d": 2.32,
-        "cv_1m": 5.61,
-        "mean_shift": -7.88,
-        "period": "2026-09-07 to 2026-10-04",
+        "cv_5d": 2.45,
+        "cv_1m": 5.46,
+        "mean_shift": -6.79,
+        "period": "2026-09-08 to 2026-10-05",
         "sessions": 20,
         "bars": 1000
       },
       "levels": {
-        "support_2": 3.81,
-        "support_1": 3.91,
-        "mean": 4.0,
-        "resistance_1": 4.09,
-        "resistance_2": 4.19
+        "support_2": 3.82,
+        "support_1": 3.92,
+        "mean": 4.02,
+        "resistance_1": 4.12,
+        "resistance_2": 4.22
+      }
+    },
+    {
+      "ticker": "EGAL",
+      "current_price": 345.99,
+      "signal": "WAIT",
+      "strategy": "At Mean - Wait for Pullback",
+      "confidence": 45,
+      "entry": 340.02,
+      "exit_target": 350.08,
+      "stop_loss": 334.99,
+      "net_gain_pct": 2.36,
+      "rr_ratio": 2.0,
+      "hold_sessions": 0,
+      "fees_pct": 0.6,
+      "stats": {
+        "mean_5d": 345.05,
+        "std_5d": 5.03,
+        "min_5d": 331.66,
+        "max_5d": 359.0,
+        "cv_5d": 1.46,
+        "cv_1m": 3.19,
+        "mean_shift": -4.14,
+        "period": "2026-09-08 to 2026-10-05",
+        "sessions": 20,
+        "bars": 1000
+      },
+      "levels": {
+        "support_2": 334.99,
+        "support_1": 340.02,
+        "mean": 345.05,
+        "resistance_1": 350.08,
+        "resistance_2": 355.1
       }
     },
     {
       "ticker": "MFPC",
-      "current_price": 47.3,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 35,
-      "entry": 45.12,
-      "exit_target": 46.74,
-      "stop_loss": 44.32,
-      "net_gain_pct": 2.97,
-      "rr_ratio": 2.0,
+      "current_price": 46.4,
+      "signal": "WAIT",
+      "strategy": "Above Mean - Wait for Pullback",
+      "confidence": 43,
+      "entry": 45.23,
+      "exit_target": 47.63,
+      "stop_loss": 44.43,
+      "net_gain_pct": 4.7,
+      "rr_ratio": 3.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 45.93,
-        "std_5d": 0.81,
-        "min_5d": 43.52,
+        "mean_5d": 46.03,
+        "std_5d": 0.8,
+        "min_5d": 44.03,
         "max_5d": 47.3,
-        "cv_5d": 1.75,
-        "cv_1m": 3.17,
-        "mean_shift": -3.06,
-        "period": "2026-09-07 to 2026-10-04",
+        "cv_5d": 1.73,
+        "cv_1m": 3.19,
+        "mean_shift": -2.79,
+        "period": "2026-09-08 to 2026-10-05",
         "sessions": 20,
         "bars": 1000
       },
       "levels": {
-        "support_2": 44.32,
-        "support_1": 45.12,
-        "mean": 45.93,
-        "resistance_1": 46.74,
-        "resistance_2": 47.54
-      }
-    },
-    {
-      "ticker": "MASR",
-      "current_price": 7.77,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 35,
-      "entry": 7.1,
-      "exit_target": 7.59,
-      "stop_loss": 6.85,
-      "net_gain_pct": 6.26,
-      "rr_ratio": 2.0,
-      "hold_sessions": 0,
-      "fees_pct": 0.6,
-      "stats": {
-        "mean_5d": 7.34,
-        "std_5d": 0.24,
-        "min_5d": 6.92,
-        "max_5d": 7.77,
-        "cv_5d": 3.32,
-        "cv_1m": 5.33,
-        "mean_shift": -5.47,
-        "period": "2026-09-07 to 2026-10-04",
-        "sessions": 20,
-        "bars": 1000
-      },
-      "levels": {
-        "support_2": 6.85,
-        "support_1": 7.1,
-        "mean": 7.34,
-        "resistance_1": 7.59,
-        "resistance_2": 7.83
-      }
-    },
-    {
-      "ticker": "ETEL",
-      "current_price": 150.08,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 31,
-      "entry": 132.21,
-      "exit_target": 142.03,
-      "stop_loss": 127.3,
-      "net_gain_pct": 6.83,
-      "rr_ratio": 2.0,
-      "hold_sessions": 0,
-      "fees_pct": 0.6,
-      "stats": {
-        "mean_5d": 137.12,
-        "std_5d": 4.91,
-        "min_5d": 129.02,
-        "max_5d": 153.5,
-        "cv_5d": 3.58,
-        "cv_1m": 4.33,
-        "mean_shift": 3.47,
-        "period": "2026-09-07 to 2026-10-04",
-        "sessions": 20,
-        "bars": 1000
-      },
-      "levels": {
-        "support_2": 127.3,
-        "support_1": 132.21,
-        "mean": 137.12,
-        "resistance_1": 142.03,
-        "resistance_2": 146.94
-      }
-    },
-    {
-      "ticker": "EFIH",
-      "current_price": 23.99,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 31,
-      "entry": 22.09,
-      "exit_target": 23.24,
-      "stop_loss": 21.51,
-      "net_gain_pct": 4.62,
-      "rr_ratio": 2.0,
-      "hold_sessions": 0,
-      "fees_pct": 0.6,
-      "stats": {
-        "mean_5d": 22.67,
-        "std_5d": 0.58,
-        "min_5d": 20.21,
-        "max_5d": 23.99,
-        "cv_5d": 2.54,
-        "cv_1m": 2.2,
-        "mean_shift": -2.21,
-        "period": "2026-09-07 to 2026-10-04",
-        "sessions": 20,
-        "bars": 1000
-      },
-      "levels": {
-        "support_2": 21.51,
-        "support_1": 22.09,
-        "mean": 22.67,
-        "resistance_1": 23.24,
-        "resistance_2": 23.82
+        "support_2": 44.43,
+        "support_1": 45.23,
+        "mean": 46.03,
+        "resistance_1": 46.83,
+        "resistance_2": 47.63
       }
     },
     {
       "ticker": "EGAS",
-      "current_price": 57.87,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 31,
-      "entry": 55.48,
-      "exit_target": 57.38,
-      "stop_loss": 54.53,
-      "net_gain_pct": 2.82,
-      "rr_ratio": 2.0,
+      "current_price": 57.03,
+      "signal": "WAIT",
+      "strategy": "Above Mean - Wait for Pullback",
+      "confidence": 39,
+      "entry": 55.59,
+      "exit_target": 58.64,
+      "stop_loss": 54.57,
+      "net_gain_pct": 4.9,
+      "rr_ratio": 3.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 56.43,
-        "std_5d": 0.95,
+        "mean_5d": 56.6,
+        "std_5d": 1.02,
         "min_5d": 54.0,
         "max_5d": 58.33,
-        "cv_5d": 1.68,
-        "cv_1m": 2.25,
-        "mean_shift": -1.65,
-        "period": "2026-09-07 to 2026-10-04",
+        "cv_5d": 1.8,
+        "cv_1m": 2.19,
+        "mean_shift": -1.25,
+        "period": "2026-09-08 to 2026-10-05",
         "sessions": 20,
         "bars": 1000
       },
       "levels": {
-        "support_2": 54.53,
-        "support_1": 55.48,
-        "mean": 56.43,
-        "resistance_1": 57.38,
-        "resistance_2": 58.32
+        "support_2": 54.57,
+        "support_1": 55.59,
+        "mean": 56.6,
+        "resistance_1": 57.62,
+        "resistance_2": 58.64
       }
     },
     {
       "ticker": "CPCI",
-      "current_price": 605.13,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 27,
-      "entry": 563.07,
-      "exit_target": 597.85,
-      "stop_loss": 545.68,
-      "net_gain_pct": 5.58,
-      "rr_ratio": 2.0,
+      "current_price": 604.0,
+      "signal": "WAIT",
+      "strategy": "Above Mean - Wait for Pullback",
+      "confidence": 35,
+      "entry": 573.8,
+      "exit_target": 619.71,
+      "stop_loss": 558.5,
+      "net_gain_pct": 7.4,
+      "rr_ratio": 3.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 580.46,
-        "std_5d": 17.39,
-        "min_5d": 550.2,
+        "mean_5d": 589.11,
+        "std_5d": 15.3,
+        "min_5d": 559.0,
         "max_5d": 613.5,
-        "cv_5d": 3.0,
-        "cv_1m": 3.49,
-        "mean_shift": 4.48,
-        "period": "2026-09-02 to 2026-10-04",
+        "cv_5d": 2.6,
+        "cv_1m": 3.86,
+        "mean_shift": 5.62,
+        "period": "2026-09-03 to 2026-10-05",
         "sessions": 23,
         "bars": 1000
       },
       "levels": {
-        "support_2": 545.68,
-        "support_1": 563.07,
-        "mean": 580.46,
-        "resistance_1": 597.85,
-        "resistance_2": 615.25
+        "support_2": 558.5,
+        "support_1": 573.8,
+        "mean": 589.11,
+        "resistance_1": 604.41,
+        "resistance_2": 619.71
       }
     },
     {
-      "ticker": "ARCC",
-      "current_price": 73.69,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 25,
-      "entry": 62.2,
-      "exit_target": 69.4,
-      "stop_loss": 58.6,
-      "net_gain_pct": 10.98,
-      "rr_ratio": 2.0,
+      "ticker": "ENGC",
+      "current_price": 37.13,
+      "signal": "WAIT",
+      "strategy": "Above Mean - Wait for Pullback",
+      "confidence": 32,
+      "entry": 34.98,
+      "exit_target": 39.39,
+      "stop_loss": 33.5,
+      "net_gain_pct": 12.03,
+      "rr_ratio": 3.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 65.8,
-        "std_5d": 3.6,
-        "min_5d": 61.0,
-        "max_5d": 74.22,
-        "cv_5d": 5.47,
-        "cv_1m": 6.38,
-        "mean_shift": -7.04,
-        "period": "2026-09-07 to 2026-10-04",
-        "sessions": 20,
-        "bars": 1000
-      },
-      "levels": {
-        "support_2": 58.6,
-        "support_1": 62.2,
-        "mean": 65.8,
-        "resistance_1": 69.4,
-        "resistance_2": 73.0
-      }
-    },
-    {
-      "ticker": "OBRI",
-      "current_price": 29.87,
-      "signal": "AVOID",
-      "strategy": "Overbought - Too Expensive",
-      "confidence": 25,
-      "entry": 23.82,
-      "exit_target": 27.14,
-      "stop_loss": 22.15,
-      "net_gain_pct": 13.37,
-      "rr_ratio": 2.0,
-      "hold_sessions": 0,
-      "fees_pct": 0.6,
-      "stats": {
-        "mean_5d": 25.48,
-        "std_5d": 1.66,
-        "min_5d": 23.0,
-        "max_5d": 30.7,
-        "cv_5d": 6.53,
-        "cv_1m": 9.86,
-        "mean_shift": -14.43,
-        "period": "2026-09-06 to 2026-10-04",
+        "mean_5d": 36.45,
+        "std_5d": 1.47,
+        "min_5d": 33.33,
+        "max_5d": 39.0,
+        "cv_5d": 4.04,
+        "cv_1m": 7.64,
+        "mean_shift": -11.12,
+        "period": "2026-09-07 to 2026-10-05",
         "sessions": 21,
         "bars": 1000
       },
       "levels": {
-        "support_2": 22.15,
-        "support_1": 23.82,
-        "mean": 25.48,
-        "resistance_1": 27.14,
-        "resistance_2": 28.81
+        "support_2": 33.5,
+        "support_1": 34.98,
+        "mean": 36.45,
+        "resistance_1": 37.92,
+        "resistance_2": 39.39
+      }
+    },
+    {
+      "ticker": "MASR",
+      "current_price": 7.73,
+      "signal": "AVOID",
+      "strategy": "Overbought - Too Expensive",
+      "confidence": 35,
+      "entry": 7.24,
+      "exit_target": 7.69,
+      "stop_loss": 7.01,
+      "net_gain_pct": 5.67,
+      "rr_ratio": 2.0,
+      "hold_sessions": 0,
+      "fees_pct": 0.6,
+      "stats": {
+        "mean_5d": 7.46,
+        "std_5d": 0.23,
+        "min_5d": 7.02,
+        "max_5d": 7.77,
+        "cv_5d": 3.04,
+        "cv_1m": 4.8,
+        "mean_shift": -3.32,
+        "period": "2026-09-08 to 2026-10-05",
+        "sessions": 20,
+        "bars": 1000
+      },
+      "levels": {
+        "support_2": 7.01,
+        "support_1": 7.24,
+        "mean": 7.46,
+        "resistance_1": 7.69,
+        "resistance_2": 7.92
+      }
+    },
+    {
+      "ticker": "EFIH",
+      "current_price": 24.22,
+      "signal": "AVOID",
+      "strategy": "Overbought - Too Expensive",
+      "confidence": 31,
+      "entry": 22.21,
+      "exit_target": 23.67,
+      "stop_loss": 21.48,
+      "net_gain_pct": 5.97,
+      "rr_ratio": 2.0,
+      "hold_sessions": 0,
+      "fees_pct": 0.6,
+      "stats": {
+        "mean_5d": 22.94,
+        "std_5d": 0.73,
+        "min_5d": 21.84,
+        "max_5d": 24.25,
+        "cv_5d": 3.18,
+        "cv_1m": 2.24,
+        "mean_shift": -1.07,
+        "period": "2026-09-08 to 2026-10-05",
+        "sessions": 20,
+        "bars": 1000
+      },
+      "levels": {
+        "support_2": 21.48,
+        "support_1": 22.21,
+        "mean": 22.94,
+        "resistance_1": 23.67,
+        "resistance_2": 24.4
+      }
+    },
+    {
+      "ticker": "ETEL",
+      "current_price": 151.0,
+      "signal": "AVOID",
+      "strategy": "Overbought - Too Expensive",
+      "confidence": 28,
+      "entry": 132.98,
+      "exit_target": 147.58,
+      "stop_loss": 125.69,
+      "net_gain_pct": 10.37,
+      "rr_ratio": 2.0,
+      "hold_sessions": 0,
+      "fees_pct": 0.6,
+      "stats": {
+        "mean_5d": 140.28,
+        "std_5d": 7.3,
+        "min_5d": 129.07,
+        "max_5d": 155.01,
+        "cv_5d": 5.2,
+        "cv_1m": 4.96,
+        "mean_shift": 4.66,
+        "period": "2026-09-08 to 2026-10-05",
+        "sessions": 20,
+        "bars": 1000
+      },
+      "levels": {
+        "support_2": 125.69,
+        "support_1": 132.98,
+        "mean": 140.28,
+        "resistance_1": 147.58,
+        "resistance_2": 154.87
+      }
+    },
+    {
+      "ticker": "ARCC",
+      "current_price": 72.23,
+      "signal": "AVOID",
+      "strategy": "Overbought - Too Expensive",
+      "confidence": 25,
+      "entry": 63.33,
+      "exit_target": 71.35,
+      "stop_loss": 59.32,
+      "net_gain_pct": 12.06,
+      "rr_ratio": 2.0,
+      "hold_sessions": 0,
+      "fees_pct": 0.6,
+      "stats": {
+        "mean_5d": 67.34,
+        "std_5d": 4.01,
+        "min_5d": 61.52,
+        "max_5d": 74.22,
+        "cv_5d": 5.95,
+        "cv_1m": 6.04,
+        "mean_shift": -4.45,
+        "period": "2026-09-08 to 2026-10-05",
+        "sessions": 20,
+        "bars": 1000
+      },
+      "levels": {
+        "support_2": 59.32,
+        "support_1": 63.33,
+        "mean": 67.34,
+        "resistance_1": 71.35,
+        "resistance_2": 75.36
+      }
+    },
+    {
+      "ticker": "OBRI",
+      "current_price": 28.99,
+      "signal": "AVOID",
+      "strategy": "Overbought - Too Expensive",
+      "confidence": 25,
+      "entry": 23.95,
+      "exit_target": 28.15,
+      "stop_loss": 21.85,
+      "net_gain_pct": 16.95,
+      "rr_ratio": 2.0,
+      "hold_sessions": 0,
+      "fees_pct": 0.6,
+      "stats": {
+        "mean_5d": 26.05,
+        "std_5d": 2.1,
+        "min_5d": 23.0,
+        "max_5d": 30.7,
+        "cv_5d": 8.07,
+        "cv_1m": 9.48,
+        "mean_shift": -11.75,
+        "period": "2026-09-07 to 2026-10-05",
+        "sessions": 21,
+        "bars": 1000
+      },
+      "levels": {
+        "support_2": 21.85,
+        "support_1": 23.95,
+        "mean": 26.05,
+        "resistance_1": 28.15,
+        "resistance_2": 30.25
       }
     }
   ],
@@ -485,133 +485,31 @@
       }
     },
     "portfolio_totals_egp": {
-      "narrow_0_5sigma": 4941.94,
-      "mid_1sigma": 9116.28,
-      "loose_2sigma": 15304.98,
-      "best_combo": 16604.35
+      "narrow_0_5sigma": 3912.36,
+      "mid_1sigma": 7486.6,
+      "loose_2sigma": 13657.35,
+      "best_combo": 14977.75
     },
     "tickers": [
       {
-        "ticker": "ETEL",
-        "current_price": 150.08,
-        "mean": 132.53,
-        "std": 5.73,
-        "best_strategy": "Narrow (0.5s)",
-        "ease_of_trading": "Moderate",
-        "strategies": {
-          "narrow": {
-            "label": "Narrow (0.5s)",
-            "buy_level": 129.6618,
-            "sell_level": 135.3966,
-            "band_width": 5.7349,
-            "completed_trades": 3,
-            "total_profit_egp": 2153.58,
-            "total_return_pct": 21.54,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 6,
-            "crosses_sell": 17,
-            "trades": [
-              {
-                "entry_time": "2026-09-07 10:45",
-                "exit_time": "2026-09-21 07:10",
-                "entry_price": 121.01,
-                "exit_price": 135.8,
-                "shares": 82,
-                "profit_egp": 1149.6,
-                "return_pct": 12.2221,
-                "open_position": false
-              },
-              {
-                "entry_time": "2026-09-28 07:05",
-                "exit_time": "2026-09-28 07:35",
-                "entry_price": 129.02,
-                "exit_price": 135.6,
-                "shares": 86,
-                "profit_egp": 497.61,
-                "return_pct": 5.1,
-                "open_position": false
-              },
-              {
-                "entry_time": "2026-09-30 07:10",
-                "exit_time": "2026-09-30 10:30",
-                "entry_price": 129.07,
-                "exit_price": 135.49,
-                "shares": 90,
-                "profit_egp": 506.37,
-                "return_pct": 4.974,
-                "open_position": false
-              }
-            ]
-          },
-          "mid": {
-            "label": "Mid (1s)",
-            "buy_level": 126.7943,
-            "sell_level": 138.2641,
-            "band_width": 11.4697,
-            "completed_trades": 1,
-            "total_profit_egp": 1411.22,
-            "total_return_pct": 14.11,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 12,
-            "crosses_sell": 10,
-            "trades": [
-              {
-                "entry_time": "2026-09-07 10:45",
-                "exit_time": "2026-09-22 07:25",
-                "entry_price": 121.01,
-                "exit_price": 139.0,
-                "shares": 82,
-                "profit_egp": 1411.22,
-                "return_pct": 14.8665,
-                "open_position": false
-              }
-            ]
-          },
-          "loose": {
-            "label": "Loose (2s)",
-            "buy_level": 121.0595,
-            "sell_level": 143.9989,
-            "band_width": 22.9395,
-            "completed_trades": 1,
-            "total_profit_egp": 1819.99,
-            "total_return_pct": 18.2,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 5,
-            "crosses_sell": 1,
-            "trades": [
-              {
-                "entry_time": "2026-09-07 10:45",
-                "exit_time": "2026-10-04 08:20",
-                "entry_price": 121.01,
-                "exit_price": 144.0,
-                "shares": 82,
-                "profit_egp": 1819.99,
-                "return_pct": 18.9984,
-                "open_position": false
-              }
-            ]
-          }
-        }
-      },
-      {
         "ticker": "EFIH",
-        "current_price": 23.99,
-        "mean": 23.18,
-        "std": 0.51,
+        "current_price": 24.22,
+        "mean": 23.19,
+        "std": 0.52,
         "best_strategy": "Loose (2s)",
         "ease_of_trading": "Moderate",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 22.9255,
-            "sell_level": 23.4359,
-            "band_width": 0.5104,
+            "buy_level": 22.9275,
+            "sell_level": 23.4469,
+            "band_width": 0.5194,
             "completed_trades": 3,
             "total_profit_egp": 569.71,
             "total_return_pct": 5.7,
             "win_rate_pct": 100.0,
             "crosses_buy": 18,
-            "crosses_sell": 25,
+            "crosses_sell": 22,
             "trades": [
               {
                 "entry_time": "2026-09-14 10:35",
@@ -647,15 +545,15 @@
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 22.6704,
-            "sell_level": 23.6911,
-            "band_width": 1.0207,
+            "buy_level": 22.6678,
+            "sell_level": 23.7066,
+            "band_width": 1.0388,
             "completed_trades": 1,
             "total_profit_egp": 419.32,
             "total_return_pct": 4.19,
             "win_rate_pct": 100.0,
-            "crosses_buy": 9,
-            "crosses_sell": 23,
+            "crosses_buy": 10,
+            "crosses_sell": 24,
             "trades": [
               {
                 "entry_time": "2026-09-24 10:30",
@@ -671,25 +569,25 @@
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 22.16,
-            "sell_level": 24.2015,
-            "band_width": 2.0415,
+            "buy_level": 22.1484,
+            "sell_level": 24.226,
+            "band_width": 2.0776,
             "completed_trades": 1,
-            "total_profit_egp": 1801.82,
-            "total_return_pct": 18.02,
+            "total_profit_egp": 1929.87,
+            "total_return_pct": 19.3,
             "win_rate_pct": 100.0,
-            "crosses_buy": 7,
-            "crosses_sell": 0,
+            "crosses_buy": 8,
+            "crosses_sell": 1,
             "trades": [
               {
                 "entry_time": "2026-09-28 07:00",
-                "exit_time": "2026-10-04 11:25",
+                "exit_time": "2026-10-05 07:10",
                 "entry_price": 20.21,
-                "exit_price": 23.99,
+                "exit_price": 24.25,
                 "shares": 494,
-                "profit_egp": 1801.82,
-                "return_pct": 18.7036,
-                "open_position": true
+                "profit_egp": 1929.87,
+                "return_pct": 19.9901,
+                "open_position": false
               }
             ]
           }
@@ -697,23 +595,23 @@
       },
       {
         "ticker": "EGAS",
-        "current_price": 57.87,
-        "mean": 57.38,
-        "std": 1.29,
+        "current_price": 57.03,
+        "mean": 57.32,
+        "std": 1.25,
         "best_strategy": "Loose (2s)",
         "ease_of_trading": "Moderate",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 56.7332,
-            "sell_level": 58.0227,
-            "band_width": 1.2895,
-            "completed_trades": 3,
-            "total_profit_egp": 860.27,
-            "total_return_pct": 8.6,
+            "buy_level": 56.6904,
+            "sell_level": 57.9454,
+            "band_width": 1.255,
+            "completed_trades": 4,
+            "total_profit_egp": 840.77,
+            "total_return_pct": 8.41,
             "win_rate_pct": 100.0,
-            "crosses_buy": 33,
-            "crosses_sell": 12,
+            "crosses_buy": 29,
+            "crosses_sell": 13,
             "trades": [
               {
                 "entry_time": "2026-09-14 10:25",
@@ -726,13 +624,13 @@
                 "open_position": false
               },
               {
-                "entry_time": "2026-09-21 08:45",
-                "exit_time": "2026-09-27 08:20",
-                "entry_price": 56.7,
-                "exit_price": 58.5,
+                "entry_time": "2026-09-21 08:50",
+                "exit_time": "2026-09-27 08:10",
+                "entry_price": 56.5,
+                "exit_price": 58.0,
                 "shares": 181,
-                "profit_egp": 263.25,
-                "return_pct": 3.1746,
+                "profit_egp": 209.33,
+                "return_pct": 2.6549,
                 "open_position": false
               },
               {
@@ -740,33 +638,43 @@
                 "exit_time": "2026-10-04 08:40",
                 "entry_price": 56.1,
                 "exit_price": 58.2,
-                "shares": 187,
-                "profit_egp": 328.58,
+                "shares": 186,
+                "profit_egp": 326.82,
                 "return_pct": 3.7433,
                 "open_position": false
+              },
+              {
+                "entry_time": "2026-10-05 11:05",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 56.5,
+                "exit_price": 57.03,
+                "shares": 191,
+                "profit_egp": 36.18,
+                "return_pct": 0.9381,
+                "open_position": true
               }
             ]
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 56.0884,
-            "sell_level": 58.6674,
-            "band_width": 2.579,
+            "buy_level": 56.0629,
+            "sell_level": 58.5728,
+            "band_width": 2.5099,
             "completed_trades": 3,
-            "total_profit_egp": 1486.46,
-            "total_return_pct": 14.86,
+            "total_profit_egp": 1279.68,
+            "total_return_pct": 12.8,
             "win_rate_pct": 100.0,
             "crosses_buy": 35,
-            "crosses_sell": 35,
+            "crosses_sell": 34,
             "trades": [
               {
                 "entry_time": "2026-09-14 10:30",
-                "exit_time": "2026-09-17 09:00",
+                "exit_time": "2026-09-17 08:35",
                 "entry_price": 56.05,
-                "exit_price": 58.8,
+                "exit_price": 58.6,
                 "shares": 178,
-                "profit_egp": 428.17,
-                "return_pct": 4.9063,
+                "profit_egp": 392.68,
+                "return_pct": 4.5495,
                 "open_position": false
               },
               {
@@ -774,53 +682,135 @@
                 "exit_time": "2026-09-27 08:30",
                 "entry_price": 56.0,
                 "exit_price": 58.8,
-                "shares": 186,
-                "profit_egp": 456.74,
+                "shares": 185,
+                "profit_egp": 454.29,
                 "return_pct": 5.0,
                 "open_position": false
               },
               {
                 "entry_time": "2026-09-28 07:05",
-                "exit_time": "2026-10-04 11:10",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 54.51,
-                "exit_price": 57.87,
-                "shares": 199,
-                "profit_egp": 601.55,
-                "return_pct": 6.164,
+                "exit_price": 57.03,
+                "shares": 198,
+                "profit_egp": 432.71,
+                "return_pct": 4.623,
                 "open_position": true
               }
             ]
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 54.7989,
-            "sell_level": 59.9569,
-            "band_width": 5.158,
+            "buy_level": 54.8079,
+            "sell_level": 59.8278,
+            "band_width": 5.0198,
             "completed_trades": 2,
-            "total_profit_egp": 1659.19,
-            "total_return_pct": 16.59,
+            "total_profit_egp": 1320.42,
+            "total_return_pct": 13.2,
             "win_rate_pct": 100.0,
             "crosses_buy": 6,
-            "crosses_sell": 2,
+            "crosses_sell": 3,
             "trades": [
               {
-                "entry_time": "2026-09-24 09:55",
+                "entry_time": "2026-09-24 09:50",
                 "exit_time": "2026-09-27 08:35",
-                "entry_price": 54.0,
+                "entry_price": 54.8,
                 "exit_price": 60.01,
-                "shares": 185,
-                "profit_egp": 1048.57,
-                "return_pct": 11.1296,
+                "shares": 182,
+                "profit_egp": 885.53,
+                "return_pct": 9.5073,
                 "open_position": false
               },
               {
                 "entry_time": "2026-09-28 07:05",
-                "exit_time": "2026-10-04 11:10",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 54.51,
-                "exit_price": 57.87,
-                "shares": 202,
-                "profit_egp": 610.62,
-                "return_pct": 6.164,
+                "exit_price": 57.03,
+                "shares": 199,
+                "profit_egp": 434.89,
+                "return_pct": 4.623,
+                "open_position": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "ticker": "MASR",
+        "current_price": 7.73,
+        "mean": 7.72,
+        "std": 0.37,
+        "best_strategy": "Loose (2s)",
+        "ease_of_trading": "Moderate",
+        "strategies": {
+          "narrow": {
+            "label": "Narrow (0.5s)",
+            "buy_level": 7.5355,
+            "sell_level": 7.906,
+            "band_width": 0.3705,
+            "completed_trades": 1,
+            "total_profit_egp": 231.97,
+            "total_return_pct": 2.32,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 15,
+            "crosses_sell": 11,
+            "trades": [
+              {
+                "entry_time": "2026-09-21 08:45",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 7.51,
+                "exit_price": 7.73,
+                "shares": 1331,
+                "profit_egp": 231.97,
+                "return_pct": 2.9294,
+                "open_position": true
+              }
+            ]
+          },
+          "mid": {
+            "label": "Mid (1s)",
+            "buy_level": 7.3502,
+            "sell_level": 8.0912,
+            "band_width": 0.741,
+            "completed_trades": 1,
+            "total_profit_egp": 483.97,
+            "total_return_pct": 4.84,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 2,
+            "crosses_sell": 2,
+            "trades": [
+              {
+                "entry_time": "2026-09-24 10:10",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 7.33,
+                "exit_price": 7.73,
+                "shares": 1364,
+                "profit_egp": 483.97,
+                "return_pct": 5.457,
+                "open_position": true
+              }
+            ]
+          },
+          "loose": {
+            "label": "Loose (2s)",
+            "buy_level": 6.9797,
+            "sell_level": 8.4618,
+            "band_width": 1.4821,
+            "completed_trades": 1,
+            "total_profit_egp": 1106.94,
+            "total_return_pct": 11.07,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 2,
+            "crosses_sell": 3,
+            "trades": [
+              {
+                "entry_time": "2026-09-28 07:00",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 6.92,
+                "exit_price": 7.73,
+                "shares": 1445,
+                "profit_egp": 1106.94,
+                "return_pct": 11.7052,
                 "open_position": true
               }
             ]
@@ -829,47 +819,47 @@
       },
       {
         "ticker": "CPCI",
-        "current_price": 605.13,
-        "mean": 555.58,
-        "std": 19.37,
+        "current_price": 604.0,
+        "mean": 557.74,
+        "std": 21.51,
         "best_strategy": "Mid (1s)",
         "ease_of_trading": "Moderate",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 545.8944,
-            "sell_level": 565.2669,
-            "band_width": 19.3725,
+            "buy_level": 546.9875,
+            "sell_level": 568.4989,
+            "band_width": 21.5114,
             "completed_trades": 1,
-            "total_profit_egp": 658.8,
-            "total_return_pct": 6.59,
+            "total_profit_egp": 640.75,
+            "total_return_pct": 6.41,
             "win_rate_pct": 100.0,
-            "crosses_buy": 13,
-            "crosses_sell": 22,
+            "crosses_buy": 14,
+            "crosses_sell": 16,
             "trades": [
               {
-                "entry_time": "2026-09-03 09:10",
+                "entry_time": "2026-09-03 07:45",
                 "exit_time": "2026-09-20 07:40",
-                "entry_price": 545.0,
+                "entry_price": 546.0,
                 "exit_price": 584.99,
                 "shares": 18,
-                "profit_egp": 658.8,
-                "return_pct": 7.3376,
+                "profit_egp": 640.75,
+                "return_pct": 7.141,
                 "open_position": false
               }
             ]
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 536.2082,
-            "sell_level": 574.9532,
-            "band_width": 38.745,
+            "buy_level": 536.2318,
+            "sell_level": 579.2546,
+            "band_width": 43.0228,
             "completed_trades": 1,
             "total_profit_egp": 819.12,
             "total_return_pct": 8.19,
             "win_rate_pct": 100.0,
             "crosses_buy": 27,
-            "crosses_sell": 15,
+            "crosses_sell": 13,
             "trades": [
               {
                 "entry_time": "2026-09-10 07:35",
@@ -885,9 +875,9 @@
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 516.8357,
-            "sell_level": 594.3257,
-            "band_width": 77.49,
+            "buy_level": 514.7204,
+            "sell_level": 600.766,
+            "band_width": 86.0455,
             "completed_trades": 0,
             "total_profit_egp": 0,
             "total_return_pct": 0.0,
@@ -899,91 +889,91 @@
         }
       },
       {
-        "ticker": "ADIB",
-        "current_price": 49.9,
-        "mean": 51.47,
-        "std": 1.07,
+        "ticker": "EGAL",
+        "current_price": 345.99,
+        "mean": 359.96,
+        "std": 11.46,
         "best_strategy": "Loose (2s)",
         "ease_of_trading": "Moderate",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 50.9358,
-            "sell_level": 52.0107,
-            "band_width": 1.0748,
+            "buy_level": 354.2279,
+            "sell_level": 365.6926,
+            "band_width": 11.4647,
             "completed_trades": 2,
-            "total_profit_egp": -15.45,
-            "total_return_pct": -0.15,
+            "total_profit_egp": -26.84,
+            "total_return_pct": -0.27,
             "win_rate_pct": 50.0,
-            "crosses_buy": 13,
-            "crosses_sell": 20,
+            "crosses_buy": 10,
+            "crosses_sell": 14,
             "trades": [
               {
-                "entry_time": "2026-09-15 07:05",
-                "exit_time": "2026-09-15 09:00",
-                "entry_price": 50.81,
-                "exit_price": 52.17,
-                "shares": 196,
-                "profit_egp": 206.01,
-                "return_pct": 2.6766,
+                "entry_time": "2026-09-15 07:30",
+                "exit_time": "2026-09-16 07:05",
+                "entry_price": 354.02,
+                "exit_price": 365.9,
+                "shares": 28,
+                "profit_egp": 272.17,
+                "return_pct": 3.3557,
                 "open_position": false
               },
               {
-                "entry_time": "2026-09-24 07:55",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 50.7,
-                "exit_price": 49.9,
-                "shares": 201,
-                "profit_egp": -221.46,
-                "return_pct": -1.5779,
+                "entry_time": "2026-09-24 09:45",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 354.2,
+                "exit_price": 345.99,
+                "shares": 29,
+                "profit_egp": -299.01,
+                "return_pct": -2.3179,
                 "open_position": true
               }
             ]
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 50.3984,
-            "sell_level": 52.5481,
-            "band_width": 2.1497,
+            "buy_level": 348.4955,
+            "sell_level": 371.425,
+            "band_width": 22.9294,
             "completed_trades": 1,
-            "total_profit_egp": 0.3,
-            "total_return_pct": 0.0,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 6,
-            "crosses_sell": 7,
+            "total_profit_egp": -114.58,
+            "total_return_pct": -1.15,
+            "win_rate_pct": 0.0,
+            "crosses_buy": 14,
+            "crosses_sell": 11,
             "trades": [
               {
                 "entry_time": "2026-09-24 10:10",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 49.6,
-                "exit_price": 49.9,
-                "shares": 201,
-                "profit_egp": 0.3,
-                "return_pct": 0.6048,
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 348.0,
+                "exit_price": 345.99,
+                "shares": 28,
+                "profit_egp": -114.58,
+                "return_pct": -0.5776,
                 "open_position": true
               }
             ]
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 49.3236,
-            "sell_level": 53.6229,
-            "band_width": 4.2993,
+            "buy_level": 337.0308,
+            "sell_level": 382.8897,
+            "band_width": 45.8588,
             "completed_trades": 1,
-            "total_profit_egp": 100.07,
-            "total_return_pct": 1.0,
+            "total_profit_egp": 221.36,
+            "total_return_pct": 2.21,
             "win_rate_pct": 100.0,
-            "crosses_buy": 9,
-            "crosses_sell": 3,
+            "crosses_buy": 2,
+            "crosses_sell": 0,
             "trades": [
               {
-                "entry_time": "2026-09-28 07:05",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 49.11,
-                "exit_price": 49.9,
-                "shares": 203,
-                "profit_egp": 100.07,
-                "return_pct": 1.6086,
+                "entry_time": "2026-09-30 07:20",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 336.31,
+                "exit_price": 345.99,
+                "shares": 29,
+                "profit_egp": 221.36,
+                "return_pct": 2.8783,
                 "open_position": true
               }
             ]
@@ -991,82 +981,255 @@
         }
       },
       {
-        "ticker": "ARCC",
-        "current_price": 73.69,
-        "mean": 70.78,
-        "std": 4.51,
+        "ticker": "ORHD",
+        "current_price": 38.5,
+        "mean": 41.11,
+        "std": 1.8,
         "best_strategy": "Loose (2s)",
-        "ease_of_trading": "Difficult",
+        "ease_of_trading": "Moderate",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 68.5271,
-            "sell_level": 73.0382,
-            "band_width": 4.5111,
+            "buy_level": 40.2169,
+            "sell_level": 42.013,
+            "band_width": 1.7961,
             "completed_trades": 1,
-            "total_profit_egp": 702.82,
-            "total_return_pct": 7.03,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 2,
-            "crosses_sell": 21,
+            "total_profit_egp": -433.88,
+            "total_return_pct": -4.34,
+            "win_rate_pct": 0.0,
+            "crosses_buy": 7,
+            "crosses_sell": 11,
             "trades": [
               {
-                "entry_time": "2026-09-23 08:30",
-                "exit_time": "2026-10-04 10:20",
-                "entry_price": 68.41,
-                "exit_price": 73.65,
-                "shares": 146,
-                "profit_egp": 702.82,
-                "return_pct": 7.6597,
-                "open_position": false
+                "entry_time": "2026-09-24 07:00",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 40.0,
+                "exit_price": 38.5,
+                "shares": 250,
+                "profit_egp": -433.88,
+                "return_pct": -3.75,
+                "open_position": true
               }
             ]
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 66.2715,
-            "sell_level": 75.2938,
-            "band_width": 9.0222,
+            "buy_level": 39.3189,
+            "sell_level": 42.9111,
+            "band_width": 3.5922,
             "completed_trades": 1,
-            "total_profit_egp": 1097.91,
-            "total_return_pct": 10.98,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 6,
-            "crosses_sell": 2,
+            "total_profit_egp": -259.94,
+            "total_return_pct": -2.6,
+            "win_rate_pct": 0.0,
+            "crosses_buy": 16,
+            "crosses_sell": 14,
             "trades": [
               {
-                "entry_time": "2026-09-27 08:25",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 66.0,
-                "exit_price": 73.69,
-                "shares": 151,
-                "profit_egp": 1097.91,
-                "return_pct": 11.6515,
+                "entry_time": "2026-09-24 10:15",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 39.29,
+                "exit_price": 38.5,
+                "shares": 254,
+                "profit_egp": -259.94,
+                "return_pct": -2.0107,
                 "open_position": true
               }
             ]
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 61.7604,
-            "sell_level": 79.8049,
-            "band_width": 18.0444,
-            "completed_trades": 1,
-            "total_profit_egp": 2002.61,
-            "total_return_pct": 20.03,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 5,
+            "buy_level": 37.5228,
+            "sell_level": 44.7072,
+            "band_width": 7.1844,
+            "completed_trades": 0,
+            "total_profit_egp": 0,
+            "total_return_pct": 0.0,
+            "win_rate_pct": 0,
+            "crosses_buy": 0,
             "crosses_sell": 0,
+            "trades": []
+          }
+        }
+      },
+      {
+        "ticker": "ADIB",
+        "current_price": 49.11,
+        "mean": 51.34,
+        "std": 1.17,
+        "best_strategy": "Loose (2s)",
+        "ease_of_trading": "Moderate",
+        "strategies": {
+          "narrow": {
+            "label": "Narrow (0.5s)",
+            "buy_level": 50.7522,
+            "sell_level": 51.9179,
+            "band_width": 1.1657,
+            "completed_trades": 1,
+            "total_profit_egp": -372.22,
+            "total_return_pct": -3.72,
+            "win_rate_pct": 0.0,
+            "crosses_buy": 10,
+            "crosses_sell": 21,
             "trades": [
               {
-                "entry_time": "2026-09-28 07:05",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 61.0,
-                "exit_price": 73.69,
-                "shares": 163,
-                "profit_egp": 2002.61,
-                "return_pct": 20.8033,
+                "entry_time": "2026-09-24 07:55",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 50.7,
+                "exit_price": 49.11,
+                "shares": 197,
+                "profit_egp": -372.22,
+                "return_pct": -3.1361,
                 "open_position": true
+              }
+            ]
+          },
+          "mid": {
+            "label": "Mid (1s)",
+            "buy_level": 50.1693,
+            "sell_level": 52.5007,
+            "band_width": 2.3314,
+            "completed_trades": 1,
+            "total_profit_egp": -158.01,
+            "total_return_pct": -1.58,
+            "win_rate_pct": 0.0,
+            "crosses_buy": 6,
+            "crosses_sell": 8,
+            "trades": [
+              {
+                "entry_time": "2026-09-24 10:10",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 49.6,
+                "exit_price": 49.11,
+                "shares": 201,
+                "profit_egp": -158.01,
+                "return_pct": -0.9879,
+                "open_position": true
+              }
+            ]
+          },
+          "loose": {
+            "label": "Loose (2s)",
+            "buy_level": 49.0036,
+            "sell_level": 53.6664,
+            "band_width": 4.6628,
+            "completed_trades": 1,
+            "total_profit_egp": -37.6,
+            "total_return_pct": -0.38,
+            "win_rate_pct": 0.0,
+            "crosses_buy": 2,
+            "crosses_sell": 3,
+            "trades": [
+              {
+                "entry_time": "2026-09-30 09:30",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 49.0,
+                "exit_price": 49.11,
+                "shares": 204,
+                "profit_egp": -37.6,
+                "return_pct": 0.2245,
+                "open_position": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "ticker": "ETEL",
+        "current_price": 151.0,
+        "mean": 134.03,
+        "std": 6.64,
+        "best_strategy": "Narrow (0.5s)",
+        "ease_of_trading": "Difficult",
+        "strategies": {
+          "narrow": {
+            "label": "Narrow (0.5s)",
+            "buy_level": 130.7074,
+            "sell_level": 137.35,
+            "band_width": 6.6426,
+            "completed_trades": 3,
+            "total_profit_egp": 2505.38,
+            "total_return_pct": 25.05,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 6,
+            "crosses_sell": 13,
+            "trades": [
+              {
+                "entry_time": "2026-09-08 10:45",
+                "exit_time": "2026-09-22 07:20",
+                "entry_price": 122.01,
+                "exit_price": 137.4,
+                "shares": 81,
+                "profit_egp": 1183.55,
+                "return_pct": 12.6137,
+                "open_position": false
+              },
+              {
+                "entry_time": "2026-09-28 07:00",
+                "exit_time": "2026-09-28 07:45",
+                "entry_price": 130.01,
+                "exit_price": 138.1,
+                "shares": 86,
+                "profit_egp": 626.57,
+                "return_pct": 6.2226,
+                "open_position": false
+              },
+              {
+                "entry_time": "2026-09-30 07:10",
+                "exit_time": "2026-10-01 10:45",
+                "entry_price": 129.07,
+                "exit_price": 137.51,
+                "shares": 91,
+                "profit_egp": 695.26,
+                "return_pct": 6.5391,
+                "open_position": false
+              }
+            ]
+          },
+          "mid": {
+            "label": "Mid (1s)",
+            "buy_level": 127.3861,
+            "sell_level": 140.6713,
+            "band_width": 13.2852,
+            "completed_trades": 1,
+            "total_profit_egp": 1473.47,
+            "total_return_pct": 14.73,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 6,
+            "crosses_sell": 3,
+            "trades": [
+              {
+                "entry_time": "2026-09-08 10:45",
+                "exit_time": "2026-10-04 07:00",
+                "entry_price": 122.01,
+                "exit_price": 140.99,
+                "shares": 81,
+                "profit_egp": 1473.47,
+                "return_pct": 15.5561,
+                "open_position": false
+              }
+            ]
+          },
+          "loose": {
+            "label": "Loose (2s)",
+            "buy_level": 120.7435,
+            "sell_level": 147.3139,
+            "band_width": 26.5704,
+            "completed_trades": 1,
+            "total_profit_egp": 2148.07,
+            "total_return_pct": 21.48,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 1,
+            "crosses_sell": 2,
+            "trades": [
+              {
+                "entry_time": "2026-09-08 11:10",
+                "exit_time": "2026-10-04 09:30",
+                "entry_price": 120.5,
+                "exit_price": 147.5,
+                "shares": 82,
+                "profit_egp": 2148.07,
+                "return_pct": 22.4066,
+                "open_position": false
               }
             ]
           }
@@ -1074,162 +1237,80 @@
       },
       {
         "ticker": "RMDA",
-        "current_price": 5.55,
-        "mean": 5.94,
+        "current_price": 5.48,
+        "mean": 5.89,
         "std": 0.38,
         "best_strategy": "Mid (1s)",
         "ease_of_trading": "Difficult",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 5.7461,
-            "sell_level": 6.1299,
-            "band_width": 0.3839,
+            "buy_level": 5.6988,
+            "sell_level": 6.0814,
+            "band_width": 0.3827,
             "completed_trades": 1,
-            "total_profit_egp": -356.26,
-            "total_return_pct": -3.56,
+            "total_profit_egp": -427.85,
+            "total_return_pct": -4.28,
             "win_rate_pct": 0.0,
-            "crosses_buy": 5,
-            "crosses_sell": 18,
+            "crosses_buy": 8,
+            "crosses_sell": 7,
             "trades": [
               {
-                "entry_time": "2026-09-24 10:00",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 5.72,
-                "exit_price": 5.55,
-                "shares": 1748,
-                "profit_egp": -356.26,
-                "return_pct": -2.972,
+                "entry_time": "2026-09-24 10:15",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 5.69,
+                "exit_price": 5.48,
+                "shares": 1757,
+                "profit_egp": -427.85,
+                "return_pct": -3.6907,
                 "open_position": true
               }
             ]
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 5.5541,
-            "sell_level": 6.3219,
-            "band_width": 0.7677,
+            "buy_level": 5.5074,
+            "sell_level": 6.2727,
+            "band_width": 0.7653,
             "completed_trades": 1,
-            "total_profit_egp": 1425.94,
-            "total_return_pct": 14.26,
+            "total_profit_egp": 1281.47,
+            "total_return_pct": 12.81,
             "win_rate_pct": 100.0,
-            "crosses_buy": 8,
-            "crosses_sell": 8,
+            "crosses_buy": 9,
+            "crosses_sell": 11,
             "trades": [
               {
                 "entry_time": "2026-09-27 07:10",
-                "exit_time": "2026-10-04 11:25",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 4.83,
-                "exit_price": 5.55,
+                "exit_price": 5.48,
                 "shares": 2070,
-                "profit_egp": 1425.94,
-                "return_pct": 14.9068,
+                "profit_egp": 1281.47,
+                "return_pct": 13.4576,
                 "open_position": true
               }
             ]
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 5.1703,
-            "sell_level": 6.7057,
-            "band_width": 1.5354,
+            "buy_level": 5.1248,
+            "sell_level": 6.6554,
+            "band_width": 1.5306,
             "completed_trades": 1,
-            "total_profit_egp": 1425.94,
-            "total_return_pct": 14.26,
+            "total_profit_egp": 1281.47,
+            "total_return_pct": 12.81,
             "win_rate_pct": 100.0,
-            "crosses_buy": 6,
+            "crosses_buy": 4,
             "crosses_sell": 0,
             "trades": [
               {
                 "entry_time": "2026-09-27 07:10",
-                "exit_time": "2026-10-04 11:25",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 4.83,
-                "exit_price": 5.55,
+                "exit_price": 5.48,
                 "shares": 2070,
-                "profit_egp": 1425.94,
-                "return_pct": 14.9068,
-                "open_position": true
-              }
-            ]
-          }
-        }
-      },
-      {
-        "ticker": "MASR",
-        "current_price": 7.77,
-        "mean": 7.77,
-        "std": 0.41,
-        "best_strategy": "Loose (2s)",
-        "ease_of_trading": "Difficult",
-        "strategies": {
-          "narrow": {
-            "label": "Narrow (0.5s)",
-            "buy_level": 7.5597,
-            "sell_level": 7.9737,
-            "band_width": 0.414,
-            "completed_trades": 1,
-            "total_profit_egp": 285.05,
-            "total_return_pct": 2.85,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 11,
-            "crosses_sell": 6,
-            "trades": [
-              {
-                "entry_time": "2026-09-21 08:45",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 7.51,
-                "exit_price": 7.77,
-                "shares": 1331,
-                "profit_egp": 285.05,
-                "return_pct": 3.4621,
-                "open_position": true
-              }
-            ]
-          },
-          "mid": {
-            "label": "Mid (1s)",
-            "buy_level": 7.3527,
-            "sell_level": 8.1806,
-            "band_width": 0.8279,
-            "completed_trades": 1,
-            "total_profit_egp": 538.37,
-            "total_return_pct": 5.38,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 2,
-            "crosses_sell": 6,
-            "trades": [
-              {
-                "entry_time": "2026-09-24 10:10",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 7.33,
-                "exit_price": 7.77,
-                "shares": 1364,
-                "profit_egp": 538.37,
-                "return_pct": 6.0027,
-                "open_position": true
-              }
-            ]
-          },
-          "loose": {
-            "label": "Loose (2s)",
-            "buy_level": 6.9388,
-            "sell_level": 8.5946,
-            "band_width": 1.6559,
-            "completed_trades": 1,
-            "total_profit_egp": 1164.57,
-            "total_return_pct": 11.65,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 1,
-            "crosses_sell": 1,
-            "trades": [
-              {
-                "entry_time": "2026-09-28 07:00",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 6.92,
-                "exit_price": 7.77,
-                "shares": 1445,
-                "profit_egp": 1164.57,
-                "return_pct": 12.2832,
+                "profit_egp": 1281.47,
+                "return_pct": 13.4576,
                 "open_position": true
               }
             ]
@@ -1238,57 +1319,57 @@
       },
       {
         "ticker": "MFPC",
-        "current_price": 47.3,
-        "mean": 47.38,
-        "std": 1.5,
+        "current_price": 46.4,
+        "mean": 47.35,
+        "std": 1.51,
         "best_strategy": "Mid (1s)",
         "ease_of_trading": "Difficult",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 46.6271,
-            "sell_level": 48.1306,
-            "band_width": 1.5035,
+            "buy_level": 46.5927,
+            "sell_level": 48.1046,
+            "band_width": 1.5119,
             "completed_trades": 2,
-            "total_profit_egp": 511.59,
-            "total_return_pct": 5.12,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 27,
+            "total_profit_egp": 264.74,
+            "total_return_pct": 2.65,
+            "win_rate_pct": 50.0,
+            "crosses_buy": 24,
             "crosses_sell": 2,
             "trades": [
               {
-                "entry_time": "2026-09-07 10:30",
+                "entry_time": "2026-09-08 10:30",
                 "exit_time": "2026-09-16 10:50",
-                "entry_price": 46.19,
+                "entry_price": 46.4,
                 "exit_price": 48.4,
-                "shares": 216,
-                "profit_egp": 416.07,
-                "return_pct": 4.7846,
+                "shares": 215,
+                "profit_egp": 368.85,
+                "return_pct": 4.3103,
                 "open_position": false
               },
               {
                 "entry_time": "2026-09-27 10:30",
-                "exit_time": "2026-10-04 11:25",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 46.59,
-                "exit_price": 47.3,
-                "shares": 223,
-                "profit_egp": 95.52,
-                "return_pct": 1.5239,
+                "exit_price": 46.4,
+                "shares": 222,
+                "profit_egp": -104.11,
+                "return_pct": -0.4078,
                 "open_position": true
               }
             ]
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 45.8753,
-            "sell_level": 48.8823,
-            "band_width": 3.007,
+            "buy_level": 45.8367,
+            "sell_level": 48.8606,
+            "band_width": 3.0239,
             "completed_trades": 2,
-            "total_profit_egp": 949.89,
-            "total_return_pct": 9.5,
+            "total_profit_egp": 741.71,
+            "total_return_pct": 7.42,
             "win_rate_pct": 100.0,
-            "crosses_buy": 13,
-            "crosses_sell": 3,
+            "crosses_buy": 12,
+            "crosses_sell": 4,
             "trades": [
               {
                 "entry_time": "2026-09-14 07:15",
@@ -1302,118 +1383,36 @@
               },
               {
                 "entry_time": "2026-09-27 10:45",
-                "exit_time": "2026-10-04 11:25",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 45.62,
-                "exit_price": 47.3,
+                "exit_price": 46.4,
                 "shares": 232,
-                "profit_egp": 325.09,
-                "return_pct": 3.6826,
+                "profit_egp": 116.91,
+                "return_pct": 1.7098,
                 "open_position": true
               }
             ]
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 44.3718,
-            "sell_level": 50.3858,
-            "band_width": 6.014,
+            "buy_level": 44.3248,
+            "sell_level": 50.3725,
+            "band_width": 6.0477,
             "completed_trades": 1,
-            "total_profit_egp": 803.23,
-            "total_return_pct": 8.03,
+            "total_profit_egp": 597.74,
+            "total_return_pct": 5.98,
             "win_rate_pct": 100.0,
             "crosses_buy": 3,
-            "crosses_sell": 10,
+            "crosses_sell": 11,
             "trades": [
               {
                 "entry_time": "2026-09-28 07:00",
-                "exit_time": "2026-10-04 11:25",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 43.52,
-                "exit_price": 47.3,
+                "exit_price": 46.4,
                 "shares": 229,
-                "profit_egp": 803.23,
-                "return_pct": 8.6857,
-                "open_position": true
-              }
-            ]
-          }
-        }
-      },
-      {
-        "ticker": "BONY",
-        "current_price": 4.18,
-        "mean": 4.34,
-        "std": 0.24,
-        "best_strategy": "Loose (2s)",
-        "ease_of_trading": "Difficult",
-        "strategies": {
-          "narrow": {
-            "label": "Narrow (0.5s)",
-            "buy_level": 4.22,
-            "sell_level": 4.4634,
-            "band_width": 0.2433,
-            "completed_trades": 1,
-            "total_profit_egp": -154.46,
-            "total_return_pct": -1.54,
-            "win_rate_pct": 0.0,
-            "crosses_buy": 5,
-            "crosses_sell": 18,
-            "trades": [
-              {
-                "entry_time": "2026-09-24 09:55",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 4.22,
-                "exit_price": 4.18,
-                "shares": 2369,
-                "profit_egp": -154.46,
-                "return_pct": -0.9479,
-                "open_position": true
-              }
-            ]
-          },
-          "mid": {
-            "label": "Mid (1s)",
-            "buy_level": 4.0983,
-            "sell_level": 4.585,
-            "band_width": 0.4867,
-            "completed_trades": 1,
-            "total_profit_egp": 184.29,
-            "total_return_pct": 1.84,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 4,
-            "crosses_sell": 7,
-            "trades": [
-              {
-                "entry_time": "2026-09-24 10:10",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 4.08,
-                "exit_price": 4.18,
-                "shares": 2450,
-                "profit_egp": 184.29,
-                "return_pct": 2.451,
-                "open_position": true
-              }
-            ]
-          },
-          "loose": {
-            "label": "Loose (2s)",
-            "buy_level": 3.855,
-            "sell_level": 4.8284,
-            "band_width": 0.9734,
-            "completed_trades": 1,
-            "total_profit_egp": 850.78,
-            "total_return_pct": 8.51,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 3,
-            "crosses_sell": 0,
-            "trades": [
-              {
-                "entry_time": "2026-09-30 09:20",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 3.83,
-                "exit_price": 4.18,
-                "shares": 2610,
-                "profit_egp": 850.78,
-                "return_pct": 9.1384,
+                "profit_egp": 597.74,
+                "return_pct": 6.6176,
                 "open_position": true
               }
             ]
@@ -1422,254 +1421,162 @@
       },
       {
         "ticker": "ENGC",
-        "current_price": 37.88,
-        "mean": 41.36,
-        "std": 3.08,
+        "current_price": 37.13,
+        "mean": 41.01,
+        "std": 3.13,
         "best_strategy": "Loose (2s)",
         "ease_of_trading": "Difficult",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 39.8196,
-            "sell_level": 42.9019,
-            "band_width": 3.0823,
+            "buy_level": 39.4428,
+            "sell_level": 42.5753,
+            "band_width": 3.1324,
             "completed_trades": 1,
-            "total_profit_egp": -504.65,
-            "total_return_pct": -5.05,
+            "total_profit_egp": -560.67,
+            "total_return_pct": -5.61,
             "win_rate_pct": 0.0,
-            "crosses_buy": 4,
-            "crosses_sell": 10,
-            "trades": [
-              {
-                "entry_time": "2026-09-24 10:10",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 39.65,
-                "exit_price": 37.88,
-                "shares": 252,
-                "profit_egp": -504.65,
-                "return_pct": -4.4641,
-                "open_position": true
-              }
-            ]
-          },
-          "mid": {
-            "label": "Mid (1s)",
-            "buy_level": 38.2785,
-            "sell_level": 44.4431,
-            "band_width": 6.1646,
-            "completed_trades": 1,
-            "total_profit_egp": -91.43,
-            "total_return_pct": -0.91,
-            "win_rate_pct": 0.0,
-            "crosses_buy": 6,
-            "crosses_sell": 21,
-            "trades": [
-              {
-                "entry_time": "2026-09-28 07:05",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 38.0,
-                "exit_price": 37.88,
-                "shares": 263,
-                "profit_egp": -91.43,
-                "return_pct": -0.3158,
-                "open_position": true
-              }
-            ]
-          },
-          "loose": {
-            "label": "Loose (2s)",
-            "buy_level": 35.1962,
-            "sell_level": 47.5253,
-            "band_width": 12.3292,
-            "completed_trades": 1,
-            "total_profit_egp": 755.63,
-            "total_return_pct": 7.56,
-            "win_rate_pct": 100.0,
-            "crosses_buy": 4,
-            "crosses_sell": 0,
-            "trades": [
-              {
-                "entry_time": "2026-09-30 07:05",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 35.01,
-                "exit_price": 37.88,
-                "shares": 285,
-                "profit_egp": 755.63,
-                "return_pct": 8.1977,
-                "open_position": true
-              }
-            ]
-          }
-        }
-      },
-      {
-        "ticker": "ORHD",
-        "current_price": 39.27,
-        "mean": 41.3,
-        "std": 1.76,
-        "best_strategy": "Loose (2s)",
-        "ease_of_trading": "Difficult",
-        "strategies": {
-          "narrow": {
-            "label": "Narrow (0.5s)",
-            "buy_level": 40.4254,
-            "sell_level": 42.1845,
-            "band_width": 1.7592,
-            "completed_trades": 1,
-            "total_profit_egp": -241.95,
-            "total_return_pct": -2.42,
-            "win_rate_pct": 0.0,
-            "crosses_buy": 2,
-            "crosses_sell": 11,
-            "trades": [
-              {
-                "entry_time": "2026-09-24 07:00",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 40.0,
-                "exit_price": 39.27,
-                "shares": 250,
-                "profit_egp": -241.95,
-                "return_pct": -1.825,
-                "open_position": true
-              }
-            ]
-          },
-          "mid": {
-            "label": "Mid (1s)",
-            "buy_level": 39.5458,
-            "sell_level": 43.0641,
-            "band_width": 3.5183,
-            "completed_trades": 1,
-            "total_profit_egp": -123.05,
-            "total_return_pct": -1.23,
-            "win_rate_pct": 0.0,
-            "crosses_buy": 4,
-            "crosses_sell": 11,
-            "trades": [
-              {
-                "entry_time": "2026-09-24 10:00",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 39.52,
-                "exit_price": 39.27,
-                "shares": 253,
-                "profit_egp": -123.05,
-                "return_pct": -0.6326,
-                "open_position": true
-              }
-            ]
-          },
-          "loose": {
-            "label": "Loose (2s)",
-            "buy_level": 37.7867,
-            "sell_level": 44.8233,
-            "band_width": 7.0366,
-            "completed_trades": 1,
-            "total_profit_egp": 349.54,
-            "total_return_pct": 3.5,
-            "win_rate_pct": 100.0,
             "crosses_buy": 3,
-            "crosses_sell": 0,
+            "crosses_sell": 11,
             "trades": [
               {
-                "entry_time": "2026-09-30 09:15",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 37.72,
-                "exit_price": 39.27,
-                "shares": 265,
-                "profit_egp": 349.54,
-                "return_pct": 4.1092,
-                "open_position": true
-              }
-            ]
-          }
-        }
-      },
-      {
-        "ticker": "EGAL",
-        "current_price": 345.0,
-        "mean": 361.23,
-        "std": 11.21,
-        "best_strategy": "Loose (2s)",
-        "ease_of_trading": "Difficult",
-        "strategies": {
-          "narrow": {
-            "label": "Narrow (0.5s)",
-            "buy_level": 355.6249,
-            "sell_level": 366.8329,
-            "band_width": 11.208,
-            "completed_trades": 2,
-            "total_profit_egp": -19.72,
-            "total_return_pct": -0.2,
-            "win_rate_pct": 50.0,
-            "crosses_buy": 11,
-            "crosses_sell": 8,
-            "trades": [
-              {
-                "entry_time": "2026-09-15 07:05",
-                "exit_time": "2026-09-17 07:15",
-                "entry_price": 355.0,
-                "exit_price": 369.0,
-                "shares": 28,
-                "profit_egp": 331.18,
-                "return_pct": 3.9437,
-                "open_position": false
-              },
-              {
-                "entry_time": "2026-09-24 07:00",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 355.0,
-                "exit_price": 345.0,
-                "shares": 29,
-                "profit_egp": -350.9,
-                "return_pct": -2.8169,
+                "entry_time": "2026-09-28 07:00",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 39.1,
+                "exit_price": 37.13,
+                "shares": 255,
+                "profit_egp": -560.67,
+                "return_pct": -5.0384,
                 "open_position": true
               }
             ]
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 350.0209,
-            "sell_level": 372.4369,
-            "band_width": 22.416,
+            "buy_level": 37.8766,
+            "sell_level": 44.1415,
+            "band_width": 6.2649,
             "completed_trades": 1,
-            "total_profit_egp": -142.21,
-            "total_return_pct": -1.42,
+            "total_profit_egp": -157.97,
+            "total_return_pct": -1.58,
             "win_rate_pct": 0.0,
-            "crosses_buy": 9,
-            "crosses_sell": 30,
+            "crosses_buy": 3,
+            "crosses_sell": 12,
             "trades": [
               {
-                "entry_time": "2026-09-24 10:10",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 348.0,
-                "exit_price": 345.0,
-                "shares": 28,
-                "profit_egp": -142.21,
-                "return_pct": -0.8621,
+                "entry_time": "2026-09-29 09:55",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 37.5,
+                "exit_price": 37.13,
+                "shares": 266,
+                "profit_egp": -157.97,
+                "return_pct": -0.9867,
                 "open_position": true
               }
             ]
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 338.8129,
-            "sell_level": 383.6449,
-            "band_width": 44.8319,
+            "buy_level": 34.7442,
+            "sell_level": 47.2739,
+            "band_width": 12.5298,
             "completed_trades": 1,
-            "total_profit_egp": 143.58,
-            "total_return_pct": 1.44,
+            "total_profit_egp": 671.88,
+            "total_return_pct": 6.72,
             "win_rate_pct": 100.0,
             "crosses_buy": 4,
             "crosses_sell": 0,
             "trades": [
               {
                 "entry_time": "2026-09-30 07:15",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 338.0,
-                "exit_price": 345.0,
-                "shares": 29,
-                "profit_egp": 143.58,
-                "return_pct": 2.071,
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 34.59,
+                "exit_price": 37.13,
+                "shares": 289,
+                "profit_egp": 671.88,
+                "return_pct": 7.3432,
+                "open_position": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "ticker": "BONY",
+        "current_price": 4.08,
+        "mean": 4.31,
+        "std": 0.24,
+        "best_strategy": "Loose (2s)",
+        "ease_of_trading": "Difficult",
+        "strategies": {
+          "narrow": {
+            "label": "Narrow (0.5s)",
+            "buy_level": 4.1934,
+            "sell_level": 4.4287,
+            "band_width": 0.2352,
+            "completed_trades": 1,
+            "total_profit_egp": -321.66,
+            "total_return_pct": -3.22,
+            "win_rate_pct": 0.0,
+            "crosses_buy": 2,
+            "crosses_sell": 11,
+            "trades": [
+              {
+                "entry_time": "2026-09-24 10:05",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 4.19,
+                "exit_price": 4.08,
+                "shares": 2386,
+                "profit_egp": -321.66,
+                "return_pct": -2.6253,
+                "open_position": true
+              }
+            ]
+          },
+          "mid": {
+            "label": "Mid (1s)",
+            "buy_level": 4.0758,
+            "sell_level": 4.5463,
+            "band_width": 0.4705,
+            "completed_trades": 1,
+            "total_profit_egp": -10.89,
+            "total_return_pct": -0.11,
+            "win_rate_pct": 0.0,
+            "crosses_buy": 7,
+            "crosses_sell": 11,
+            "trades": [
+              {
+                "entry_time": "2026-09-27 10:35",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 4.06,
+                "exit_price": 4.08,
+                "shares": 2463,
+                "profit_egp": -10.89,
+                "return_pct": 0.4926,
+                "open_position": true
+              }
+            ]
+          },
+          "loose": {
+            "label": "Loose (2s)",
+            "buy_level": 3.8406,
+            "sell_level": 4.7815,
+            "band_width": 0.941,
+            "completed_trades": 1,
+            "total_profit_egp": 590.56,
+            "total_return_pct": 5.91,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 3,
+            "crosses_sell": 0,
+            "trades": [
+              {
+                "entry_time": "2026-09-30 09:20",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 3.83,
+                "exit_price": 4.08,
+                "shares": 2610,
+                "profit_egp": 590.56,
+                "return_pct": 6.5274,
                 "open_position": true
               }
             ]
@@ -1678,80 +1585,162 @@
       },
       {
         "ticker": "OBRI",
-        "current_price": 29.87,
-        "mean": 29.77,
-        "std": 2.93,
+        "current_price": 28.99,
+        "mean": 29.52,
+        "std": 2.8,
         "best_strategy": "Loose (2s)",
         "ease_of_trading": "Very Difficult",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 28.3079,
-            "sell_level": 31.2414,
-            "band_width": 2.9335,
+            "buy_level": 28.1174,
+            "sell_level": 30.9145,
+            "band_width": 2.7971,
             "completed_trades": 1,
-            "total_profit_egp": 492.61,
-            "total_return_pct": 4.93,
+            "total_profit_egp": 366.05,
+            "total_return_pct": 3.66,
             "win_rate_pct": 100.0,
-            "crosses_buy": 5,
-            "crosses_sell": 1,
+            "crosses_buy": 3,
+            "crosses_sell": 10,
             "trades": [
               {
-                "entry_time": "2026-09-24 10:15",
-                "exit_time": "2026-10-04 11:25",
-                "entry_price": 28.3,
-                "exit_price": 29.87,
-                "shares": 353,
-                "profit_egp": 492.61,
-                "return_pct": 5.5477,
+                "entry_time": "2026-09-27 10:30",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 27.8,
+                "exit_price": 28.99,
+                "shares": 359,
+                "profit_egp": 366.05,
+                "return_pct": 4.2806,
                 "open_position": true
               }
             ]
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 26.8411,
-            "sell_level": 32.7081,
-            "band_width": 5.867,
+            "buy_level": 26.7188,
+            "sell_level": 32.3131,
+            "band_width": 5.5942,
             "completed_trades": 1,
-            "total_profit_egp": 1140.15,
-            "total_return_pct": 11.4,
+            "total_profit_egp": 811.14,
+            "total_return_pct": 8.11,
             "win_rate_pct": 100.0,
-            "crosses_buy": 3,
-            "crosses_sell": 16,
+            "crosses_buy": 5,
+            "crosses_sell": 1,
             "trades": [
               {
                 "entry_time": "2026-09-27 10:55",
-                "exit_time": "2026-10-04 11:25",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 26.66,
-                "exit_price": 29.87,
+                "exit_price": 28.99,
                 "shares": 375,
-                "profit_egp": 1140.15,
-                "return_pct": 12.0405,
+                "profit_egp": 811.14,
+                "return_pct": 8.7397,
                 "open_position": true
               }
             ]
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 23.9076,
-            "sell_level": 35.6416,
-            "band_width": 11.734,
+            "buy_level": 23.9217,
+            "sell_level": 35.1102,
+            "band_width": 11.1884,
             "completed_trades": 1,
-            "total_profit_egp": 2428.03,
-            "total_return_pct": 24.28,
+            "total_profit_egp": 2061.3,
+            "total_return_pct": 20.61,
             "win_rate_pct": 100.0,
-            "crosses_buy": 5,
+            "crosses_buy": 4,
             "crosses_sell": 0,
             "trades": [
               {
                 "entry_time": "2026-09-30 07:25",
-                "exit_time": "2026-10-04 11:25",
+                "exit_time": "2026-10-05 11:25",
                 "entry_price": 23.9,
-                "exit_price": 29.87,
+                "exit_price": 28.99,
                 "shares": 418,
-                "profit_egp": 2428.03,
-                "return_pct": 24.9791,
+                "profit_egp": 2061.3,
+                "return_pct": 21.2971,
+                "open_position": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "ticker": "ARCC",
+        "current_price": 72.23,
+        "mean": 70.48,
+        "std": 4.26,
+        "best_strategy": "Loose (2s)",
+        "ease_of_trading": "Very Difficult",
+        "strategies": {
+          "narrow": {
+            "label": "Narrow (0.5s)",
+            "buy_level": 68.3514,
+            "sell_level": 72.6087,
+            "band_width": 4.2573,
+            "completed_trades": 1,
+            "total_profit_egp": 636.11,
+            "total_return_pct": 6.36,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 3,
+            "crosses_sell": 21,
+            "trades": [
+              {
+                "entry_time": "2026-09-24 07:05",
+                "exit_time": "2026-10-04 07:05",
+                "entry_price": 68.12,
+                "exit_price": 72.9,
+                "shares": 146,
+                "profit_egp": 636.11,
+                "return_pct": 7.017,
+                "open_position": false
+              }
+            ]
+          },
+          "mid": {
+            "label": "Mid (1s)",
+            "buy_level": 66.2227,
+            "sell_level": 74.7373,
+            "band_width": 8.5146,
+            "completed_trades": 1,
+            "total_profit_egp": 878.11,
+            "total_return_pct": 8.78,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 5,
+            "crosses_sell": 1,
+            "trades": [
+              {
+                "entry_time": "2026-09-27 08:25",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 66.0,
+                "exit_price": 72.23,
+                "shares": 151,
+                "profit_egp": 878.11,
+                "return_pct": 9.4394,
+                "open_position": true
+              }
+            ]
+          },
+          "loose": {
+            "label": "Loose (2s)",
+            "buy_level": 61.9654,
+            "sell_level": 78.9946,
+            "band_width": 17.0292,
+            "completed_trades": 1,
+            "total_profit_egp": 1765.34,
+            "total_return_pct": 17.65,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 4,
+            "crosses_sell": 0,
+            "trades": [
+              {
+                "entry_time": "2026-09-28 07:05",
+                "exit_time": "2026-10-05 11:25",
+                "entry_price": 61.0,
+                "exit_price": 72.23,
+                "shares": 163,
+                "profit_egp": 1765.34,
+                "return_pct": 18.4098,
                 "open_position": true
               }
             ]
