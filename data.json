@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-07 12:10",
-  "data_date": "2026-10-07 12:09",
+  "generated": "2026-10-07 19:00",
+  "data_date": "2026-10-07 19:00",
   "fees_per_side_pct": 0.3,
   "round_trip_fees_pct": 0.6,
   "backtest_budget_egp": 10000,
@@ -57,7 +57,7 @@
         "std_5d": 0.05,
         "min_5d": 5.3,
         "max_5d": 5.6,
-        "cv_5d": 1.0,
+        "cv_5d": 1.01,
         "cv_1m": 6.43,
         "mean_shift": -5.96,
         "period": "2026-09-10 to 2026-10-07",
@@ -145,30 +145,30 @@
       "strategy": "Buy at -1 Sigma Support",
       "confidence": 77,
       "entry": 339.4,
-      "exit_target": 345.04,
-      "stop_loss": 335.77,
-      "net_gain_pct": 1.06,
+      "exit_target": 345.06,
+      "stop_loss": 335.78,
+      "net_gain_pct": 1.07,
       "rr_ratio": 1.6,
       "hold_sessions": 1,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 345.04,
+        "mean_5d": 345.06,
         "std_5d": 4.64,
         "min_5d": 334.73,
         "max_5d": 359.0,
         "cv_5d": 1.34,
         "cv_1m": 3.26,
-        "mean_shift": -3.24,
+        "mean_shift": -3.25,
         "period": "2026-09-10 to 2026-10-07",
         "sessions": 20,
         "bars": 1000
       },
       "levels": {
-        "support_2": 335.77,
-        "support_1": 340.4,
-        "mean": 345.04,
-        "resistance_1": 349.67,
-        "resistance_2": 354.31
+        "support_2": 335.78,
+        "support_1": 340.42,
+        "mean": 345.06,
+        "resistance_1": 349.69,
+        "resistance_2": 354.33
       }
     },
     {
@@ -180,13 +180,13 @@
       "entry": 45.69,
       "exit_target": 47.27,
       "stop_loss": 45.17,
-      "net_gain_pct": 2.84,
+      "net_gain_pct": 2.85,
       "rr_ratio": 3.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
         "mean_5d": 46.22,
-        "std_5d": 0.52,
+        "std_5d": 0.53,
         "min_5d": 44.9,
         "max_5d": 47.3,
         "cv_5d": 1.14,
@@ -200,7 +200,7 @@
         "support_2": 45.17,
         "support_1": 45.69,
         "mean": 46.22,
-        "resistance_1": 46.74,
+        "resistance_1": 46.75,
         "resistance_2": 47.27
       }
     },
@@ -210,31 +210,31 @@
       "signal": "WAIT",
       "strategy": "At Mean - Wait for Pullback",
       "confidence": 45,
-      "entry": 591.36,
-      "exit_target": 609.1,
-      "stop_loss": 582.48,
-      "net_gain_pct": 2.4,
+      "entry": 591.28,
+      "exit_target": 609.09,
+      "stop_loss": 582.38,
+      "net_gain_pct": 2.41,
       "rr_ratio": 2.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 600.23,
-        "std_5d": 8.87,
+        "mean_5d": 600.19,
+        "std_5d": 8.9,
         "min_5d": 570.02,
         "max_5d": 619.0,
         "cv_5d": 1.48,
-        "cv_1m": 4.34,
-        "mean_shift": 6.7,
+        "cv_1m": 4.33,
+        "mean_shift": 6.72,
         "period": "2026-09-07 to 2026-10-07",
         "sessions": 23,
         "bars": 1000
       },
       "levels": {
-        "support_2": 582.48,
-        "support_1": 591.36,
-        "mean": 600.23,
-        "resistance_1": 609.1,
-        "resistance_2": 617.98
+        "support_2": 582.38,
+        "support_1": 591.28,
+        "mean": 600.19,
+        "resistance_1": 609.09,
+        "resistance_2": 617.99
       }
     },
     {
@@ -411,18 +411,18 @@
       "entry": 4.01,
       "exit_target": 4.26,
       "stop_loss": 3.89,
-      "net_gain_pct": 5.57,
+      "net_gain_pct": 5.54,
       "rr_ratio": 2.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 4.14,
+        "mean_5d": 4.13,
         "std_5d": 0.12,
         "min_5d": 3.89,
         "max_5d": 4.45,
-        "cv_5d": 2.99,
-        "cv_1m": 5.08,
-        "mean_shift": -3.16,
+        "cv_5d": 2.98,
+        "cv_1m": 5.09,
+        "mean_shift": -3.19,
         "period": "2026-09-10 to 2026-10-07",
         "sessions": 20,
         "bars": 1000
@@ -430,7 +430,7 @@
       "levels": {
         "support_2": 3.89,
         "support_1": 4.01,
-        "mean": 4.14,
+        "mean": 4.13,
         "resistance_1": 4.26,
         "resistance_2": 4.38
       }
@@ -485,10 +485,10 @@
       }
     },
     "portfolio_totals_egp": {
-      "narrow_0_5sigma": 8084.49,
+      "narrow_0_5sigma": 8066.44,
       "mid_1sigma": 8666.96,
       "loose_2sigma": 11866.35,
-      "best_combo": 14723.82
+      "best_combo": 14705.77
     },
     "tickers": [
       {
@@ -631,7 +631,7 @@
             "label": "Loose (2s)",
             "buy_level": 54.7289,
             "sell_level": 59.5664,
-            "band_width": 4.8375,
+            "band_width": 4.8376,
             "completed_trades": 2,
             "total_profit_egp": 1312.79,
             "total_return_pct": 13.13,
@@ -758,16 +758,16 @@
       {
         "ticker": "EGAL",
         "current_price": 339.4,
-        "mean": 356.6,
-        "std": 11.62,
+        "mean": 356.63,
+        "std": 11.63,
         "best_strategy": "Loose (2s)",
         "ease_of_trading": "Moderate",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 350.7863,
-            "sell_level": 362.4098,
-            "band_width": 11.6235,
+            "buy_level": 350.8194,
+            "sell_level": 362.4465,
+            "band_width": 11.6271,
             "completed_trades": 1,
             "total_profit_egp": -298.54,
             "total_return_pct": -2.99,
@@ -789,14 +789,14 @@
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 344.9746,
-            "sell_level": 368.2216,
-            "band_width": 23.247,
+            "buy_level": 345.0059,
+            "sell_level": 368.2601,
+            "band_width": 23.2542,
             "completed_trades": 1,
             "total_profit_egp": -192.86,
             "total_return_pct": -1.93,
             "win_rate_pct": 0.0,
-            "crosses_buy": 14,
+            "crosses_buy": 15,
             "crosses_sell": 10,
             "trades": [
               {
@@ -813,9 +813,9 @@
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 333.3511,
-            "sell_level": 379.8451,
-            "band_width": 46.494,
+            "buy_level": 333.3788,
+            "sell_level": 379.8872,
+            "band_width": 46.5085,
             "completed_trades": 1,
             "total_profit_egp": 131.48,
             "total_return_pct": 1.31,
@@ -1021,9 +1021,9 @@
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 4.1623,
-            "sell_level": 4.3792,
-            "band_width": 0.2169,
+            "buy_level": 4.1624,
+            "sell_level": 4.3794,
+            "band_width": 0.2171,
             "completed_trades": 1,
             "total_profit_egp": 697.25,
             "total_return_pct": 6.97,
@@ -1046,8 +1046,8 @@
           "mid": {
             "label": "Mid (1s)",
             "buy_level": 4.0538,
-            "sell_level": 4.4876,
-            "band_width": 0.4338,
+            "sell_level": 4.488,
+            "band_width": 0.4341,
             "completed_trades": 1,
             "total_profit_egp": 756.28,
             "total_return_pct": 7.56,
@@ -1069,9 +1069,9 @@
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 3.8369,
-            "sell_level": 4.7045,
-            "band_width": 0.8676,
+            "buy_level": 3.8368,
+            "sell_level": 4.705,
+            "band_width": 0.8683,
             "completed_trades": 1,
             "total_profit_egp": 1319.17,
             "total_return_pct": 13.19,
@@ -1178,31 +1178,31 @@
       {
         "ticker": "CPCI",
         "current_price": 600.0,
-        "mean": 562.54,
-        "std": 24.42,
+        "mean": 562.42,
+        "std": 24.35,
         "best_strategy": "Narrow (0.5s)",
         "ease_of_trading": "Difficult",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 550.3314,
-            "sell_level": 574.7466,
-            "band_width": 24.4152,
+            "buy_level": 550.2422,
+            "sell_level": 574.596,
+            "band_width": 24.3538,
             "completed_trades": 2,
-            "total_profit_egp": 1197.57,
-            "total_return_pct": 11.98,
+            "total_profit_egp": 1179.52,
+            "total_return_pct": 11.8,
             "win_rate_pct": 100.0,
             "crosses_buy": 3,
             "crosses_sell": 16,
             "trades": [
               {
-                "entry_time": "2026-09-07 07:10",
+                "entry_time": "2026-09-07 07:00",
                 "exit_time": "2026-09-20 07:40",
-                "entry_price": 544.0,
+                "entry_price": 545.0,
                 "exit_price": 584.99,
                 "shares": 18,
-                "profit_egp": 676.85,
-                "return_pct": 7.5349,
+                "profit_egp": 658.8,
+                "return_pct": 7.3376,
                 "open_position": false
               },
               {
@@ -1219,9 +1219,9 @@
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 538.1237,
-            "sell_level": 586.9542,
-            "band_width": 48.8305,
+            "buy_level": 538.0653,
+            "sell_level": 586.7729,
+            "band_width": 48.7077,
             "completed_trades": 1,
             "total_profit_egp": 874.91,
             "total_return_pct": 8.75,
@@ -1243,9 +1243,9 @@
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 513.7085,
-            "sell_level": 611.3695,
-            "band_width": 97.661,
+            "buy_level": 513.7114,
+            "sell_level": 611.1267,
+            "band_width": 97.4153,
             "completed_trades": 0,
             "total_profit_egp": 0,
             "total_return_pct": 0.0,
@@ -1266,8 +1266,8 @@
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 5.6068,
-            "sell_level": 5.9789,
+            "buy_level": 5.6069,
+            "sell_level": 5.979,
             "band_width": 0.3721,
             "completed_trades": 1,
             "total_profit_egp": 1137.01,
@@ -1316,7 +1316,7 @@
             "label": "Loose (2s)",
             "buy_level": 5.0487,
             "sell_level": 6.5371,
-            "band_width": 1.4884,
+            "band_width": 1.4883,
             "completed_trades": 1,
             "total_profit_egp": 1137.01,
             "total_return_pct": 11.37,
@@ -1348,9 +1348,9 @@
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 46.43,
-            "sell_level": 47.9954,
-            "band_width": 1.5654,
+            "buy_level": 46.4318,
+            "sell_level": 47.9969,
+            "band_width": 1.5651,
             "completed_trades": 2,
             "total_profit_egp": 385.51,
             "total_return_pct": 3.86,
@@ -1382,14 +1382,14 @@
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 45.6473,
-            "sell_level": 48.7781,
-            "band_width": 3.1307,
+            "buy_level": 45.6492,
+            "sell_level": 48.7795,
+            "band_width": 3.1303,
             "completed_trades": 2,
             "total_profit_egp": 819.44,
             "total_return_pct": 8.19,
             "win_rate_pct": 100.0,
-            "crosses_buy": 19,
+            "crosses_buy": 20,
             "crosses_sell": 4,
             "trades": [
               {
@@ -1416,9 +1416,9 @@
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 44.082,
-            "sell_level": 50.3434,
-            "band_width": 6.2615,
+            "buy_level": 44.0841,
+            "sell_level": 50.3446,
+            "band_width": 6.2605,
             "completed_trades": 1,
             "total_profit_egp": 620.58,
             "total_return_pct": 6.21,
