@@ -11,6 +11,7 @@ FEE_PER_SIDE = 0.003
 ROUND_TRIP_FEE = FEE_PER_SIDE * 2
 MAX_TRADES_PER_DAY = 3
 MAX_PARTICIPATION = 0.10  # max share of a single bar's volume we may take
+STOP_SIGMA = 2.0  # stop at entry = mean - 2*std (the live plan's support_2)
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 CACHE_DIR = os.path.join(OUTPUT_DIR, '_cache')
 
@@ -132,7 +133,12 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
     shares = 0
     buy_price = 0
     buy_time = None
-    sell_level = None  # frozen at entry, like the live trading plan
+    buy_bar = 0
+    sell_level = None  # target, frozen at entry like the live trading plan
+    stop_level = None  # stop, frozen at entry: mean - 2 sigma (plan support_2)
+    entry_buy_level = None
+    entry_sell_level = None
+    entry_fee = 0.0
     trades = []
     daily_trades = {}
     in_trade = False
@@ -165,18 +171,32 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
                     shares = max_shares
                     buy_price = price
                     buy_time = bar_time
+                    buy_bar = i
                     sell_level = sell_level_now  # frozen at entry
+                    entry_buy_level = buy_level
+                    entry_sell_level = sell_level_now
+                    # Stop mirrors the live trading plan (support_2 = mean - 2 sigma).
+                    # A -2 sigma entry already sits there, so keep 1 sigma of risk.
+                    stop_level = m - STOP_SIGMA * s
+                    if stop_level >= price:
+                        stop_level = price - s
                     cost = shares * price
-                    fee = cost * FEE_PER_SIDE
-                    budget -= (cost + fee)
+                    entry_fee = cost * FEE_PER_SIDE
+                    budget -= (cost + entry_fee)
                     daily_trades[day] += 1  # cap counts ENTRIES per day
                     in_trade = True
         else:
+            exit_reason = None
             if price >= sell_level:
+                exit_reason = 'target'
+            elif price <= stop_level:
+                exit_reason = 'stop'
+
+            if exit_reason:
                 revenue = shares * price
                 fee = revenue * FEE_PER_SIDE
                 net_revenue = revenue - fee
-                profit = net_revenue - (shares * buy_price + shares * buy_price * FEE_PER_SIDE)
+                profit = net_revenue - (shares * buy_price + entry_fee)
                 budget += net_revenue
 
                 trades.append({
@@ -187,11 +207,19 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
                     'shares': shares,
                     'profit': round(profit, 2),
                     'return_pct': round((price - buy_price) / buy_price * 100, 4),
+                    'entry_buy_level': round(entry_buy_level, 4),
+                    'entry_sell_level': round(entry_sell_level, 4),
+                    'stop_level': round(stop_level, 4),
+                    'exit_reason': exit_reason,
+                    'hold_bars': i - buy_bar,
                 })
 
                 shares = 0
                 buy_price = 0
                 buy_time = None
+                sell_level = None
+                stop_level = None
+                entry_fee = 0.0
                 in_trade = False
 
     if in_trade:
@@ -199,7 +227,7 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
         revenue = shares * final_price
         fee = revenue * FEE_PER_SIDE
         net_revenue = revenue - fee
-        profit = net_revenue - (shares * buy_price + shares * buy_price * FEE_PER_SIDE)
+        profit = net_revenue - (shares * buy_price + entry_fee)
         budget += net_revenue
         trades.append({
             'entry_time': buy_time.strftime('%Y-%m-%d %H:%M'),
@@ -209,6 +237,11 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
             'shares': shares,
             'profit': round(profit, 2),
             'return_pct': round((final_price - buy_price) / buy_price * 100, 4),
+            'entry_buy_level': round(entry_buy_level, 4),
+            'entry_sell_level': round(entry_sell_level, 4),
+            'stop_level': round(stop_level, 4),
+            'exit_reason': 'open',
+            'hold_bars': len(close) - 1 - buy_bar,
             'open_position': True,
         })
         shares = 0
@@ -217,12 +250,23 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
 
     total_profit = sum(t['profit'] for t in trades)
     total_return = (budget - BUDGET) / BUDGET * 100
-    winning_trades = [t for t in trades if t['profit'] > 0]
-    losing_trades = [t for t in trades if t['profit'] <= 0]
-    win_rate = len(winning_trades) / len(trades) * 100 if trades else 0
+    # An unresolved position marked to market at the last bar is NOT a completed
+    # trade: keep it in the money totals but out of the win rate, otherwise a
+    # single carried loser reads as "1 completed trade, 0% win rate".
+    closed_trades = [t for t in trades if t.get('exit_reason') != 'open']
+    open_trades = [t for t in trades if t.get('exit_reason') == 'open']
+    realized_profit = sum(t['profit'] for t in closed_trades)
+    unrealized_profit = sum(t['profit'] for t in open_trades)
+    winning_trades = [t for t in closed_trades if t['profit'] > 0]
+    losing_trades = [t for t in closed_trades if t['profit'] <= 0]
+    win_rate = len(winning_trades) / len(closed_trades) * 100 if closed_trades else 0
     avg_profit = np.mean([t['profit'] for t in trades]) if trades else 0
     avg_return = np.mean([t['return_pct'] for t in trades]) if trades else 0
     max_drawdown = min([t['profit'] for t in trades]) if trades else 0
+    avg_closed_profit = np.mean([t['profit'] for t in closed_trades]) if closed_trades else 0
+    avg_hold_bars = np.mean([t['hold_bars'] for t in closed_trades]) if closed_trades else 0
+    target_hits = sum(1 for t in closed_trades if t.get('exit_reason') == 'target')
+    stop_hits = sum(1 for t in closed_trades if t.get('exit_reason') == 'stop')
     trading_days = len([d for d, c in daily_trades.items() if c > 0])
     total_possible_days = len(set(dates.date))
     avg_trades_per_day = sum(daily_trades.values()) / total_possible_days if total_possible_days > 0 else 0
@@ -273,12 +317,21 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
         'band_width': round(band_width, 4),
         'band_width_pct': round(band_width_pct, 2),
         'total_trades': len(trades),
+        'closed_trades': len(closed_trades),
+        'open_trades': len(open_trades),
+        'target_hits': target_hits,
+        'stop_hits': stop_hits,
         'total_profit': round(total_profit, 2),
+        'realized_profit': round(realized_profit, 2),
+        'unrealized_profit': round(unrealized_profit, 2),
         'total_return_pct': round(total_return, 2),
         'final_budget': round(budget, 2),
         'win_rate': round(win_rate, 1),
         'avg_profit_per_trade': round(avg_profit, 2),
+        'avg_closed_profit': round(avg_closed_profit, 2),
         'avg_return_per_trade': round(avg_return, 4),
+        'avg_hold_bars': round(avg_hold_bars, 1),
+        'stop_sigma': STOP_SIGMA,
         'max_loss': round(max_drawdown, 2),
         'trading_days': trading_days,
         'avg_trades_per_day': round(avg_trades_per_day, 2),
@@ -329,6 +382,8 @@ def analyze_ticker(ticker):
             'current_price': round(current, 2),
             'mean': round(mean, 2),
             'std': round(std, 2),
+            'sessions': len(set(data.index.date)),
+            'period': '{} to {}'.format(data.index[0].strftime('%Y-%m-%d'), data.index[-1].strftime('%Y-%m-%d')),
             'strategies': results,
             'best_strategy': best_strategy,
             'ease_label': ease_label,
@@ -341,6 +396,7 @@ def analyze_ticker(ticker):
 
 def generate_html(ticker_results):
     ticker_results = [r for r in ticker_results if r is not None]
+    sessions = max([r.get('sessions', 0) for r in ticker_results] or [0])
     ticker_results.sort(key=lambda x: (
         0 if x['ease_label'] == 'Easy' else 1 if x['ease_label'] == 'Moderate' else 2 if x['ease_label'] == 'Difficult' else 3,
         -x['strategies'][x['best_strategy']]['total_return_pct']
@@ -392,7 +448,7 @@ def generate_html(ticker_results):
 </head>
 <body>
 <h1>EGX Band Strategy Backtest</h1>
-<p class="subtitle">10,000 EGP budget | Max 3 trades/day | 20 sessions | 5-min data | Fees: 0.6% round trip</p>
+<p class="subtitle">10,000 EGP budget | Max 3 trades/day | __SESSIONS__ sessions | 5-min data | Fees: 0.6% round trip<br>Exit: sell at the opposite band, stop at mean - 2\u03C3 frozen at entry; positions still open at the last bar are marked to market and excluded from the win rate</p>
 
 <div class="params-box">
   <h3>Strategy Definitions</h3>
@@ -416,21 +472,21 @@ def generate_html(ticker_results):
         html += """
   <tr>
     <td><strong>{ticker}</strong></td><td>{price:.2f}</td><td>{mean:.2f}</td><td>{std:.2f}</td>
-    <td class="{narrow_cls}">{narrow_ret:+.2f}% ({narrow_trades} trades)</td>
-    <td class="{mid_cls}">{mid_ret:+.2f}% ({mid_trades} trades)</td>
-    <td class="{loose_cls}">{loose_ret:+.2f}% ({loose_trades} trades)</td>
+    <td class="{narrow_cls}">{narrow_ret:+.2f}% ({narrow_trades})</td>
+    <td class="{mid_cls}">{mid_ret:+.2f}% ({mid_trades})</td>
+    <td class="{loose_cls}">{loose_ret:+.2f}% ({loose_trades})</td>
     <td><span class="best-badge">{best}</span></td>
     <td><span class="ease-badge ease-{ease}">{ease}</span></td>
   </tr>""".format(
             ticker=r['ticker'], price=r['current_price'], mean=r['mean'], std=r['std'],
             narrow_ret=s['Narrow (0.5s)']['total_return_pct'],
-            narrow_trades=s['Narrow (0.5s)']['total_trades'],
+            narrow_trades='{}c/{}o'.format(s['Narrow (0.5s)']['closed_trades'], s['Narrow (0.5s)']['open_trades']),
             narrow_cls='profit-pos' if s['Narrow (0.5s)']['total_return_pct'] > 0 else 'profit-neg',
             mid_ret=s['Mid (1s)']['total_return_pct'],
-            mid_trades=s['Mid (1s)']['total_trades'],
+            mid_trades='{}c/{}o'.format(s['Mid (1s)']['closed_trades'], s['Mid (1s)']['open_trades']),
             mid_cls='profit-pos' if s['Mid (1s)']['total_return_pct'] > 0 else 'profit-neg',
             loose_ret=s['Loose (2s)']['total_return_pct'],
-            loose_trades=s['Loose (2s)']['total_trades'],
+            loose_trades='{}c/{}o'.format(s['Loose (2s)']['closed_trades'], s['Loose (2s)']['open_trades']),
             loose_cls='profit-pos' if s['Loose (2s)']['total_return_pct'] > 0 else 'profit-neg',
             best=best, ease=r['ease_label'],
         )
@@ -460,17 +516,19 @@ def generate_html(ticker_results):
             html += """
       <div class="strat-card{is_best}">
         <div class="strat-name">{sname}</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">{buy:.4f} EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">{sell:.4f} EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">{buy:.4f} EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">{sell:.4f} EGP</span></div>
         <div class="strat-row"><span class="label">Band Width</span><span class="value">{bw:.4f} EGP ({bwp:.1f}%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">{trades}</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">{ct} / {ot}</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">{th} / {sh}</span></div>
         <div class="strat-row"><span class="label">Trading Days</span><span class="value">{days}</span></div>
         <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">{atd:.1f}</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">{wr:.1f}%</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">{wr:.1f}%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value {cls}">{rp:+,.2f} EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value {cls}">{up:+,.2f} EGP</span></div>
         <div class="strat-row"><span class="label">Total Return</span><span class="value {cls}">{ret:+.2f}%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value {cls}">{profit:+.2f} EGP</span></div>
         <div class="strat-row"><span class="label">Final Budget</span><span class="value">{fb:.2f} EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value {cls}">{apt:+.2f} EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value {cls}">{apt:+,.2f} EGP</span></div>
         <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">{ml:+.2f} EGP</span></div>
         <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">{cb}</span></div>
         <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">{cs}</span></div>
@@ -478,10 +536,12 @@ def generate_html(ticker_results):
                 is_best=is_best, sname=sname,
                 buy=sd['buy_level'], sell=sd['sell_level'],
                 bw=sd['band_width'], bwp=sd['band_width_pct'],
-                trades=sd['total_trades'], days=sd['trading_days'],
+                ct=sd['closed_trades'], ot=sd['open_trades'],
+                th=sd['target_hits'], sh=sd['stop_hits'], days=sd['trading_days'],
                 atd=sd['avg_trades_per_day'], wr=sd['win_rate'],
-                ret=sd['total_return_pct'], profit=sd['total_profit'],
-                fb=sd['final_budget'], apt=sd['avg_profit_per_trade'],
+                rp=sd['realized_profit'], up=sd['unrealized_profit'],
+                ret=sd['total_return_pct'],
+                fb=sd['final_budget'], apt=sd['avg_closed_profit'],
                 ml=sd['max_loss'], cb=sd['crosses_buy'], cs=sd['crosses_sell'],
                 cls=cls,
             )
@@ -508,7 +568,7 @@ function toggleSection(header) {
 </body>
 </html>"""
 
-    return html
+    return html.replace('__SESSIONS__', str(sessions))
 
 
 def main():
@@ -641,6 +701,8 @@ def run_backtest(tickers=None, fetched_data=None):
                 'current_price': round(current, 2),
                 'mean': round(mean, 2),
                 'std': round(std, 2),
+                'sessions': len(set(data.index.date)),
+                'period': '{} to {}'.format(data.index[0].strftime('%Y-%m-%d'), data.index[-1].strftime('%Y-%m-%d')),
                 'strategies': strat_results,
                 'best_strategy': best_strategy,
                 'ease_label': ease_label,
@@ -665,21 +727,32 @@ def run_backtest(tickers=None, fetched_data=None):
 
 def format_trades_list(trades, color):
     if not trades:
-        return '<div class="bt-trades-empty">No completed trades</div>'
+        return '<div class="bt-trades-empty">No trades</div>'
     html = '<div class="bt-trades-list">'
     for i, t in enumerate(trades):
-        open_tag = ' <span style="color:#ffd93d;font-size:0.75em">(OPEN)</span>' if t.get('open_position') else ''
+        reason = t.get('exit_reason', 'open')
+        if reason == 'target':
+            tag, tag_color = 'TARGET', '#6bcb77'
+        elif reason == 'stop':
+            tag, tag_color = 'STOP', '#ee5a24'
+        else:
+            tag, tag_color = 'OPEN - marked to market', '#ffd93d'
+        tag_html = ' <span style="color:{};font-size:0.75em">[{}]</span>'.format(tag_color, tag)
         profit_cls = 'profit-pos' if t['profit'] > 0 else 'profit-neg'
+        levels = ''
+        if 'stop_level' in t:
+            levels = ' <span style="color:#888;font-size:0.72em">stop {:.4f} / target {:.4f}</span>'.format(
+                t['stop_level'], t['entry_sell_level'])
         html += """
       <div class="bt-trade-row">
         <span class="bt-trade-num">#{}</span>
         <span class="bt-trade-time">{} &rarr; {}</span>
-        <span class="bt-trade-prices">{} &rarr; {}</span>
+        <span class="bt-trade-prices">{} &rarr; {}{}</span>
         <span class="bt-trade-profit {}">{:+,.2f} EGP{}</span>
       </div>""".format(
             i + 1, t['entry_time'], t['exit_time'],
-            t['entry_price'], t['exit_price'],
-            profit_cls, t['profit'], open_tag)
+            t['entry_price'], t['exit_price'], levels,
+            profit_cls, t['profit'], tag_html)
     html += '</div>'
     return html
 
@@ -694,7 +767,7 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
 <div class="backtest-section">
   <div class="backtest-header" onclick="toggleSection(this)">
     <span style="font-size:1.1em;font-weight:700;color:#ffd93d">Backtest: Band Strategy Comparison</span>
-    <span style="color:#888;font-size:0.85em">10,000 EGP per stock | Max 3 trades/day | 0.6% fees</span>
+    <span style="color:#888;font-size:0.85em">10,000 EGP per stock | Max 3 trades/day | 0.6% fees | Stop: mean - 2\u03C3 at entry | Positions still open at the last bar are marked to market, not counted as completed</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion" style="padding:0 15px 15px">
@@ -726,6 +799,15 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
         narrow_trades = s[narrow_key]['total_trades']
         mid_trades = s[mid_key]['total_trades']
         loose_trades = s[loose_key]['total_trades']
+        n_closed, n_open = s[narrow_key]['closed_trades'], s[narrow_key]['open_trades']
+        m_closed, m_open = s[mid_key]['closed_trades'], s[mid_key]['open_trades']
+        l_closed, l_open = s[loose_key]['closed_trades'], s[loose_key]['open_trades']
+        n_th, n_sh = s[narrow_key]['target_hits'], s[narrow_key]['stop_hits']
+        m_th, m_sh = s[mid_key]['target_hits'], s[mid_key]['stop_hits']
+        l_th, l_sh = s[loose_key]['target_hits'], s[loose_key]['stop_hits']
+        n_real, n_unreal = s[narrow_key]['realized_profit'], s[narrow_key]['unrealized_profit']
+        m_real, m_unreal = s[mid_key]['realized_profit'], s[mid_key]['unrealized_profit']
+        l_real, l_unreal = s[loose_key]['realized_profit'], s[loose_key]['unrealized_profit']
         narrow_wr = s[narrow_key]['win_rate']
         mid_wr = s[mid_key]['win_rate']
         loose_wr = s[loose_key]['win_rate']
@@ -754,32 +836,38 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
           <div class="bt-detail-grid">
             <div class="bt-detail-card">
               <div class="bt-detail-title" style="color:#6bcb77">Narrow (0.5s)</div>
-              <div class="bt-detail-row"><span>Buy Level:</span><span>{nb:.4f}</span></div>
-              <div class="bt-detail-row"><span>Sell Level:</span><span>{ns:.4f}</span></div>
-              <div class="bt-detail-row"><span>Completed Trades:</span><span>{nt}</span></div>
-              <div class="bt-detail-row"><span>Win Rate:</span><span>{nw:.1f}%</span></div>
+              <div class="bt-detail-row"><span>Current Band Buy:</span><span>{nb:.4f}</span></div>
+              <div class="bt-detail-row"><span>Current Band Sell:</span><span>{ns:.4f}</span></div>
+              <div class="bt-detail-row"><span>Closed / Open:</span><span>{ntc} / {nto}</span></div>
+              <div class="bt-detail-row"><span>Target / Stop hits:</span><span>{nth} / {nsh}</span></div>
+              <div class="bt-detail-row"><span>Win Rate (closed):</span><span>{nw:.1f}%</span></div>
               <div class="bt-detail-row"><span>Band Width:</span><span>{nbw:.2f} EGP</span></div>
-              <div class="bt-detail-row"><span>Profit:</span><span class="{nc}">{np:+,.2f} EGP</span></div>
+              <div class="bt-detail-row"><span>Realized:</span><span class="{nc}">{nrp:+,.2f} EGP</span></div>
+              <div class="bt-detail-row"><span>Open (marked):</span><span class="{nc}">{nup:+,.2f} EGP</span></div>
               {narrow_trades}
             </div>
             <div class="bt-detail-card">
               <div class="bt-detail-title" style="color:#ffd93d">Mid (1s)</div>
-              <div class="bt-detail-row"><span>Buy Level:</span><span>{mb:.4f}</span></div>
-              <div class="bt-detail-row"><span>Sell Level:</span><span>{ms:.4f}</span></div>
-              <div class="bt-detail-row"><span>Completed Trades:</span><span>{mt}</span></div>
-              <div class="bt-detail-row"><span>Win Rate:</span><span>{mw:.1f}%</span></div>
+              <div class="bt-detail-row"><span>Current Band Buy:</span><span>{mb:.4f}</span></div>
+              <div class="bt-detail-row"><span>Current Band Sell:</span><span>{ms:.4f}</span></div>
+              <div class="bt-detail-row"><span>Closed / Open:</span><span>{mtc} / {mto}</span></div>
+              <div class="bt-detail-row"><span>Target / Stop hits:</span><span>{mth} / {msh}</span></div>
+              <div class="bt-detail-row"><span>Win Rate (closed):</span><span>{mw:.1f}%</span></div>
               <div class="bt-detail-row"><span>Band Width:</span><span>{mbw:.2f} EGP</span></div>
-              <div class="bt-detail-row"><span>Profit:</span><span class="{mc}">{mp:+,.2f} EGP</span></div>
+              <div class="bt-detail-row"><span>Realized:</span><span class="{mc}">{mrp:+,.2f} EGP</span></div>
+              <div class="bt-detail-row"><span>Open (marked):</span><span class="{mc}">{mup:+,.2f} EGP</span></div>
               {mid_trades}
             </div>
             <div class="bt-detail-card">
               <div class="bt-detail-title" style="color:#ff9f43">Loose (2s)</div>
-              <div class="bt-detail-row"><span>Buy Level:</span><span>{lb:.4f}</span></div>
-              <div class="bt-detail-row"><span>Sell Level:</span><span>{ls:.4f}</span></div>
-              <div class="bt-detail-row"><span>Completed Trades:</span><span>{lt}</span></div>
-              <div class="bt-detail-row"><span>Win Rate:</span><span>{lw:.1f}%</span></div>
+              <div class="bt-detail-row"><span>Current Band Buy:</span><span>{lb:.4f}</span></div>
+              <div class="bt-detail-row"><span>Current Band Sell:</span><span>{ls:.4f}</span></div>
+              <div class="bt-detail-row"><span>Closed / Open:</span><span>{ltc} / {lto}</span></div>
+              <div class="bt-detail-row"><span>Target / Stop hits:</span><span>{lth} / {lsh}</span></div>
+              <div class="bt-detail-row"><span>Win Rate (closed):</span><span>{lw:.1f}%</span></div>
               <div class="bt-detail-row"><span>Band Width:</span><span>{lbw:.2f} EGP</span></div>
-              <div class="bt-detail-row"><span>Profit:</span><span class="{lc}">{lp:+,.2f} EGP</span></div>
+              <div class="bt-detail-row"><span>Realized:</span><span class="{lc}">{lrp:+,.2f} EGP</span></div>
+              <div class="bt-detail-row"><span>Open (marked):</span><span class="{lc}">{lup:+,.2f} EGP</span></div>
               {loose_trades}
             </div>
           </div>
@@ -789,13 +877,16 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
             nc=nc, nr=narrow_ret, mc=mc, mr=mid_ret, lc=lc, lr=loose_ret, bc=bc, br=best_ret,
             best=best, ease=r['ease_label'],
             nb=s[narrow_key]['buy_level'], ns=s[narrow_key]['sell_level'],
-            nt=narrow_trades, nw=narrow_wr, nbw=s[narrow_key]['band_width'], np=narrow_profit,
+            ntc=n_closed, nto=n_open, nth=n_th, nsh=n_sh,
+            nw=narrow_wr, nbw=s[narrow_key]['band_width'], nrp=n_real, nup=n_unreal,
             narrow_trades=format_trades_list(s[narrow_key]['trades'], '#6bcb77'),
             mb=s[mid_key]['buy_level'], ms=s[mid_key]['sell_level'],
-            mt=mid_trades, mw=mid_wr, mbw=s[mid_key]['band_width'], mp=mid_profit,
+            mtc=m_closed, mto=m_open, mth=m_th, msh=m_sh,
+            mw=mid_wr, mbw=s[mid_key]['band_width'], mrp=m_real, mup=m_unreal,
             mid_trades=format_trades_list(s[mid_key]['trades'], '#ffd93d'),
             lb=s[loose_key]['buy_level'], ls=s[loose_key]['sell_level'],
-            lt=loose_trades, lw=loose_wr, lbw=s[loose_key]['band_width'], lp=loose_profit,
+            ltc=l_closed, lto=l_open, lth=l_th, lsh=l_sh,
+            lw=loose_wr, lbw=s[loose_key]['band_width'], lrp=l_real, lup=l_unreal,
             loose_trades=format_trades_list(s[loose_key]['trades'], '#ff9f43'))
 
     html += """

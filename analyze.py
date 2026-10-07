@@ -722,7 +722,7 @@ def main():
         band_key = loose_key if ds <= -2 else mid_key if ds <= -1 else narrow_key
         bt = bt_by_ticker.get(r['stats']['ticker'])
         sd = bt['strategies'].get(band_key) if bt else None
-        n_tr = sd['total_trades'] if sd else 0
+        n_tr = sd.get('closed_trades', sd.get('total_trades', 0)) if sd else 0
         if not sd or n_tr < 3:
             p['confidence_basis'] = 'heuristic only ({} band: n={} trades)'.format(
                 band_key.split(' ')[0].lower(), n_tr)
@@ -763,7 +763,7 @@ def main():
                 'narrow': {'buy': 'mean - 0.5*std', 'sell': 'mean + 0.5*std'},
                 'mid': {'buy': 'mean - 1*std', 'sell': 'mean + 1*std'},
                 'loose': {'buy': 'mean - 2*std', 'sell': 'mean + 2*std'},
-                'note': 'Levels use rolling 300-bar stats (no look-ahead). best_combo picks the best band per ticker in-sample (hindsight), not a forward-tested portfolio.',
+                'note': 'Levels use rolling 300-bar stats (no look-ahead). best_combo picks the best band per ticker in-sample (hindsight), not a forward-tested portfolio. Exits: sell at the opposite band, stop at mean - 2 sigma frozen at entry (the live plan support_2); positions still open at the last bar are marked to market and excluded from the win rate.',
             },
             'portfolio_totals_egp': {},
             'tickers': []
@@ -833,8 +833,14 @@ def main():
                 'buy_level': sd['buy_level'],
                 'sell_level': sd['sell_level'],
                 'band_width': sd['band_width'],
-                'completed_trades': sd['total_trades'],
+                'completed_trades': sd['closed_trades'],
+                'open_trades': sd['open_trades'],
+                'target_hits': sd['target_hits'],
+                'stop_hits': sd['stop_hits'],
+                'stop_sigma': sd['stop_sigma'],
                 'total_profit_egp': sd['total_profit'],
+                'realized_profit_egp': sd['realized_profit'],
+                'unrealized_profit_egp': sd['unrealized_profit'],
                 'total_return_pct': sd['total_return_pct'],
                 'win_rate_pct': sd['win_rate'],
                 'crosses_buy': sd['crosses_buy'],
@@ -843,7 +849,10 @@ def main():
                     {'entry_time': t['entry_time'], 'exit_time': t['exit_time'],
                      'entry_price': t['entry_price'], 'exit_price': t['exit_price'],
                      'shares': t['shares'], 'profit_egp': t['profit'], 'return_pct': t['return_pct'],
-                     'open_position': t.get('open_position', False)}
+                     'entry_buy_level': t.get('entry_buy_level'), 'entry_sell_level': t.get('entry_sell_level'),
+                     'stop_level': t.get('stop_level'), 'exit_reason': t.get('exit_reason'),
+                     'hold_bars': t.get('hold_bars'),
+                     'open_position': t.get('exit_reason') == 'open'}
                     for t in sd['trades']
                 ]
             }

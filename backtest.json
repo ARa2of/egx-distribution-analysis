@@ -1,650 +1,650 @@
 {
-  "generated": "2026-09-20 12:07",
+  "generated": "2026-10-07 23:29",
   "budget": 10000,
   "max_trades_per_day": 3,
   "fees_per_side": 0.3,
   "tickers": [
     {
-      "ticker": "ENGC",
-      "current_price": 44.5,
-      "mean": 44.63,
-      "std": 1.79,
-      "best_strategy": "Narrow (0.5s)",
+      "ticker": "ETEL",
+      "current_price": 148.0,
+      "mean": 144.51,
+      "std": 6.95,
+      "best_strategy": "Loose (2s)",
       "ease_label": "Moderate",
       "strategies": {
         "Narrow (0.5s)": {
-          "buy_level": 43.7332,
-          "sell_level": 45.5241,
-          "band_width_pct": 4.01,
-          "total_trades": 4,
-          "total_return_pct": 24.43,
-          "total_profit": 2443.24,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.14,
-          "crosses_buy": 16,
-          "crosses_sell": 26
-        },
-        "Mid (1s)": {
-          "buy_level": 42.8378,
-          "sell_level": 46.4195,
-          "band_width_pct": 8.03,
-          "total_trades": 2,
-          "total_return_pct": 14.04,
-          "total_profit": 1403.54,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
+          "buy_level": 140.9739,
+          "sell_level": 147.9536,
+          "band_width_pct": 4.83,
+          "total_trades": 7,
+          "total_return_pct": 0.7,
+          "total_profit": 70.3,
+          "win_rate": 42.9,
+          "avg_trades_per_day": 0.35,
           "crosses_buy": 9,
-          "crosses_sell": 14
-        },
-        "Loose (2s)": {
-          "buy_level": 41.0469,
-          "sell_level": 48.2103,
-          "band_width_pct": 16.05,
-          "total_trades": 0,
-          "total_return_pct": 0.0,
-          "total_profit": 0,
-          "win_rate": 0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 0,
-          "crosses_sell": 6
-        }
-      }
-    },
-    {
-      "ticker": "EGAL",
-      "current_price": 373.0,
-      "mean": 365.08,
-      "std": 10.95,
-      "best_strategy": "Mid (1s)",
-      "ease_label": "Moderate",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 359.6062,
-          "sell_level": 370.5556,
-          "band_width_pct": 3.0,
-          "total_trades": 3,
-          "total_return_pct": 19.09,
-          "total_profit": 1909.14,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.15,
-          "crosses_buy": 10,
-          "crosses_sell": 17
-        },
-        "Mid (1s)": {
-          "buy_level": 354.1316,
-          "sell_level": 376.0302,
-          "band_width_pct": 6.0,
-          "total_trades": 2,
-          "total_return_pct": 21.85,
-          "total_profit": 2185.03,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 5,
-          "crosses_sell": 15
-        },
-        "Loose (2s)": {
-          "buy_level": 343.1822,
-          "sell_level": 386.9796,
-          "band_width_pct": 12.0,
-          "total_trades": 1,
-          "total_return_pct": 16.47,
-          "total_profit": 1647.46,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 1,
-          "crosses_sell": 1
-        }
-      }
-    },
-    {
-      "ticker": "CPCI",
-      "current_price": 571.0,
-      "mean": 542.72,
-      "std": 7.81,
-      "best_strategy": "Mid (1s)",
-      "ease_label": "Moderate",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 538.813,
-          "sell_level": 546.6239,
-          "band_width_pct": 1.44,
-          "total_trades": 4,
-          "total_return_pct": 6.37,
-          "total_profit": 637.15,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.17,
-          "crosses_buy": 30,
-          "crosses_sell": 55
-        },
-        "Mid (1s)": {
-          "buy_level": 534.9076,
-          "sell_level": 550.5293,
-          "band_width_pct": 2.88,
-          "total_trades": 3,
-          "total_return_pct": 12.29,
-          "total_profit": 1228.86,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.13,
-          "crosses_buy": 16,
-          "crosses_sell": 24
-        },
-        "Loose (2s)": {
-          "buy_level": 527.0967,
-          "sell_level": 558.3402,
-          "band_width_pct": 5.76,
-          "total_trades": 0,
-          "total_return_pct": 0.0,
-          "total_profit": 0,
-          "win_rate": 0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 0,
           "crosses_sell": 8
+        },
+        "Mid (1s)": {
+          "buy_level": 137.484,
+          "sell_level": 151.4435,
+          "band_width_pct": 9.66,
+          "total_trades": 2,
+          "total_return_pct": 3.68,
+          "total_profit": 367.67,
+          "win_rate": 50.0,
+          "avg_trades_per_day": 0.1,
+          "crosses_buy": 6,
+          "crosses_sell": 12
+        },
+        "Loose (2s)": {
+          "buy_level": 130.5043,
+          "sell_level": 158.4232,
+          "band_width_pct": 19.33,
+          "total_trades": 1,
+          "total_return_pct": 7.73,
+          "total_profit": 772.69,
+          "win_rate": 100.0,
+          "avg_trades_per_day": 0.05,
+          "crosses_buy": 7,
+          "crosses_sell": 11
         }
       }
     },
     {
       "ticker": "EGAS",
-      "current_price": 59.48,
-      "mean": 58.37,
-      "std": 1.04,
+      "current_price": 56.15,
+      "mean": 56.68,
+      "std": 0.94,
       "best_strategy": "Mid (1s)",
       "ease_label": "Moderate",
       "strategies": {
         "Narrow (0.5s)": {
-          "buy_level": 57.8504,
-          "sell_level": 58.8953,
-          "band_width_pct": 1.79,
-          "total_trades": 4,
-          "total_return_pct": 10.04,
-          "total_profit": 1003.93,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.19,
-          "crosses_buy": 13,
-          "crosses_sell": 38
-        },
-        "Mid (1s)": {
-          "buy_level": 57.3279,
-          "sell_level": 59.4177,
-          "band_width_pct": 3.58,
-          "total_trades": 3,
-          "total_return_pct": 11.19,
-          "total_profit": 1119.31,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.14,
-          "crosses_buy": 20,
-          "crosses_sell": 28
-        },
-        "Loose (2s)": {
-          "buy_level": 56.283,
-          "sell_level": 60.4626,
-          "band_width_pct": 7.16,
-          "total_trades": 1,
-          "total_return_pct": 7.78,
-          "total_profit": 777.78,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 13,
-          "crosses_sell": 3
-        }
-      }
-    },
-    {
-      "ticker": "RMDA",
-      "current_price": 6.17,
-      "mean": 6.18,
-      "std": 0.14,
-      "best_strategy": "Loose (2s)",
-      "ease_label": "Moderate",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 6.105,
-          "sell_level": 6.2467,
-          "band_width_pct": 2.29,
-          "total_trades": 3,
-          "total_return_pct": 8.99,
-          "total_profit": 899.04,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.15,
-          "crosses_buy": 18,
-          "crosses_sell": 11
-        },
-        "Mid (1s)": {
-          "buy_level": 6.0341,
-          "sell_level": 6.3175,
-          "band_width_pct": 4.59,
-          "total_trades": 2,
-          "total_return_pct": 6.69,
-          "total_profit": 668.79,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 16,
-          "crosses_sell": 13
-        },
-        "Loose (2s)": {
-          "buy_level": 5.8924,
-          "sell_level": 6.4592,
-          "band_width_pct": 9.18,
-          "total_trades": 1,
-          "total_return_pct": 10.13,
-          "total_profit": 1013.45,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 2,
-          "crosses_sell": 7
-        }
-      }
-    },
-    {
-      "ticker": "BONY",
-      "current_price": 4.56,
-      "mean": 4.58,
-      "std": 0.09,
-      "best_strategy": "Narrow (0.5s)",
-      "ease_label": "Moderate",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 4.5394,
-          "sell_level": 4.6255,
-          "band_width_pct": 1.88,
-          "total_trades": 5,
-          "total_return_pct": 8.26,
-          "total_profit": 826.42,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.2,
-          "crosses_buy": 25,
-          "crosses_sell": 13
-        },
-        "Mid (1s)": {
-          "buy_level": 4.4964,
-          "sell_level": 4.6685,
-          "band_width_pct": 3.76,
-          "total_trades": 2,
-          "total_return_pct": 4.61,
-          "total_profit": 460.72,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 10,
+          "buy_level": 56.2067,
+          "sell_level": 57.1505,
+          "band_width_pct": 1.67,
+          "total_trades": 9,
+          "total_return_pct": -3.72,
+          "total_profit": -372.12,
+          "win_rate": 25.0,
+          "avg_trades_per_day": 0.45,
+          "crosses_buy": 47,
           "crosses_sell": 15
         },
-        "Loose (2s)": {
-          "buy_level": 4.4103,
-          "sell_level": 4.7545,
-          "band_width_pct": 7.51,
-          "total_trades": 1,
-          "total_return_pct": 2.79,
-          "total_profit": 279.05,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 2,
-          "crosses_sell": 10
-        }
-      }
-    },
-    {
-      "ticker": "EFIH",
-      "current_price": 23.65,
-      "mean": 23.56,
-      "std": 0.4,
-      "best_strategy": "Mid (1s)",
-      "ease_label": "Moderate",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 23.3597,
-          "sell_level": 23.7609,
-          "band_width_pct": 1.7,
-          "total_trades": 3,
-          "total_return_pct": 4.01,
-          "total_profit": 401.37,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.15,
-          "crosses_buy": 14,
-          "crosses_sell": 35
-        },
         "Mid (1s)": {
-          "buy_level": 23.1591,
-          "sell_level": 23.9615,
-          "band_width_pct": 3.41,
-          "total_trades": 2,
-          "total_return_pct": 6.26,
-          "total_profit": 625.67,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.1,
-          "crosses_buy": 10,
-          "crosses_sell": 8
+          "buy_level": 55.7348,
+          "sell_level": 57.6224,
+          "band_width_pct": 3.33,
+          "total_trades": 5,
+          "total_return_pct": 4.81,
+          "total_profit": 481.51,
+          "win_rate": 25.0,
+          "avg_trades_per_day": 0.25,
+          "crosses_buy": 14,
+          "crosses_sell": 16
         },
         "Loose (2s)": {
-          "buy_level": 22.7579,
-          "sell_level": 24.3627,
-          "band_width_pct": 6.81,
-          "total_trades": 1,
-          "total_return_pct": 3.34,
-          "total_profit": 333.99,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 1,
+          "buy_level": 54.7911,
+          "sell_level": 58.5661,
+          "band_width_pct": 6.66,
+          "total_trades": 2,
+          "total_return_pct": 1.06,
+          "total_profit": 105.75,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.1,
+          "crosses_buy": 7,
           "crosses_sell": 0
         }
       }
     },
     {
-      "ticker": "ORHD",
-      "current_price": 43.36,
-      "mean": 42.44,
-      "std": 0.56,
+      "ticker": "CPCI",
+      "current_price": 600.0,
+      "mean": 593.65,
+      "std": 13.52,
       "best_strategy": "Mid (1s)",
       "ease_label": "Moderate",
       "strategies": {
         "Narrow (0.5s)": {
-          "buy_level": 42.1561,
-          "sell_level": 42.7168,
-          "band_width_pct": 1.32,
-          "total_trades": 3,
-          "total_return_pct": 5.46,
-          "total_profit": 546.47,
+          "buy_level": 586.6942,
+          "sell_level": 600.343,
+          "band_width_pct": 2.3,
+          "total_trades": 5,
+          "total_return_pct": 2.55,
+          "total_profit": 255.38,
           "win_rate": 100.0,
-          "avg_trades_per_day": 0.15,
-          "crosses_buy": 26,
-          "crosses_sell": 20
-        },
-        "Mid (1s)": {
-          "buy_level": 41.8757,
-          "sell_level": 42.9971,
-          "band_width_pct": 2.64,
-          "total_trades": 2,
-          "total_return_pct": 5.6,
-          "total_profit": 560.26,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.1,
-          "crosses_buy": 14,
-          "crosses_sell": 17
-        },
-        "Loose (2s)": {
-          "buy_level": 41.315,
-          "sell_level": 43.5578,
-          "band_width_pct": 5.29,
-          "total_trades": 1,
-          "total_return_pct": 5.26,
-          "total_profit": 526.31,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 6,
-          "crosses_sell": 4
-        }
-      }
-    },
-    {
-      "ticker": "OBRI",
-      "current_price": 31.85,
-      "mean": 32.6,
-      "std": 1.05,
-      "best_strategy": "Loose (2s)",
-      "ease_label": "Moderate",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 32.0722,
-          "sell_level": 33.123,
-          "band_width_pct": 3.22,
-          "total_trades": 2,
-          "total_return_pct": 1.75,
-          "total_profit": 175.12,
-          "win_rate": 50.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 11,
-          "crosses_sell": 14
-        },
-        "Mid (1s)": {
-          "buy_level": 31.5468,
-          "sell_level": 33.6484,
-          "band_width_pct": 6.45,
-          "total_trades": 1,
-          "total_return_pct": 0.51,
-          "total_profit": 50.7,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 2,
-          "crosses_sell": 17
-        },
-        "Loose (2s)": {
-          "buy_level": 30.496,
-          "sell_level": 34.6992,
-          "band_width_pct": 12.89,
-          "total_trades": 1,
-          "total_return_pct": 5.16,
-          "total_profit": 515.97,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 5,
-          "crosses_sell": 5
-        }
-      }
-    },
-    {
-      "ticker": "ARCC",
-      "current_price": 73.11,
-      "mean": 75.75,
-      "std": 2.02,
-      "best_strategy": "Narrow (0.5s)",
-      "ease_label": "Difficult",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 74.7401,
-          "sell_level": 76.7642,
-          "band_width_pct": 2.67,
-          "total_trades": 3,
-          "total_return_pct": 5.41,
-          "total_profit": 541.23,
-          "win_rate": 66.7,
-          "avg_trades_per_day": 0.1,
-          "crosses_buy": 4,
-          "crosses_sell": 41
-        },
-        "Mid (1s)": {
-          "buy_level": 73.7281,
-          "sell_level": 77.7762,
-          "band_width_pct": 5.34,
-          "total_trades": 2,
-          "total_return_pct": 5.14,
-          "total_profit": 514.46,
-          "win_rate": 50.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 3,
-          "crosses_sell": 14
-        },
-        "Loose (2s)": {
-          "buy_level": 71.7041,
-          "sell_level": 79.8002,
-          "band_width_pct": 10.69,
-          "total_trades": 1,
-          "total_return_pct": 1.4,
-          "total_profit": 139.79,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 4,
-          "crosses_sell": 3
-        }
-      }
-    },
-    {
-      "ticker": "ADIB",
-      "current_price": 53.6,
-      "mean": 52.81,
-      "std": 1.01,
-      "best_strategy": "Mid (1s)",
-      "ease_label": "Difficult",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 52.3076,
-          "sell_level": 53.3214,
-          "band_width_pct": 1.92,
-          "total_trades": 2,
-          "total_return_pct": 3.38,
-          "total_profit": 338.23,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.1,
-          "crosses_buy": 24,
-          "crosses_sell": 5
-        },
-        "Mid (1s)": {
-          "buy_level": 51.8006,
-          "sell_level": 53.8283,
-          "band_width_pct": 3.84,
-          "total_trades": 1,
-          "total_return_pct": 3.73,
-          "total_profit": 373.02,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 9,
+          "avg_trades_per_day": 0.22,
+          "crosses_buy": 16,
           "crosses_sell": 18
         },
-        "Loose (2s)": {
-          "buy_level": 50.7868,
-          "sell_level": 54.8422,
-          "band_width_pct": 7.68,
-          "total_trades": 0,
-          "total_return_pct": 0.0,
-          "total_profit": 0,
-          "win_rate": 0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 0,
-          "crosses_sell": 4
-        }
-      }
-    },
-    {
-      "ticker": "MFPC",
-      "current_price": 50.11,
-      "mean": 44.7,
-      "std": 3.42,
-      "best_strategy": "Mid (1s)",
-      "ease_label": "Very Difficult",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 42.988,
-          "sell_level": 46.4091,
-          "band_width_pct": 7.65,
-          "total_trades": 1,
-          "total_return_pct": 16.62,
-          "total_profit": 1661.93,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 1,
-          "crosses_sell": 14
-        },
         "Mid (1s)": {
-          "buy_level": 41.2774,
-          "sell_level": 48.1197,
-          "band_width_pct": 15.31,
-          "total_trades": 1,
-          "total_return_pct": 21.2,
-          "total_profit": 2119.88,
+          "buy_level": 579.8699,
+          "sell_level": 607.1673,
+          "band_width_pct": 4.6,
+          "total_trades": 2,
+          "total_return_pct": 4.26,
+          "total_profit": 426.35,
           "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 0,
-          "crosses_sell": 1
+          "avg_trades_per_day": 0.09,
+          "crosses_buy": 12,
+          "crosses_sell": 32
         },
         "Loose (2s)": {
-          "buy_level": 37.8563,
-          "sell_level": 51.5408,
-          "band_width_pct": 30.62,
+          "buy_level": 566.2212,
+          "sell_level": 620.816,
+          "band_width_pct": 9.2,
           "total_trades": 0,
           "total_return_pct": 0.0,
           "total_profit": 0,
           "win_rate": 0,
           "avg_trades_per_day": 0.0,
           "crosses_buy": 0,
-          "crosses_sell": 0
-        }
-      }
-    },
-    {
-      "ticker": "ETEL",
-      "current_price": 133.29,
-      "mean": 121.53,
-      "std": 6.14,
-      "best_strategy": "Mid (1s)",
-      "ease_label": "Very Difficult",
-      "strategies": {
-        "Narrow (0.5s)": {
-          "buy_level": 118.4558,
-          "sell_level": 124.5951,
-          "band_width_pct": 5.05,
-          "total_trades": 1,
-          "total_return_pct": 5.13,
-          "total_profit": 512.54,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 1,
-          "crosses_sell": 6
-        },
-        "Mid (1s)": {
-          "buy_level": 115.3861,
-          "sell_level": 127.6647,
-          "band_width_pct": 10.1,
-          "total_trades": 1,
-          "total_return_pct": 12.17,
-          "total_profit": 1217.35,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 6,
-          "crosses_sell": 4
-        },
-        "Loose (2s)": {
-          "buy_level": 109.2468,
-          "sell_level": 133.804,
-          "band_width_pct": 20.21,
-          "total_trades": 0,
-          "total_return_pct": 0.0,
-          "total_profit": 0,
-          "win_rate": 0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 0,
-          "crosses_sell": 3
+          "crosses_sell": 28
         }
       }
     },
     {
       "ticker": "MASR",
-      "current_price": 7.77,
-      "mean": 7.98,
-      "std": 0.36,
-      "best_strategy": "Mid (1s)",
-      "ease_label": "Very Difficult",
+      "current_price": 7.86,
+      "mean": 7.6,
+      "std": 0.16,
+      "best_strategy": "Loose (2s)",
+      "ease_label": "Moderate",
       "strategies": {
         "Narrow (0.5s)": {
-          "buy_level": 7.801,
-          "sell_level": 8.1584,
-          "band_width_pct": 4.48,
-          "total_trades": 2,
-          "total_return_pct": 5.2,
-          "total_profit": 519.83,
-          "win_rate": 50.0,
-          "avg_trades_per_day": 0.05,
-          "crosses_buy": 2,
-          "crosses_sell": 1
+          "buy_level": 7.5174,
+          "sell_level": 7.6833,
+          "band_width_pct": 2.18,
+          "total_trades": 5,
+          "total_return_pct": -5.52,
+          "total_profit": -551.53,
+          "win_rate": 20.0,
+          "avg_trades_per_day": 0.25,
+          "crosses_buy": 4,
+          "crosses_sell": 6
         },
         "Mid (1s)": {
-          "buy_level": 7.6223,
-          "sell_level": 8.3371,
-          "band_width_pct": 8.96,
-          "total_trades": 1,
-          "total_return_pct": 9.23,
-          "total_profit": 923.33,
-          "win_rate": 100.0,
-          "avg_trades_per_day": 0.05,
+          "buy_level": 7.4345,
+          "sell_level": 7.7662,
+          "band_width_pct": 4.36,
+          "total_trades": 5,
+          "total_return_pct": -4.28,
+          "total_profit": -427.7,
+          "win_rate": 20.0,
+          "avg_trades_per_day": 0.25,
+          "crosses_buy": 9,
+          "crosses_sell": 10
+        },
+        "Loose (2s)": {
+          "buy_level": 7.2686,
+          "sell_level": 7.932,
+          "band_width_pct": 8.73,
+          "total_trades": 4,
+          "total_return_pct": 1.62,
+          "total_profit": 162.05,
+          "win_rate": 25.0,
+          "avg_trades_per_day": 0.2,
+          "crosses_buy": 9,
+          "crosses_sell": 5
+        }
+      }
+    },
+    {
+      "ticker": "BONY",
+      "current_price": 4.36,
+      "mean": 4.1,
+      "std": 0.14,
+      "best_strategy": "Narrow (0.5s)",
+      "ease_label": "Moderate",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 4.0319,
+          "sell_level": 4.1752,
+          "band_width_pct": 3.49,
+          "total_trades": 7,
+          "total_return_pct": -0.18,
+          "total_profit": -17.79,
+          "win_rate": 14.3,
+          "avg_trades_per_day": 0.35,
+          "crosses_buy": 3,
+          "crosses_sell": 5
+        },
+        "Mid (1s)": {
+          "buy_level": 3.9602,
+          "sell_level": 4.2469,
+          "band_width_pct": 6.99,
+          "total_trades": 7,
+          "total_return_pct": -1.98,
+          "total_profit": -197.68,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.35,
+          "crosses_buy": 5,
+          "crosses_sell": 8
+        },
+        "Loose (2s)": {
+          "buy_level": 3.8169,
+          "sell_level": 4.3902,
+          "band_width_pct": 13.97,
+          "total_trades": 6,
+          "total_return_pct": -15.48,
+          "total_profit": -1548.36,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.3,
+          "crosses_buy": 31,
+          "crosses_sell": 9
+        }
+      }
+    },
+    {
+      "ticker": "MFPC",
+      "current_price": 46.5,
+      "mean": 46.03,
+      "std": 0.72,
+      "best_strategy": "Loose (2s)",
+      "ease_label": "Moderate",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 45.6554,
+          "sell_level": 46.3834,
+          "band_width_pct": 1.58,
+          "total_trades": 3,
+          "total_return_pct": -4.73,
+          "total_profit": -472.83,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.15,
+          "crosses_buy": 15,
+          "crosses_sell": 10
+        },
+        "Mid (1s)": {
+          "buy_level": 45.2914,
+          "sell_level": 46.7474,
+          "band_width_pct": 3.16,
+          "total_trades": 4,
+          "total_return_pct": -4.68,
+          "total_profit": -468.36,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.2,
+          "crosses_buy": 17,
+          "crosses_sell": 6
+        },
+        "Loose (2s)": {
+          "buy_level": 44.5634,
+          "sell_level": 47.4754,
+          "band_width_pct": 6.33,
+          "total_trades": 3,
+          "total_return_pct": -3.29,
+          "total_profit": -329.12,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.15,
+          "crosses_buy": 7,
+          "crosses_sell": 0
+        }
+      }
+    },
+    {
+      "ticker": "EFIH",
+      "current_price": 25.23,
+      "mean": 23.73,
+      "std": 0.98,
+      "best_strategy": "Loose (2s)",
+      "ease_label": "Moderate",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 23.2304,
+          "sell_level": 24.2146,
+          "band_width_pct": 4.15,
+          "total_trades": 12,
+          "total_return_pct": -17.96,
+          "total_profit": -1796.03,
+          "win_rate": 16.7,
+          "avg_trades_per_day": 0.6,
+          "crosses_buy": 18,
+          "crosses_sell": 5
+        },
+        "Mid (1s)": {
+          "buy_level": 22.7383,
+          "sell_level": 24.7067,
+          "band_width_pct": 8.3,
+          "total_trades": 9,
+          "total_return_pct": -15.98,
+          "total_profit": -1597.71,
+          "win_rate": 11.1,
+          "avg_trades_per_day": 0.45,
+          "crosses_buy": 26,
+          "crosses_sell": 2
+        },
+        "Loose (2s)": {
+          "buy_level": 21.7542,
+          "sell_level": 25.6908,
+          "band_width_pct": 16.59,
+          "total_trades": 3,
+          "total_return_pct": -7.79,
+          "total_profit": -778.6,
+          "win_rate": 33.3,
+          "avg_trades_per_day": 0.15,
+          "crosses_buy": 12,
+          "crosses_sell": 7
+        }
+      }
+    },
+    {
+      "ticker": "ARCC",
+      "current_price": 71.07,
+      "mean": 69.31,
+      "std": 3.3,
+      "best_strategy": "Mid (1s)",
+      "ease_label": "Difficult",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 67.6241,
+          "sell_level": 70.9361,
+          "band_width_pct": 4.78,
+          "total_trades": 8,
+          "total_return_pct": -3.7,
+          "total_profit": -369.51,
+          "win_rate": 12.5,
+          "avg_trades_per_day": 0.4,
+          "crosses_buy": 4,
+          "crosses_sell": 3
+        },
+        "Mid (1s)": {
+          "buy_level": 65.9681,
+          "sell_level": 72.5921,
+          "band_width_pct": 9.56,
+          "total_trades": 8,
+          "total_return_pct": -0.92,
+          "total_profit": -92.44,
+          "win_rate": 12.5,
+          "avg_trades_per_day": 0.4,
+          "crosses_buy": 7,
+          "crosses_sell": 2
+        },
+        "Loose (2s)": {
+          "buy_level": 62.6561,
+          "sell_level": 75.904,
+          "band_width_pct": 19.12,
+          "total_trades": 6,
+          "total_return_pct": -1.32,
+          "total_profit": -132.33,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.3,
+          "crosses_buy": 23,
+          "crosses_sell": 1
+        }
+      }
+    },
+    {
+      "ticker": "EGAL",
+      "current_price": 339.4,
+      "mean": 343.99,
+      "std": 5.26,
+      "best_strategy": "Loose (2s)",
+      "ease_label": "Difficult",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 341.3657,
+          "sell_level": 346.6186,
+          "band_width_pct": 1.53,
+          "total_trades": 6,
+          "total_return_pct": -7.66,
+          "total_profit": -766.44,
+          "win_rate": 20.0,
+          "avg_trades_per_day": 0.3,
+          "crosses_buy": 13,
+          "crosses_sell": 11
+        },
+        "Mid (1s)": {
+          "buy_level": 338.7392,
+          "sell_level": 349.245,
+          "band_width_pct": 3.05,
+          "total_trades": 5,
+          "total_return_pct": -8.41,
+          "total_profit": -841.37,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.25,
+          "crosses_buy": 5,
+          "crosses_sell": 2
+        },
+        "Loose (2s)": {
+          "buy_level": 333.4864,
+          "sell_level": 354.4979,
+          "band_width_pct": 6.11,
+          "total_trades": 4,
+          "total_return_pct": -5.81,
+          "total_profit": -581.23,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.2,
+          "crosses_buy": 18,
+          "crosses_sell": 0
+        }
+      }
+    },
+    {
+      "ticker": "ADIB",
+      "current_price": 47.8,
+      "mean": 49.03,
+      "std": 0.71,
+      "best_strategy": "Loose (2s)",
+      "ease_label": "Difficult",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 48.6795,
+          "sell_level": 49.3868,
+          "band_width_pct": 1.44,
+          "total_trades": 10,
+          "total_return_pct": -17.1,
+          "total_profit": -1710.13,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.5,
+          "crosses_buy": 12,
+          "crosses_sell": 4
+        },
+        "Mid (1s)": {
+          "buy_level": 48.3258,
+          "sell_level": 49.7405,
+          "band_width_pct": 2.89,
+          "total_trades": 10,
+          "total_return_pct": -16.78,
+          "total_profit": -1678.13,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.5,
+          "crosses_buy": 29,
+          "crosses_sell": 4
+        },
+        "Loose (2s)": {
+          "buy_level": 47.6185,
+          "sell_level": 50.4479,
+          "band_width_pct": 5.77,
+          "total_trades": 4,
+          "total_return_pct": -6.68,
+          "total_profit": -667.95,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.2,
+          "crosses_buy": 14,
+          "crosses_sell": 0
+        }
+      }
+    },
+    {
+      "ticker": "ENGC",
+      "current_price": 37.0,
+      "mean": 36.37,
+      "std": 1.19,
+      "best_strategy": "Loose (2s)",
+      "ease_label": "Difficult",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 35.7705,
+          "sell_level": 36.9649,
+          "band_width_pct": 3.28,
+          "total_trades": 6,
+          "total_return_pct": -15.52,
+          "total_profit": -1552.03,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.29,
+          "crosses_buy": 7,
+          "crosses_sell": 6
+        },
+        "Mid (1s)": {
+          "buy_level": 35.1733,
+          "sell_level": 37.5622,
+          "band_width_pct": 6.57,
+          "total_trades": 6,
+          "total_return_pct": -16.38,
+          "total_profit": -1638.43,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.29,
+          "crosses_buy": 13,
+          "crosses_sell": 2
+        },
+        "Loose (2s)": {
+          "buy_level": 33.9789,
+          "sell_level": 38.7566,
+          "band_width_pct": 13.14,
+          "total_trades": 4,
+          "total_return_pct": -7.93,
+          "total_profit": -793.29,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.19,
+          "crosses_buy": 13,
+          "crosses_sell": 4
+        }
+      }
+    },
+    {
+      "ticker": "ORHD",
+      "current_price": 12.0,
+      "mean": 12.02,
+      "std": 0.14,
+      "best_strategy": "Loose (2s)",
+      "ease_label": "Difficult",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 11.9452,
+          "sell_level": 12.0856,
+          "band_width_pct": 1.17,
+          "total_trades": 8,
+          "total_return_pct": -11.38,
+          "total_profit": -1137.98,
+          "win_rate": 14.3,
+          "avg_trades_per_day": 0.4,
+          "crosses_buy": 8,
+          "crosses_sell": 14
+        },
+        "Mid (1s)": {
+          "buy_level": 11.875,
+          "sell_level": 12.1558,
+          "band_width_pct": 2.34,
+          "total_trades": 7,
+          "total_return_pct": -11.76,
+          "total_profit": -1176.2,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.35,
+          "crosses_buy": 15,
+          "crosses_sell": 0
+        },
+        "Loose (2s)": {
+          "buy_level": 11.7346,
+          "sell_level": 12.2962,
+          "band_width_pct": 4.67,
+          "total_trades": 5,
+          "total_return_pct": -9.43,
+          "total_profit": -943.43,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.25,
           "crosses_buy": 6,
+          "crosses_sell": 0
+        }
+      }
+    },
+    {
+      "ticker": "OBRI",
+      "current_price": 28.36,
+      "mean": 27.2,
+      "std": 2.02,
+      "best_strategy": "Mid (1s)",
+      "ease_label": "Difficult",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 26.1715,
+          "sell_level": 28.198,
+          "band_width_pct": 7.45,
+          "total_trades": 11,
+          "total_return_pct": -18.25,
+          "total_profit": -1825.02,
+          "win_rate": 9.1,
+          "avg_trades_per_day": 0.52,
+          "crosses_buy": 8,
+          "crosses_sell": 5
+        },
+        "Mid (1s)": {
+          "buy_level": 25.1582,
+          "sell_level": 29.2113,
+          "band_width_pct": 14.91,
+          "total_trades": 11,
+          "total_return_pct": -11.05,
+          "total_profit": -1105.38,
+          "win_rate": 9.1,
+          "avg_trades_per_day": 0.52,
+          "crosses_buy": 12,
           "crosses_sell": 3
         },
         "Loose (2s)": {
-          "buy_level": 7.2648,
-          "sell_level": 8.6945,
-          "band_width_pct": 17.92,
-          "total_trades": 0,
-          "total_return_pct": 0.0,
-          "total_profit": 0,
-          "win_rate": 0,
-          "avg_trades_per_day": 0.0,
-          "crosses_buy": 0,
-          "crosses_sell": 5
+          "buy_level": 23.1317,
+          "sell_level": 31.2378,
+          "band_width_pct": 29.82,
+          "total_trades": 6,
+          "total_return_pct": -26.99,
+          "total_profit": -2699.26,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.29,
+          "crosses_buy": 13,
+          "crosses_sell": 2
+        }
+      }
+    },
+    {
+      "ticker": "RMDA",
+      "current_price": 5.41,
+      "mean": 5.41,
+      "std": 0.1,
+      "best_strategy": "Loose (2s)",
+      "ease_label": "Difficult",
+      "strategies": {
+        "Narrow (0.5s)": {
+          "buy_level": 5.3629,
+          "sell_level": 5.4655,
+          "band_width_pct": 1.89,
+          "total_trades": 10,
+          "total_return_pct": -29.13,
+          "total_profit": -2913.19,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.5,
+          "crosses_buy": 12,
+          "crosses_sell": 12
+        },
+        "Mid (1s)": {
+          "buy_level": 5.3117,
+          "sell_level": 5.5167,
+          "band_width_pct": 3.79,
+          "total_trades": 10,
+          "total_return_pct": -28.55,
+          "total_profit": -2854.9,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.5,
+          "crosses_buy": 11,
+          "crosses_sell": 1
+        },
+        "Loose (2s)": {
+          "buy_level": 5.2092,
+          "sell_level": 5.6192,
+          "band_width_pct": 7.57,
+          "total_trades": 7,
+          "total_return_pct": -24.97,
+          "total_profit": -2497.29,
+          "win_rate": 0.0,
+          "avg_trades_per_day": 0.35,
+          "crosses_buy": 19,
+          "crosses_sell": 0
         }
       }
     }

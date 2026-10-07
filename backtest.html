@@ -44,7 +44,7 @@
 </head>
 <body>
 <h1>EGX Band Strategy Backtest</h1>
-<p class="subtitle">10,000 EGP budget | Max 3 trades/day | 20 sessions | 5-min data | Fees: 0.6% round trip</p>
+<p class="subtitle">10,000 EGP budget | Max 3 trades/day | 23 sessions | 5-min data | Fees: 0.6% round trip<br>Exit: sell at the opposite band, stop at mean - 2σ frozen at entry; positions still open at the last bar are marked to market and excluded from the win rate</p>
 
 <div class="params-box">
   <h3>Strategy Definitions</h3>
@@ -62,304 +62,184 @@
     <th>Best Strategy</th><th>Ease</th>
   </tr>
   <tr>
-    <td><strong>ENGC</strong></td><td>44.50</td><td>44.63</td><td>1.79</td>
-    <td class="profit-pos">+24.43% (4 trades)</td>
-    <td class="profit-pos">+14.04% (2 trades)</td>
-    <td class="profit-neg">+0.00% (0 trades)</td>
-    <td><span class="best-badge">Narrow (0.5s)</span></td>
-    <td><span class="ease-badge ease-Moderate">Moderate</span></td>
-  </tr>
-  <tr>
-    <td><strong>EGAL</strong></td><td>373.00</td><td>365.08</td><td>10.95</td>
-    <td class="profit-pos">+19.09% (3 trades)</td>
-    <td class="profit-pos">+21.85% (2 trades)</td>
-    <td class="profit-pos">+16.47% (1 trades)</td>
-    <td><span class="best-badge">Mid (1s)</span></td>
-    <td><span class="ease-badge ease-Moderate">Moderate</span></td>
-  </tr>
-  <tr>
-    <td><strong>CPCI</strong></td><td>571.00</td><td>542.72</td><td>7.81</td>
-    <td class="profit-pos">+6.37% (4 trades)</td>
-    <td class="profit-pos">+12.29% (3 trades)</td>
-    <td class="profit-neg">+0.00% (0 trades)</td>
-    <td><span class="best-badge">Mid (1s)</span></td>
-    <td><span class="ease-badge ease-Moderate">Moderate</span></td>
-  </tr>
-  <tr>
-    <td><strong>EGAS</strong></td><td>59.48</td><td>58.37</td><td>1.04</td>
-    <td class="profit-pos">+10.04% (4 trades)</td>
-    <td class="profit-pos">+11.19% (3 trades)</td>
-    <td class="profit-pos">+7.78% (1 trades)</td>
-    <td><span class="best-badge">Mid (1s)</span></td>
-    <td><span class="ease-badge ease-Moderate">Moderate</span></td>
-  </tr>
-  <tr>
-    <td><strong>RMDA</strong></td><td>6.17</td><td>6.18</td><td>0.14</td>
-    <td class="profit-pos">+8.99% (3 trades)</td>
-    <td class="profit-pos">+6.69% (2 trades)</td>
-    <td class="profit-pos">+10.13% (1 trades)</td>
+    <td><strong>ETEL</strong></td><td>148.00</td><td>144.51</td><td>6.95</td>
+    <td class="profit-pos">+0.70% (7c/0o)</td>
+    <td class="profit-pos">+3.68% (2c/0o)</td>
+    <td class="profit-pos">+7.73% (1c/0o)</td>
     <td><span class="best-badge">Loose (2s)</span></td>
     <td><span class="ease-badge ease-Moderate">Moderate</span></td>
   </tr>
   <tr>
-    <td><strong>BONY</strong></td><td>4.56</td><td>4.58</td><td>0.09</td>
-    <td class="profit-pos">+8.26% (5 trades)</td>
-    <td class="profit-pos">+4.61% (2 trades)</td>
-    <td class="profit-pos">+2.79% (1 trades)</td>
-    <td><span class="best-badge">Narrow (0.5s)</span></td>
-    <td><span class="ease-badge ease-Moderate">Moderate</span></td>
-  </tr>
-  <tr>
-    <td><strong>EFIH</strong></td><td>23.65</td><td>23.56</td><td>0.40</td>
-    <td class="profit-pos">+4.01% (3 trades)</td>
-    <td class="profit-pos">+6.26% (2 trades)</td>
-    <td class="profit-pos">+3.34% (1 trades)</td>
+    <td><strong>EGAS</strong></td><td>56.15</td><td>56.68</td><td>0.94</td>
+    <td class="profit-neg">-3.72% (8c/1o)</td>
+    <td class="profit-pos">+4.81% (4c/1o)</td>
+    <td class="profit-pos">+1.06% (1c/1o)</td>
     <td><span class="best-badge">Mid (1s)</span></td>
     <td><span class="ease-badge ease-Moderate">Moderate</span></td>
   </tr>
   <tr>
-    <td><strong>ORHD</strong></td><td>43.36</td><td>42.44</td><td>0.56</td>
-    <td class="profit-pos">+5.46% (3 trades)</td>
-    <td class="profit-pos">+5.60% (2 trades)</td>
-    <td class="profit-pos">+5.26% (1 trades)</td>
+    <td><strong>CPCI</strong></td><td>600.00</td><td>593.65</td><td>13.52</td>
+    <td class="profit-pos">+2.55% (5c/0o)</td>
+    <td class="profit-pos">+4.26% (2c/0o)</td>
+    <td class="profit-neg">+0.00% (0c/0o)</td>
     <td><span class="best-badge">Mid (1s)</span></td>
     <td><span class="ease-badge ease-Moderate">Moderate</span></td>
   </tr>
   <tr>
-    <td><strong>OBRI</strong></td><td>31.85</td><td>32.60</td><td>1.05</td>
-    <td class="profit-pos">+1.75% (2 trades)</td>
-    <td class="profit-pos">+0.51% (1 trades)</td>
-    <td class="profit-pos">+5.16% (1 trades)</td>
+    <td><strong>MASR</strong></td><td>7.86</td><td>7.60</td><td>0.16</td>
+    <td class="profit-neg">-5.52% (5c/0o)</td>
+    <td class="profit-neg">-4.28% (5c/0o)</td>
+    <td class="profit-pos">+1.62% (4c/0o)</td>
     <td><span class="best-badge">Loose (2s)</span></td>
     <td><span class="ease-badge ease-Moderate">Moderate</span></td>
   </tr>
   <tr>
-    <td><strong>ARCC</strong></td><td>73.11</td><td>75.75</td><td>2.02</td>
-    <td class="profit-pos">+5.41% (3 trades)</td>
-    <td class="profit-pos">+5.14% (2 trades)</td>
-    <td class="profit-pos">+1.40% (1 trades)</td>
+    <td><strong>BONY</strong></td><td>4.36</td><td>4.10</td><td>0.14</td>
+    <td class="profit-neg">-0.18% (7c/0o)</td>
+    <td class="profit-neg">-1.98% (6c/1o)</td>
+    <td class="profit-neg">-15.48% (6c/0o)</td>
     <td><span class="best-badge">Narrow (0.5s)</span></td>
-    <td><span class="ease-badge ease-Difficult">Difficult</span></td>
+    <td><span class="ease-badge ease-Moderate">Moderate</span></td>
   </tr>
   <tr>
-    <td><strong>ADIB</strong></td><td>53.60</td><td>52.81</td><td>1.01</td>
-    <td class="profit-pos">+3.38% (2 trades)</td>
-    <td class="profit-pos">+3.73% (1 trades)</td>
-    <td class="profit-neg">+0.00% (0 trades)</td>
+    <td><strong>MFPC</strong></td><td>46.50</td><td>46.03</td><td>0.72</td>
+    <td class="profit-neg">-4.73% (2c/1o)</td>
+    <td class="profit-neg">-4.68% (3c/1o)</td>
+    <td class="profit-neg">-3.29% (2c/1o)</td>
+    <td><span class="best-badge">Loose (2s)</span></td>
+    <td><span class="ease-badge ease-Moderate">Moderate</span></td>
+  </tr>
+  <tr>
+    <td><strong>EFIH</strong></td><td>25.23</td><td>23.73</td><td>0.98</td>
+    <td class="profit-neg">-17.96% (12c/0o)</td>
+    <td class="profit-neg">-15.98% (9c/0o)</td>
+    <td class="profit-neg">-7.79% (3c/0o)</td>
+    <td><span class="best-badge">Loose (2s)</span></td>
+    <td><span class="ease-badge ease-Moderate">Moderate</span></td>
+  </tr>
+  <tr>
+    <td><strong>ARCC</strong></td><td>71.07</td><td>69.31</td><td>3.30</td>
+    <td class="profit-neg">-3.70% (8c/0o)</td>
+    <td class="profit-neg">-0.92% (8c/0o)</td>
+    <td class="profit-neg">-1.32% (5c/1o)</td>
     <td><span class="best-badge">Mid (1s)</span></td>
     <td><span class="ease-badge ease-Difficult">Difficult</span></td>
   </tr>
   <tr>
-    <td><strong>MFPC</strong></td><td>50.11</td><td>44.70</td><td>3.42</td>
-    <td class="profit-pos">+16.62% (1 trades)</td>
-    <td class="profit-pos">+21.20% (1 trades)</td>
-    <td class="profit-neg">+0.00% (0 trades)</td>
-    <td><span class="best-badge">Mid (1s)</span></td>
-    <td><span class="ease-badge ease-Very Difficult">Very Difficult</span></td>
+    <td><strong>EGAL</strong></td><td>339.40</td><td>343.99</td><td>5.26</td>
+    <td class="profit-neg">-7.66% (5c/1o)</td>
+    <td class="profit-neg">-8.41% (4c/1o)</td>
+    <td class="profit-neg">-5.81% (3c/1o)</td>
+    <td><span class="best-badge">Loose (2s)</span></td>
+    <td><span class="ease-badge ease-Difficult">Difficult</span></td>
   </tr>
   <tr>
-    <td><strong>ETEL</strong></td><td>133.29</td><td>121.53</td><td>6.14</td>
-    <td class="profit-pos">+5.13% (1 trades)</td>
-    <td class="profit-pos">+12.17% (1 trades)</td>
-    <td class="profit-neg">+0.00% (0 trades)</td>
-    <td><span class="best-badge">Mid (1s)</span></td>
-    <td><span class="ease-badge ease-Very Difficult">Very Difficult</span></td>
+    <td><strong>ADIB</strong></td><td>47.80</td><td>49.03</td><td>0.71</td>
+    <td class="profit-neg">-17.10% (9c/1o)</td>
+    <td class="profit-neg">-16.78% (9c/1o)</td>
+    <td class="profit-neg">-6.68% (3c/1o)</td>
+    <td><span class="best-badge">Loose (2s)</span></td>
+    <td><span class="ease-badge ease-Difficult">Difficult</span></td>
   </tr>
   <tr>
-    <td><strong>MASR</strong></td><td>7.77</td><td>7.98</td><td>0.36</td>
-    <td class="profit-pos">+5.20% (2 trades)</td>
-    <td class="profit-pos">+9.23% (1 trades)</td>
-    <td class="profit-neg">+0.00% (0 trades)</td>
+    <td><strong>ENGC</strong></td><td>37.00</td><td>36.37</td><td>1.19</td>
+    <td class="profit-neg">-15.52% (5c/1o)</td>
+    <td class="profit-neg">-16.38% (5c/1o)</td>
+    <td class="profit-neg">-7.93% (3c/1o)</td>
+    <td><span class="best-badge">Loose (2s)</span></td>
+    <td><span class="ease-badge ease-Difficult">Difficult</span></td>
+  </tr>
+  <tr>
+    <td><strong>ORHD</strong></td><td>12.00</td><td>12.02</td><td>0.14</td>
+    <td class="profit-neg">-11.38% (7c/1o)</td>
+    <td class="profit-neg">-11.76% (6c/1o)</td>
+    <td class="profit-neg">-9.43% (4c/1o)</td>
+    <td><span class="best-badge">Loose (2s)</span></td>
+    <td><span class="ease-badge ease-Difficult">Difficult</span></td>
+  </tr>
+  <tr>
+    <td><strong>OBRI</strong></td><td>28.36</td><td>27.20</td><td>2.02</td>
+    <td class="profit-neg">-18.25% (11c/0o)</td>
+    <td class="profit-neg">-11.05% (11c/0o)</td>
+    <td class="profit-neg">-26.99% (6c/0o)</td>
     <td><span class="best-badge">Mid (1s)</span></td>
-    <td><span class="ease-badge ease-Very Difficult">Very Difficult</span></td>
+    <td><span class="ease-badge ease-Difficult">Difficult</span></td>
+  </tr>
+  <tr>
+    <td><strong>RMDA</strong></td><td>5.41</td><td>5.41</td><td>0.10</td>
+    <td class="profit-neg">-29.13% (9c/1o)</td>
+    <td class="profit-neg">-28.55% (9c/1o)</td>
+    <td class="profit-neg">-24.97% (6c/1o)</td>
+    <td><span class="best-badge">Loose (2s)</span></td>
+    <td><span class="ease-badge ease-Difficult">Difficult</span></td>
   </tr>
 </table>
 
 <div class="ticker-section">
   <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">ENGC</span>
+    <span class="ticker-name">ETEL</span>
     <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Narrow (0.5s) (+24.43%)</span>
+    <span class="best-badge">Best: Loose (2s) (+7.73%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
-      <div class="strat-card best">
-        <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">43.7332 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">45.5241 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.7908 EGP (4.0%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">4</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+24.43%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+2443.24 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">12443.25 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+610.81 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+178.63 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">16</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">26</span></div>
-      </div>
       <div class="strat-card">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">42.8378 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">46.4195 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">3.5817 EGP (8.0%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+14.04%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1403.54 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11403.54 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+701.77 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+392.79 EGP</span></div>
+        <div class="strat-name">Narrow (0.5s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">140.9739 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">147.9536 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">6.9797 EGP (4.8%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">7 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">3 / 4</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">42.9%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-pos">+70.30 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-pos">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+0.70%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10070.31 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-pos">+10.04 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-394.69 EGP</span></div>
         <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">9</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">14</span></div>
-      </div>
-      <div class="strat-card">
-        <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">41.0469 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">48.2103 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">7.1634 EGP (16.1%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">0.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">+0.00%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10000.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">6</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-section">
-  <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">EGAL</span>
-    <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Mid (1s) (+21.85%)</span>
-    <span class="arrow">&#9660;</span>
-  </div>
-  <div class="accordion">
-    <div class="strat-grid">
-      <div class="strat-card">
-        <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">359.6062 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">370.5556 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">10.9493 EGP (3.0%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+19.09%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1909.14 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11909.13 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+636.38 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+403.64 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">10</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">17</span></div>
-      </div>
-      <div class="strat-card best">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">354.1316 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">376.0302 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">21.8987 EGP (6.0%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+21.85%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+2185.03 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">12185.03 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+1092.52 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+537.57 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">5</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">15</span></div>
-      </div>
-      <div class="strat-card">
-        <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">343.1822 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">386.9796 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">43.7973 EGP (12.0%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+16.47%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1647.46 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11647.46 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+1647.46 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+1647.46 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">1</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-section">
-  <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">CPCI</span>
-    <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Mid (1s) (+12.29%)</span>
-    <span class="arrow">&#9660;</span>
-  </div>
-  <div class="accordion">
-    <div class="strat-grid">
-      <div class="strat-card">
-        <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">538.8130 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">546.6239 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">7.8109 EGP (1.4%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">4</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+6.37%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+637.15 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10637.15 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+159.29 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+108.77 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">30</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">55</span></div>
-      </div>
-      <div class="strat-card best">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">534.9076 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">550.5293 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">15.6217 EGP (2.9%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+12.29%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1228.86 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11228.86 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+409.62 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+352.14 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">16</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">24</span></div>
-      </div>
-      <div class="strat-card">
-        <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">527.0967 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">558.3402 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">31.2434 EGP (5.8%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">0.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">+0.00%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10000.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">0</span></div>
         <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">8</span></div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">137.4840 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">151.4435 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">13.9595 EGP (9.7%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">2 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 1</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">2</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">50.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-pos">+367.67 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-pos">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+3.68%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10367.67 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-pos">+183.84 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-313.05 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">12</span></div>
+      </div>
+      <div class="strat-card best">
+        <div class="strat-name">Loose (2s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">130.5043 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">158.4232 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">27.9189 EGP (19.3%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">1 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 0</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">100.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-pos">+772.69 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-pos">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+7.73%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10772.69 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-pos">+772.69 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+772.69 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">7</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">11</span></div>
       </div>
     </div>
   </div>
@@ -368,124 +248,205 @@
   <div class="ticker-header" onclick="toggleSection(this)">
     <span class="ticker-name">EGAS</span>
     <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Mid (1s) (+11.19%)</span>
+    <span class="best-badge">Best: Mid (1s) (+4.81%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
       <div class="strat-card">
         <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">57.8504 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">58.8953 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.0449 EGP (1.8%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">4</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">4</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+10.04%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1003.93 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11003.92 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+250.98 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+178.01 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">13</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">38</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">56.2067 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">57.1505 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.9438 EGP (1.7%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">8 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">2 / 6</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.5</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">25.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-363.22 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">-8.90 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-3.72%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9627.89 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-45.40 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-405.31 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">47</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">15</span></div>
       </div>
       <div class="strat-card best">
         <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">57.3279 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">59.4177 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.0898 EGP (3.6%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">55.7348 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">57.6224 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.8875 EGP (3.3%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">4 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 3</span></div>
         <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+11.19%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1119.31 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11119.31 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+373.10 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+353.40 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">20</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">28</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">25.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-pos">+236.91 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-pos">+244.60 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+4.81%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10481.50 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-pos">+59.23 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-283.25 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">14</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">16</span></div>
       </div>
       <div class="strat-card">
         <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">56.2830 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">60.4626 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">4.1796 EGP (7.2%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">54.7911 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">58.5661 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">3.7750 EGP (6.7%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">1 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 1</span></div>
         <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
         <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+7.78%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+777.78 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10777.78 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+777.78 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+777.78 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">13</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-pos">-287.13 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-pos">+392.88 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+1.06%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10105.75 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-pos">-287.13 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-287.13 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">7</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">0</span></div>
       </div>
     </div>
   </div>
 </div>
 <div class="ticker-section">
   <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">RMDA</span>
+    <span class="ticker-name">CPCI</span>
     <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Loose (2s) (+10.13%)</span>
+    <span class="best-badge">Best: Mid (1s) (+4.26%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
       <div class="strat-card">
         <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">6.1050 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">6.2467 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.1417 EGP (2.3%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">586.6942 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">600.3430 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">13.6487 EGP (2.3%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">5 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">5 / 0</span></div>
         <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">100.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-pos">+255.38 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-pos">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+2.55%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10255.37 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-pos">+51.08 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+8.49 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">16</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">18</span></div>
+      </div>
+      <div class="strat-card best">
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">579.8699 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">607.1673 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">27.2974 EGP (4.6%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">2 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">2 / 0</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">2</span></div>
         <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+8.99%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+899.04 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10899.05 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+299.68 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+260.78 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">18</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">11</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">100.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-pos">+426.35 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-pos">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+4.26%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10426.35 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-pos">+213.18 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+103.52 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">12</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">32</span></div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-name">Loose (2s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">566.2212 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">620.8160 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">54.5949 EGP (9.2%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">0 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 0</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">+0.00%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10000.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">0</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">28</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-section">
+  <div class="ticker-header" onclick="toggleSection(this)">
+    <span class="ticker-name">MASR</span>
+    <span class="ease-badge ease-Moderate">Moderate</span>
+    <span class="best-badge">Best: Loose (2s) (+1.62%)</span>
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="accordion">
+    <div class="strat-grid">
+      <div class="strat-card">
+        <div class="strat-name">Narrow (0.5s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">7.5174 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">7.6833 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.1659 EGP (2.2%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">5 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 4</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">20.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-551.53 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-5.52%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9448.47 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-110.31 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-405.89 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">4</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">6</span></div>
       </div>
       <div class="strat-card">
         <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">6.0341 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">6.3175 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.2834 EGP (4.6%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+6.69%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+668.79 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10668.80 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+334.40 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+197.25 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">16</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">13</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">7.4345 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">7.7662 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.3317 EGP (4.4%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">5 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 4</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">20.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-427.70 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-4.28%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9572.30 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-85.54 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-405.89 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">9</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">10</span></div>
       </div>
       <div class="strat-card best">
         <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">5.8924 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">6.4592 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.5668 EGP (9.2%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+10.13%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1013.45 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11013.45 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+1013.45 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+1013.45 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">7</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">7.2686 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">7.9320 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.6634 EGP (8.7%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">4 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 3</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">4</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">25.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-pos">+162.05 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-pos">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+1.62%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10162.05 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-pos">+40.51 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-321.99 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">9</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">5</span></div>
       </div>
     </div>
   </div>
@@ -494,61 +455,136 @@
   <div class="ticker-header" onclick="toggleSection(this)">
     <span class="ticker-name">BONY</span>
     <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Narrow (0.5s) (+8.26%)</span>
+    <span class="best-badge">Best: Narrow (0.5s) (-0.18%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
       <div class="strat-card best">
         <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">4.5394 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">4.6255 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.0861 EGP (1.9%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">5</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">4</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+8.26%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+826.42 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10826.42 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+165.28 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+6.52 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">25</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">13</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">4.0319 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">4.1752 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.1433 EGP (3.5%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">7 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 6</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">14.3%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-17.79 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-0.18%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9982.21 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-2.54 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-364.71 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">5</span></div>
       </div>
       <div class="strat-card">
         <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">4.4964 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">4.6685 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.1721 EGP (3.8%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+4.61%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+460.72 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10460.72 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+230.36 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+98.85 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">10</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">15</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">3.9602 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">4.2469 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.2867 EGP (7.0%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">6 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 6</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,272.42 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+1,074.74 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-1.98%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9802.33 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-212.07 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-365.53 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">8</span></div>
       </div>
       <div class="strat-card">
         <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">4.4103 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">4.7545 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.3442 EGP (7.5%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+2.79%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+279.05 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10279.05 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+279.05 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+279.05 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">2</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">3.8169 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">4.3902 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.5733 EGP (14.0%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">6 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 6</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">4</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,548.36 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-15.48%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8451.62 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-258.06 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-365.12 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">31</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">9</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-section">
+  <div class="ticker-header" onclick="toggleSection(this)">
+    <span class="ticker-name">MFPC</span>
+    <span class="ease-badge ease-Moderate">Moderate</span>
+    <span class="best-badge">Best: Loose (2s) (-3.29%)</span>
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="accordion">
+    <div class="strat-grid">
+      <div class="strat-card">
+        <div class="strat-name">Narrow (0.5s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">45.6554 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">46.3834 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.7280 EGP (1.6%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">2 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 2</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-931.90 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+459.07 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-4.73%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9527.17 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-465.95 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-494.79 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">15</span></div>
         <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">10</span></div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">45.2914 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">46.7474 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.4560 EGP (3.2%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">3 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 3</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-927.43 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+459.07 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-4.68%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9531.64 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-309.14 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-494.79 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">17</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">6</span></div>
+      </div>
+      <div class="strat-card best">
+        <div class="strat-name">Loose (2s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">44.5634 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">47.4754 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.9120 EGP (6.3%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">2 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 2</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-794.88 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+465.76 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-3.29%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9670.88 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-397.44 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-424.82 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">7</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">0</span></div>
       </div>
     </div>
   </div>
@@ -557,187 +593,67 @@
   <div class="ticker-header" onclick="toggleSection(this)">
     <span class="ticker-name">EFIH</span>
     <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Mid (1s) (+6.26%)</span>
+    <span class="best-badge">Best: Loose (2s) (-7.79%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
       <div class="strat-card">
         <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">23.3597 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">23.7609 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.4012 EGP (1.7%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+4.01%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+401.37 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10401.37 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+133.79 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+131.08 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">14</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">35</span></div>
-      </div>
-      <div class="strat-card best">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">23.1591 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">23.9615 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.8024 EGP (3.4%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+6.26%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+625.67 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10625.68 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+312.84 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+292.49 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">10</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">8</span></div>
-      </div>
-      <div class="strat-card">
-        <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">22.7579 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">24.3627 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.6048 EGP (6.8%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+3.34%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+333.99 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10333.99 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+333.99 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+333.99 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">0</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-section">
-  <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">ORHD</span>
-    <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Mid (1s) (+5.60%)</span>
-    <span class="arrow">&#9660;</span>
-  </div>
-  <div class="accordion">
-    <div class="strat-grid">
-      <div class="strat-card">
-        <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">42.1561 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">42.7168 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.5607 EGP (1.3%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+5.46%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+546.47 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10546.47 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+182.16 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+120.74 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">26</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">20</span></div>
-      </div>
-      <div class="strat-card best">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">41.8757 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">42.9971 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.1214 EGP (2.6%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+5.60%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+560.26 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10560.26 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+280.13 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+221.18 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">14</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">17</span></div>
-      </div>
-      <div class="strat-card">
-        <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">41.3150 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">43.5578 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.2428 EGP (5.3%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+5.26%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+526.31 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10526.31 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+526.31 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+526.31 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">6</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">4</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-section">
-  <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">OBRI</span>
-    <span class="ease-badge ease-Moderate">Moderate</span>
-    <span class="best-badge">Best: Loose (2s) (+5.16%)</span>
-    <span class="arrow">&#9660;</span>
-  </div>
-  <div class="accordion">
-    <div class="strat-grid">
-      <div class="strat-card">
-        <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">32.0722 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">33.1230 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.0508 EGP (3.2%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">50.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+1.75%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+175.12 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10175.12 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+87.56 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-125.74 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">11</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">14</span></div>
-      </div>
-      <div class="strat-card">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">31.5468 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">33.6484 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.1016 EGP (6.5%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+0.51%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+50.70 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10050.70 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+50.70 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+50.70 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">17</span></div>
-      </div>
-      <div class="strat-card best">
-        <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">30.4960 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">34.6992 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">4.2032 EGP (12.9%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+5.16%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+515.97 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10515.97 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+515.97 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+515.97 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">23.2304 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">24.2146 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.9842 EGP (4.2%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">12 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">2 / 10</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">7</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.6</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">16.7%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,796.03 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-17.96%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8203.96 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-149.67 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-1132.04 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">18</span></div>
         <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">5</span></div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">22.7383 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">24.7067 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.9683 EGP (8.3%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">9 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 8</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.5</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">11.1%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,597.71 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-15.98%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8402.29 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-177.52 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-1161.03 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">26</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">2</span></div>
+      </div>
+      <div class="strat-card best">
+        <div class="strat-name">Loose (2s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">21.7542 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">25.6908 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">3.9367 EGP (16.6%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">3 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 2</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">2</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">33.3%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-778.60 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-7.79%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9221.40 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-259.53 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-1182.15 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">12</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">7</span></div>
       </div>
     </div>
   </div>
@@ -746,61 +662,136 @@
   <div class="ticker-header" onclick="toggleSection(this)">
     <span class="ticker-name">ARCC</span>
     <span class="ease-badge ease-Difficult">Difficult</span>
-    <span class="best-badge">Best: Narrow (0.5s) (+5.41%)</span>
+    <span class="best-badge">Best: Mid (1s) (-0.92%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
-      <div class="strat-card best">
-        <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">74.7401 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">76.7642 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.0240 EGP (2.7%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">66.7%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+5.41%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+541.23 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10541.23 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+180.41 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-280.30 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">4</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">41</span></div>
-      </div>
       <div class="strat-card">
+        <div class="strat-name">Narrow (0.5s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">67.6241 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">70.9361 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">3.3120 EGP (4.8%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">8 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 7</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.4</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">12.5%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-369.51 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-3.70%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9630.49 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-46.19 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-319.47 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">4</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">3</span></div>
+      </div>
+      <div class="strat-card best">
         <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">73.7281 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">77.7762 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">4.0480 EGP (5.3%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">50.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+5.14%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+514.46 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10514.46 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+257.23 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-118.05 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">3</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">14</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">65.9681 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">72.5921 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">6.6240 EGP (9.6%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">8 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 7</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.4</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">12.5%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-92.44 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-0.92%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9907.56 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-11.56 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-319.47 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">7</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">2</span></div>
       </div>
       <div class="strat-card">
         <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">71.7041 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">79.8002 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">8.0961 EGP (10.7%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+1.40%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+139.79 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10139.79 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+139.79 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+139.79 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">4</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">62.6561 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">75.9040 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">13.2480 EGP (19.1%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">5 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 5</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,476.99 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+1,344.66 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-1.32%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9867.66 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-295.40 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-535.78 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">23</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">1</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-section">
+  <div class="ticker-header" onclick="toggleSection(this)">
+    <span class="ticker-name">EGAL</span>
+    <span class="ease-badge ease-Difficult">Difficult</span>
+    <span class="best-badge">Best: Loose (2s) (-5.81%)</span>
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="accordion">
+    <div class="strat-grid">
+      <div class="strat-card">
+        <div class="strat-name">Narrow (0.5s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">341.3657 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">346.6186 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">5.2529 EGP (1.5%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">5 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 4</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">20.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-795.14 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+28.70 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-7.66%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9233.54 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-159.03 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-252.98 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">13</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">11</span></div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">338.7392 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">349.2450 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">10.5058 EGP (3.0%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">4 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 4</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-870.07 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+28.70 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-8.41%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9158.61 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-217.52 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-252.98 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">2</span></div>
+      </div>
+      <div class="strat-card best">
+        <div class="strat-name">Loose (2s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">333.4864 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">354.4979 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">21.0116 EGP (6.1%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">3 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 3</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-609.93 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+28.70 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-5.81%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9418.76 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-203.31 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-232.40 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">18</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">0</span></div>
       </div>
     </div>
   </div>
@@ -809,123 +800,66 @@
   <div class="ticker-header" onclick="toggleSection(this)">
     <span class="ticker-name">ADIB</span>
     <span class="ease-badge ease-Difficult">Difficult</span>
-    <span class="best-badge">Best: Mid (1s) (+3.73%)</span>
+    <span class="best-badge">Best: Loose (2s) (-6.68%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
       <div class="strat-card">
         <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">52.3076 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">53.3214 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.0139 EGP (1.9%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+3.38%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+338.23 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10338.23 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+169.12 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+157.28 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">24</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">5</span></div>
-      </div>
-      <div class="strat-card best">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">51.8006 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">53.8283 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.0277 EGP (3.8%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+3.73%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+373.02 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10373.02 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+373.02 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+373.02 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">9</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">18</span></div>
-      </div>
-      <div class="strat-card">
-        <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">50.7868 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">54.8422 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">4.0554 EGP (7.7%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">0.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">+0.00%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10000.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">0</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">48.6795 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">49.3868 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.7074 EGP (1.4%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">9 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 9</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.5</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,707.35 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">-2.78 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-17.10%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8289.86 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-189.71 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-335.19 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">12</span></div>
         <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">4</span></div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-section">
-  <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">MFPC</span>
-    <span class="ease-badge ease-Very Difficult">Very Difficult</span>
-    <span class="best-badge">Best: Mid (1s) (+21.20%)</span>
-    <span class="arrow">&#9660;</span>
-  </div>
-  <div class="accordion">
-    <div class="strat-grid">
       <div class="strat-card">
-        <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">42.9880 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">46.4091 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">3.4211 EGP (7.7%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+16.62%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1661.93 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11661.93 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+1661.93 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+1661.93 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">14</span></div>
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">48.3258 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">49.7405 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.4147 EGP (2.9%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">9 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 9</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.5</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,675.33 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">-2.80 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-16.78%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8321.86 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-186.15 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-336.99 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">29</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">4</span></div>
       </div>
       <div class="strat-card best">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">41.2774 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">48.1197 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">6.8423 EGP (15.3%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+21.20%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+2119.88 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">12119.88 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+2119.88 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+2119.88 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">1</span></div>
-      </div>
-      <div class="strat-card">
         <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">37.8563 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">51.5408 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">13.6845 EGP (30.6%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">0.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">+0.00%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10000.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">0</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">47.6185 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">50.4479 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.8294 EGP (5.8%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">3 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 3</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">4</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-664.82 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">-3.13 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-6.68%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9332.04 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-221.61 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-247.75 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">14</span></div>
         <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">0</span></div>
       </div>
     </div>
@@ -933,126 +867,276 @@
 </div>
 <div class="ticker-section">
   <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">ETEL</span>
-    <span class="ease-badge ease-Very Difficult">Very Difficult</span>
-    <span class="best-badge">Best: Mid (1s) (+12.17%)</span>
+    <span class="ticker-name">ENGC</span>
+    <span class="ease-badge ease-Difficult">Difficult</span>
+    <span class="best-badge">Best: Loose (2s) (-7.93%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
       <div class="strat-card">
         <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">118.4558 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">124.5951 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">6.1393 EGP (5.0%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+5.13%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+512.54 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10512.54 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+512.54 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+512.54 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">1</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">35.7705 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">36.9649 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.1944 EGP (3.3%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">5 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 5</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-2,302.80 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+750.77 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-15.52%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8447.97 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-460.56 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-518.42 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">7</span></div>
         <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">6</span></div>
       </div>
-      <div class="strat-card best">
-        <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">115.3861 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">127.6647 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">12.2786 EGP (10.1%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+12.17%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+1217.35 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">11217.35 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+1217.35 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+1217.35 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">6</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">4</span></div>
-      </div>
       <div class="strat-card">
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">35.1733 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">37.5622 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.3889 EGP (6.6%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">5 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 5</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-2,382.64 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+744.21 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-16.38%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8361.57 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-476.53 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-531.69 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">13</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">2</span></div>
+      </div>
+      <div class="strat-card best">
         <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">109.2468 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">133.8040 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">24.5573 EGP (20.2%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">0.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">+0.00%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10000.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">3</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">33.9789 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">38.7566 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">4.7777 EGP (13.1%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">3 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 3</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">4</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,402.28 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+608.99 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-7.93%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9206.71 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-467.43 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-528.91 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">13</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">4</span></div>
       </div>
     </div>
   </div>
 </div>
 <div class="ticker-section">
   <div class="ticker-header" onclick="toggleSection(this)">
-    <span class="ticker-name">MASR</span>
-    <span class="ease-badge ease-Very Difficult">Very Difficult</span>
-    <span class="best-badge">Best: Mid (1s) (+9.23%)</span>
+    <span class="ticker-name">ORHD</span>
+    <span class="ease-badge ease-Difficult">Difficult</span>
+    <span class="best-badge">Best: Loose (2s) (-9.43%)</span>
     <span class="arrow">&#9660;</span>
   </div>
   <div class="accordion">
     <div class="strat-grid">
       <div class="strat-card">
         <div class="strat-name">Narrow (0.5s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">7.8010 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">8.1584 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.3574 EGP (4.5%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">50.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+5.20%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+519.83 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10519.83 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+259.91 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-104.48 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">2</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">1</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">11.9452 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">12.0856 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.1404 EGP (1.2%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">7 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 6</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.4</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">14.3%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,141.31 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+3.33 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-11.38%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8862.02 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-163.04 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-317.28 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">8</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">14</span></div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">11.8750 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">12.1558 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.2808 EGP (2.3%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">6 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 6</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,179.51 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+3.31 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-11.76%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8823.80 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-196.58 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-316.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">15</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">0</span></div>
+      </div>
+      <div class="strat-card best">
+        <div class="strat-name">Loose (2s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">11.7346 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">12.2962 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.5616 EGP (4.7%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">4 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 4</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">4</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.2</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-946.83 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+3.40 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-9.43%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">9056.57 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-236.71 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-312.27 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">0</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-section">
+  <div class="ticker-header" onclick="toggleSection(this)">
+    <span class="ticker-name">OBRI</span>
+    <span class="ease-badge ease-Difficult">Difficult</span>
+    <span class="best-badge">Best: Mid (1s) (-11.05%)</span>
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="accordion">
+    <div class="strat-grid">
+      <div class="strat-card">
+        <div class="strat-name">Narrow (0.5s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">26.1715 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">28.1980 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">2.0265 EGP (7.5%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">11 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 10</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.5</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">9.1%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,825.02 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-18.25%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8174.97 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-165.91 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-640.33 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">8</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">5</span></div>
       </div>
       <div class="strat-card best">
         <div class="strat-name">Mid (1s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">7.6223 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">8.3371 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.7148 EGP (9.0%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">1</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.1</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">100.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-pos">+9.23%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-pos">+923.33 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10923.33 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-pos">+923.33 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+923.33 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">25.1582 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">29.2113 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">4.0531 EGP (14.9%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">11 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">1 / 10</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.5</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">9.1%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-1,105.38 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-11.05%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">8894.62 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-100.49 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-646.80 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">12</span></div>
         <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">3</span></div>
       </div>
       <div class="strat-card">
         <div class="strat-name">Loose (2s)</div>
-        <div class="strat-row"><span class="label">Buy Level</span><span class="value">7.2648 EGP</span></div>
-        <div class="strat-row"><span class="label">Sell Level</span><span class="value">8.6945 EGP</span></div>
-        <div class="strat-row"><span class="label">Band Width</span><span class="value">1.4297 EGP (17.9%)</span></div>
-        <div class="strat-row"><span class="label">Total Trades</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Trading Days</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.0</span></div>
-        <div class="strat-row"><span class="label">Win Rate</span><span class="value">0.0%</span></div>
-        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">+0.00%</span></div>
-        <div class="strat-row"><span class="label">Total Profit</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Final Budget</span><span class="value">10000.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Avg Profit/Trade</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">+0.00 EGP</span></div>
-        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">0</span></div>
-        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">23.1317 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">31.2378 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">8.1062 EGP (29.8%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">6 / 0</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 6</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">4</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-2,699.26 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+0.00 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-26.99%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">7300.74 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-449.88 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-676.98 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">13</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">2</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-section">
+  <div class="ticker-header" onclick="toggleSection(this)">
+    <span class="ticker-name">RMDA</span>
+    <span class="ease-badge ease-Difficult">Difficult</span>
+    <span class="best-badge">Best: Loose (2s) (-24.97%)</span>
+    <span class="arrow">&#9660;</span>
+  </div>
+  <div class="accordion">
+    <div class="strat-grid">
+      <div class="strat-card">
+        <div class="strat-name">Narrow (0.5s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">5.3629 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">5.4655 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.1025 EGP (1.9%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">9 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 9</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.5</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-3,108.21 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+195.02 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-29.13%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">7086.81 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-345.36 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-1330.80 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">12</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">12</span></div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-name">Mid (1s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">5.3117 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">5.5167 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.2050 EGP (3.8%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">9 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 9</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">6</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.5</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-3,051.55 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+196.65 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-28.55%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">7145.11 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-339.06 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-1341.87 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">11</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">1</span></div>
+      </div>
+      <div class="strat-card best">
+        <div class="strat-name">Loose (2s)</div>
+        <div class="strat-row"><span class="label">Current Band Buy</span><span class="value">5.2092 EGP</span></div>
+        <div class="strat-row"><span class="label">Current Band Sell</span><span class="value">5.6192 EGP</span></div>
+        <div class="strat-row"><span class="label">Band Width</span><span class="value">0.4100 EGP (7.6%)</span></div>
+        <div class="strat-row"><span class="label">Closed / Open</span><span class="value">6 / 1</span></div>
+        <div class="strat-row"><span class="label">Target / Stop hits</span><span class="value">0 / 6</span></div>
+        <div class="strat-row"><span class="label">Trading Days</span><span class="value">5</span></div>
+        <div class="strat-row"><span class="label">Avg Trades/Day</span><span class="value">0.3</span></div>
+        <div class="strat-row"><span class="label">Win Rate (closed)</span><span class="value">0.0%</span></div>
+        <div class="strat-row"><span class="label">Realized Profit</span><span class="value profit-neg">-2,703.86 EGP</span></div>
+        <div class="strat-row"><span class="label">Open (marked to market)</span><span class="value profit-neg">+206.57 EGP</span></div>
+        <div class="strat-row"><span class="label">Total Return</span><span class="value profit-neg">-24.97%</span></div>
+        <div class="strat-row"><span class="label">Final Budget</span><span class="value">7502.72 EGP</span></div>
+        <div class="strat-row"><span class="label">Avg Profit/Closed Trade</span><span class="value profit-neg">-450.64 EGP</span></div>
+        <div class="strat-row"><span class="label">Max Single Loss</span><span class="value profit-neg">-1513.35 EGP</span></div>
+        <div class="strat-row"><span class="label">Buy Crosses</span><span class="value">19</span></div>
+        <div class="strat-row"><span class="label">Sell Crosses</span><span class="value">0</span></div>
       </div>
     </div>
   </div>
