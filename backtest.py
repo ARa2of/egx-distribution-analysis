@@ -10,7 +10,42 @@ BUDGET = 10000
 FEE_PER_SIDE = 0.003
 ROUND_TRIP_FEE = FEE_PER_SIDE * 2
 MAX_TRADES_PER_DAY = 3
+MAX_PARTICIPATION = 0.10  # max share of a single bar's volume we may take
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
+CACHE_DIR = os.path.join(OUTPUT_DIR, '_cache')
+
+_tv = None  # module-level client, reused across tickers
+
+
+def get_tv():
+    """Return a shared TvDatafeed client (one websocket per run, not per ticker)."""
+    global _tv
+    if _tv is None:
+        _tv = TvDatafeed()
+    return _tv
+
+
+def _cache_path(ticker):
+    return os.path.join(CACHE_DIR, '{}.csv'.format(ticker))
+
+
+def _save_cache(ticker, data):
+    try:
+        os.makedirs(CACHE_DIR, exist_ok=True)
+        data.to_csv(_cache_path(ticker))
+    except Exception:
+        pass  # cache is best-effort
+
+
+def _load_cache(ticker):
+    path = _cache_path(ticker)
+    if not os.path.exists(path):
+        return None
+    try:
+        data = pd.read_csv(path, index_col=0, parse_dates=True)
+        return data if not data.empty else None
+    except Exception:
+        return None
 
 STRATEGIES = {
     'Narrow (0.5s)': {'buy_mult': -0.5, 'sell_mult': 0.5},
@@ -18,20 +53,68 @@ STRATEGIES = {
     'Loose (2s)': {'buy_mult': -2.0, 'sell_mult': 2.0},
 }
 
+# Corporate actions the raw TvDatafeed feed does NOT adjust for.
+# Value = TOTAL shares multiplier applied from the ex-date onward
+# (bonus issue of B shares/share -> 1 + B). Bars strictly before the ex-date
+# get prices divided by the factor and volumes multiplied by it.
+# ORHD (Orascom Development Egypt): 2.2288508184 bonus shares per share,
+# effective from first trading session 2026-10-07 (EGX disclosure 2026-09-21).
+CORPORATE_ACTIONS = {
+    'ORHD': {'2026-10-07': 3.2288508184},
+}
+
+
+def adjust_for_corporate_actions(ticker, data):
+    """Rescale pre-ex-date bars for known splits/bonus issues so stats and
+    band levels are computed on one consistent price basis. Cache keeps raw
+    prices; adjustment is re-applied on every load (idempotent)."""
+    events = CORPORATE_ACTIONS.get(ticker)
+    if not events or data is None or data.empty:
+        return data
+    for ex_date_str, factor in events.items():
+        ex = pd.Timestamp(ex_date_str)
+        mask = data.index < ex
+        if not mask.any():
+            continue
+        data = data.copy()
+        for col in ('open', 'high', 'low', 'close'):
+            if col in data.columns:
+                data.loc[mask, col] = data.loc[mask, col] / factor
+        if 'volume' in data.columns:
+            data.loc[mask, 'volume'] = data.loc[mask, 'volume'] * factor
+        print("  {}: split-adjusted {} pre-{} bars (÷{:.6f})".format(
+            ticker, int(mask.sum()), ex_date_str, factor))
+    return data
+
 
 def fetch_data(ticker, n_bars=1000):
-    tv = TvDatafeed()
+    """Fetch 5-min bars for a ticker. Reuses one TvDatafeed client across
+    tickers; on live failure falls back to the on-disk cache from the last
+    successful run so a flaky fetch does not lose the whole report."""
     for attempt in range(3):
         try:
+            tv = get_tv()
             data = tv.get_hist(ticker, exchange='EGX', interval=Interval.in_5_minute, n_bars=n_bars)
             if data is not None and not data.empty:
-                return data
+                _save_cache(ticker, data)  # cache keeps raw (unadjusted) prices
+                return adjust_for_corporate_actions(ticker, data)
         except Exception:
             if attempt < 2:
                 time.sleep(1)
+                # drop the possibly-dead client so the next attempt reconnects
+                global _tv
+                _tv = None
             else:
-                raise ValueError("No data found for {}".format(ticker))
+                break
+    cached = _load_cache(ticker)
+    if cached is not None:
+        print("  WARNING: {} live fetch failed; using cached data from {}".format(
+            ticker, cached.index[-1]))
+        return adjust_for_corporate_actions(ticker, cached)
     raise ValueError("No data found for {}".format(ticker))
+
+
+ROLLING_WINDOW = 300  # ~5 EGX sessions of 5-min bars; matches the live 5d signal window
 
 
 def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
@@ -39,19 +122,22 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
     volume = data['volume'].values
     dates = data.index
 
-    mean = close.mean()
-    std = close.std()
-
-    buy_level = mean + buy_mult * std
-    sell_level = mean + sell_mult * std
+    # Rolling stats shifted by 1 bar: level at bar i uses only bars [i-W .. i-1].
+    # Static full-sample mean/std leaked future data into every trade (look-ahead).
+    close_s = data['close']
+    roll_mean = close_s.rolling(ROLLING_WINDOW, min_periods=ROLLING_WINDOW).mean().shift(1)
+    roll_std = close_s.rolling(ROLLING_WINDOW, min_periods=ROLLING_WINDOW).std().shift(1)
 
     budget = BUDGET
     shares = 0
     buy_price = 0
     buy_time = None
+    sell_level = None  # frozen at entry, like the live trading plan
     trades = []
     daily_trades = {}
     in_trade = False
+    last_m = np.nan
+    last_s = np.nan
 
     for i in range(len(close)):
         price = close[i]
@@ -62,16 +148,28 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
         if day not in daily_trades:
             daily_trades[day] = 0
 
+        m = roll_mean.iloc[i]
+        s = roll_std.iloc[i]
+        if pd.isna(m) or pd.isna(s) or s <= 0:
+            continue  # warm-up: not enough history for honest levels
+
+        last_m, last_s = m, s
+        buy_level = m + buy_mult * s
+        sell_level_now = m + sell_mult * s
+
         if not in_trade:
             if price <= buy_level and daily_trades[day] < MAX_TRADES_PER_DAY:
-                max_shares = int(budget / price)
-                if max_shares > 0 and vol >= max_shares:
+                affordable = int(budget / price)
+                max_shares = min(affordable, int(vol * MAX_PARTICIPATION))
+                if max_shares > 0:
                     shares = max_shares
                     buy_price = price
                     buy_time = bar_time
+                    sell_level = sell_level_now  # frozen at entry
                     cost = shares * price
                     fee = cost * FEE_PER_SIDE
                     budget -= (cost + fee)
+                    daily_trades[day] += 1  # cap counts ENTRIES per day
                     in_trade = True
         else:
             if price >= sell_level:
@@ -91,7 +189,6 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
                     'return_pct': round((price - buy_price) / buy_price * 100, 4),
                 })
 
-                daily_trades[day] += 1
                 shares = 0
                 buy_price = 0
                 buy_time = None
@@ -130,16 +227,36 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
     total_possible_days = len(set(dates.date))
     avg_trades_per_day = sum(daily_trades.values()) / total_possible_days if total_possible_days > 0 else 0
 
-    band_width = sell_level - buy_level
-    band_width_pct = band_width / mean * 100 if mean > 0 else 0
+    if np.isnan(last_m):
+        # Fewer bars than the rolling window: fall back to full-sample stats
+        last_m = float(close.mean())
+        last_s = float(close.std()) if close.std() > 0 else 1e-9
+    disp_buy = last_m + buy_mult * last_s
+    disp_sell = last_m + sell_mult * last_s
+    band_width = disp_sell - disp_buy
+    band_width_pct = band_width / last_m * 100 if last_m > 0 else 0
 
+    # Band crossings vs the rolling (no-look-ahead) levels
+    buy_series = (roll_mean + buy_mult * roll_std).values
+    sell_series = (roll_mean + sell_mult * roll_std).values
     crosses_buy = 0
     crosses_sell = 0
-    for i in range(1, len(close)):
-        if close[i-1] > buy_level and close[i] <= buy_level:
-            crosses_buy += 1
-        if close[i-1] < sell_level and close[i] >= sell_level:
-            crosses_sell += 1
+    prev_above_buy = None
+    prev_above_sell = None
+    for i in range(len(close)):
+        b = buy_series[i]
+        sl = sell_series[i]
+        if np.isnan(b) or np.isnan(sl):
+            continue
+        above_buy = close[i] > b
+        above_sell = close[i] > sl
+        if prev_above_buy is not None:
+            if prev_above_buy and not above_buy:
+                crosses_buy += 1
+            if not prev_above_sell and above_sell:
+                crosses_sell += 1
+        prev_above_buy = above_buy
+        prev_above_sell = above_sell
 
     ease_score = 0
     if crosses_buy >= 10 and crosses_sell >= 10:
@@ -151,8 +268,8 @@ def backtest_strategy(data, strategy_name, buy_mult, sell_mult):
 
     return {
         'strategy': strategy_name,
-        'buy_level': round(buy_level, 4),
-        'sell_level': round(sell_level, 4),
+        'buy_level': round(disp_buy, 4),
+        'sell_level': round(disp_sell, 4),
         'band_width': round(band_width, 4),
         'band_width_pct': round(band_width_pct, 2),
         'total_trades': len(trades),
@@ -179,9 +296,15 @@ def analyze_ticker(ticker):
         print("  Got {} bars".format(len(data)))
 
         close = data['close'].values
-        mean = close.mean()
-        std = close.std()
         current = close[-1]
+        # Display the CURRENT band basis (rolling 5-session stats), not full-sample
+        roll_m = data['close'].rolling(ROLLING_WINDOW, min_periods=ROLLING_WINDOW).mean().iloc[-1]
+        roll_s = data['close'].rolling(ROLLING_WINDOW, min_periods=ROLLING_WINDOW).std().iloc[-1]
+        if pd.isna(roll_m):
+            roll_m = data['close'].mean()
+            roll_s = data['close'].std()
+        mean = float(roll_m)
+        std = float(roll_s)
 
         results = {}
         for name, params in STRATEGIES.items():
@@ -400,6 +523,10 @@ def main():
             results.append(r)
         time.sleep(0.3)
 
+    if not results:
+        print("\nNo results from any ticker - all fetches failed.")
+        return
+
     results.sort(key=lambda x: (
         0 if x['ease_label'] == 'Easy' else 1 if x['ease_label'] == 'Moderate' else 2 if x['ease_label'] == 'Difficult' else 3,
         -x['strategies'][x['best_strategy']]['total_return_pct']
@@ -482,9 +609,14 @@ def run_backtest(tickers=None, fetched_data=None):
                 print("  Got {} bars".format(len(data)))
 
             close = data['close'].values
-            mean = close.mean()
-            std = close.std()
             current = close[-1]
+            roll_m = data['close'].rolling(ROLLING_WINDOW, min_periods=ROLLING_WINDOW).mean().iloc[-1]
+            roll_s = data['close'].rolling(ROLLING_WINDOW, min_periods=ROLLING_WINDOW).std().iloc[-1]
+            if pd.isna(roll_m):
+                roll_m = data['close'].mean()
+                roll_s = data['close'].std()
+            mean = float(roll_m)
+            std = float(roll_s)
 
             strat_results = {}
             for name, params in STRATEGIES.items():
@@ -517,9 +649,13 @@ def run_backtest(tickers=None, fetched_data=None):
         except Exception as e:
             print("  ERROR: {}".format(e))
         time.sleep(0.3)
-    narrow_key = [k for k in results[0]['strategies'] if 'Narrow' in k][0]
-    mid_key = [k for k in results[0]['strategies'] if 'Mid' in k][0]
-    loose_key = [k for k in results[0]['strategies'] if 'Loose' in k][0]
+    strategy_keys = list(STRATEGIES.keys())
+    narrow_key, mid_key, loose_key = strategy_keys[0], strategy_keys[1], strategy_keys[2]
+    if not results:
+        # every fetch failed: return empty results with valid keys instead of
+        # crashing on results[0] (IndexError) so callers can render a stub.
+        print("  WARNING: no ticker data fetched; backtest empty")
+        return [], narrow_key, mid_key, loose_key
     results.sort(key=lambda x: (
         0 if x['ease_label'] == 'Easy' else 1 if x['ease_label'] == 'Moderate' else 2 if x['ease_label'] == 'Difficult' else 3,
         -x['strategies'][x['best_strategy']]['total_return_pct']
@@ -566,8 +702,9 @@ def backtest_fragment(results, narrow_key, mid_key, loose_key):
       <div class="bt-box"><div class="bt-label">Narrow (0.5s) Total</div><div class="bt-value" style="color:{narrow_color}">{narrow_str} EGP</div></div>
       <div class="bt-box"><div class="bt-label">Mid (1s) Total</div><div class="bt-value" style="color:{mid_color}">{mid_str} EGP</div></div>
       <div class="bt-box"><div class="bt-label">Loose (2s) Total</div><div class="bt-value" style="color:{loose_color}">{loose_str} EGP</div></div>
-      <div class="bt-box" style="border-color:#6bcb77"><div class="bt-label" style="color:#6bcb77">Best Combo Total</div><div class="bt-value" style="color:#6bcb77;font-size:1.3em">{best_str} EGP</div></div>
+      <div class="bt-box" style="border-color:#6bcb77"><div class="bt-label" style="color:#6bcb77">Best Combo Total (hindsight)</div><div class="bt-value" style="color:#6bcb77;font-size:1.3em">{best_str} EGP</div></div>
     </div>
+    <p style="color:#888;font-size:0.75em;margin:4px 0 8px">*Best-per-ticker band chosen on the same data it was scored on — in-sample hindsight, not a forward-tested allocation.</p>
     <table class="bt-table">
       <tr><th></th><th>Ticker</th><th>Price</th><th>Narrow</th><th>Mid</th><th>Loose</th><th>Best</th><th>Best Strategy</th><th>Ease</th></tr>""".format(
             narrow_str='{:+,.0f}'.format(narrow_total), narrow_color='#6bcb77' if narrow_total >= 0 else '#ee5a24',

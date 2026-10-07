@@ -3,3 +3,18 @@ __pycache__/
 *.pyo
 _*.py
 _verify*.py
+
+# Agent workspace / private files - never publish
+.nanobot/
+memory/
+skills/
+prompts/
+cron/
+triggers/
+SOUL.md
+USER.md
+HEARTBEAT.md
+
+# Local cache and scratch data
+_cache/
+_data_*.json

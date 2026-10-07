@@ -7,7 +7,7 @@ import os
 import time
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from backtest import run_backtest, backtest_fragment
+from backtest import run_backtest, backtest_fragment, fetch_data
 
 TICKERS = ['MFPC', 'MASR', 'ETEL', 'EFIH', 'ORHD', 'CPCI', 'RMDA', 'ARCC', 'OBRI', 'EGAS', 'ADIB', 'EGAL', 'BONY', 'ENGC']
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -18,26 +18,27 @@ DARK_BG2 = '#16213e'
 
 
 def fetch_data(ticker, n_bars=1000):
-    tv = TvDatafeed()
-    for attempt in range(3):
-        try:
-            data = tv.get_hist(ticker, exchange='EGX', interval=Interval.in_5_minute, n_bars=n_bars)
-            if data is not None and not data.empty:
-                return data
-        except Exception as e:
-            if attempt < 2:
-                time.sleep(1)
-            else:
-                raise ValueError("No data found for {}".format(ticker))
-    raise ValueError("No data found for {}".format(ticker))
+    # kept for compatibility; the shared implementation lives in backtest.py
+    # (reuses one TvDatafeed client + falls back to the on-disk cache)
+    from backtest import fetch_data as _fetch
+    return _fetch(ticker, n_bars=n_bars)
+
+
+def last_n_sessions(data, n=5):
+    """Return the last n trading sessions (calendar dates present in the data).
+
+    Fixes the old calendar-day Timedelta(days=7) window, which silently shrank
+    when sessions were missed (e.g. EGX holidays).
+    """
+    dates = sorted(set(data.index.date))
+    keep = set(dates[-n:])
+    return data[[d in keep for d in data.index.date]]
 
 
 def compute_stats(data):
     close = data['close']
     volume = data['volume']
-    last_date = data.index[-1]
-    cutoff = last_date - pd.Timedelta(days=7)
-    recent = data[data.index >= cutoff]
+    recent = last_n_sessions(data, 5)
     close_5d = recent['close']
     volume_5d = recent['volume']
 
@@ -106,7 +107,7 @@ def compute_trading_plan(stats, data):
     resistance_1 = mean_5d + std_5d
     resistance_2 = mean_5d + 2 * std_5d
 
-    close_5d = data[data.index >= data.index[-1] - pd.Timedelta(days=7)]['close']
+    close_5d = last_n_sessions(data, 5)['close']
     close_1m = data['close']
 
     # Count how many times price crosses into/out of the buy zone in the last month
@@ -208,6 +209,10 @@ def compute_trading_plan(stats, data):
     net_gain_pct = gross_gain_pct - (ROUND_TRIP_FEE * 100)
 
     stop_loss = support_2
+    if stop_loss >= current:
+        # Deep-value entries (-2σ or lower): band stop would sit at/above entry.
+        # Keep 1σ of risk below entry, consistent with the band logic.
+        stop_loss = current - std_5d
     stop_loss_pct = abs(entry - stop_loss) / entry * 100 if entry > 0 else 0
 
     risk = abs(entry - stop_loss) if entry > 0 else 0
@@ -236,9 +241,8 @@ def create_price_chart(data, stats):
     close_all = data['close'].values
     mean = stats['mean']
     std = stats['std']
-    last_date = data.index[-1]
-    cutoff = last_date - pd.Timedelta(days=7)
-    recent = data[data.index >= cutoff]
+    n_sess = stats.get('sessions', len(set(data.index.date)))
+    recent = last_n_sessions(data, 5)
     close_5d = recent['close'].values
     mean_5d = stats['mean_5d']
     std_5d = stats['std_5d']
@@ -272,9 +276,9 @@ def create_price_chart(data, stats):
     fig = go.Figure()
 
     fig.add_trace(go.Bar(
-        x=bin_centers, y=count_1m, name='1 Month',
+        x=bin_centers, y=count_1m, name='Full ({} sess)'.format(n_sess),
         marker_color='#00d4ff', opacity=0.25,
-        hovertemplate='Price: %{x:.2f}<br>Count: %{y:.0f}<extra>1 Month</extra>'
+        hovertemplate='Price: %{x:.2f}<br>Count: %{y:.0f}<extra>Full Window</extra>'
     ))
 
     fig.add_trace(go.Bar(
@@ -288,9 +292,9 @@ def create_price_chart(data, stats):
 
     bell_1m = len(close_all) * bin_width * (1 / (std * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((x - mean) / std) ** 2)
     fig.add_trace(go.Scatter(
-        x=x, y=bell_1m, name='1M Normal Fit',
+        x=x, y=bell_1m, name='Full Normal Fit',
         line=dict(color='#ff6b6b', width=1.5, dash='dash'), opacity=0.6,
-        hovertemplate='Price: %{x:.2f}<br>Expected: %{y:.1f}<extra>1M Fit</extra>'
+        hovertemplate='Price: %{x:.2f}<br>Expected: %{y:.1f}<extra>Full Fit</extra>'
     ))
 
     bell_5d = len(close_5d) * bin_width * (1 / (std_5d * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((x - mean_5d) / std_5d) ** 2)
@@ -315,7 +319,7 @@ def create_price_chart(data, stats):
                   annotation=dict(text='Current {:.2f}'.format(current), font=dict(color='white', size=11, family='Arial Black'), yshift=-15, showarrow=False))
 
     fig.update_layout(
-        title=dict(text='{} - Price Distribution (1M + 5D)'.format(stats['ticker']), font=dict(color='white', size=14)),
+        title=dict(text='{} - Price Distribution (Full {} Sessions + 5D)'.format(stats['ticker'], n_sess), font=dict(color='white', size=14)),
         paper_bgcolor=DARK_BG, plot_bgcolor=DARK_BG2,
         xaxis=dict(title='Price (EGP)', color='white', gridcolor='#2a2a4a'),
         yaxis=dict(title='Number of Occurrences', color='white', gridcolor='#2a2a4a'),
@@ -332,9 +336,8 @@ def create_volume_chart(data, stats):
     volume_all = data['volume'].values
     mean_5d = stats['mean_5d']
     std_5d = stats['std_5d']
-    last_date = data.index[-1]
-    cutoff = last_date - pd.Timedelta(days=7)
-    recent = data[data.index >= cutoff]
+    n_sess = stats.get('sessions', len(set(data.index.date)))
+    recent = last_n_sessions(data, 5)
     close_5d = recent['close'].values
     volume_5d = recent['volume'].values
 
@@ -367,9 +370,9 @@ def create_volume_chart(data, stats):
     fig = make_subplots(rows=1, cols=1)
 
     fig.add_trace(go.Bar(
-        x=bin_centers, y=vol_1m, name='1M Volume',
+        x=bin_centers, y=vol_1m, name='Full ({} sess)'.format(n_sess),
         marker_color='#00d4ff', opacity=0.25,
-        hovertemplate='Price: %{x:.2f}<br>Volume: %{y:,.0f}<extra>1 Month</extra>'
+        hovertemplate='Price: %{x:.2f}<br>Volume: %{y:,.0f}<extra>Full Window</extra>'
     ))
 
     fig.add_trace(go.Bar(
@@ -393,7 +396,7 @@ def create_volume_chart(data, stats):
                   annotation=dict(text='Current {:.2f}'.format(current), font=dict(color='white', size=11, family='Arial Black'), yshift=-15, showarrow=False))
 
     fig.update_layout(
-        title=dict(text='{} - Volume Concentration (1M + 5D)'.format(stats['ticker']), font=dict(color='white', size=14)),
+        title=dict(text='{} - Volume Concentration (Full {} Sessions + 5D)'.format(stats['ticker'], n_sess), font=dict(color='white', size=14)),
         paper_bgcolor=DARK_BG, plot_bgcolor=DARK_BG2,
         xaxis=dict(title='Price (EGP)', color='white', gridcolor='#2a2a4a'),
         yaxis=dict(title='Total Volume', color='white', gridcolor='#2a2a4a', tickformat=',.0f'),
@@ -441,7 +444,7 @@ def build_ticker_section(stats, price_chart, volume_chart, plan, mean_shift):
         <div class="stat-box"><div class="stat-label">5D Range</div><div class="stat-value">{min_5d:.2f} - {max_5d:.2f}</div></div>
       </div>
       <div class="stats-grid">
-        <div class="stat-box"><div class="stat-label">Mean Shift (1M vs 5D)</div><div class="stat-value">{mean_shift:+.1f}%</div></div>
+        <div class="stat-box"><div class="stat-label">Mean Shift (Full vs 5D)</div><div class="stat-value">{mean_shift:+.1f}%</div></div>
       </div>
       <div class="sigma-section">
         <div class="sigma-bar">
@@ -465,6 +468,7 @@ def build_ticker_section(stats, price_chart, volume_chart, plan, mean_shift):
           <div class="plan-box"><div class="plan-label">Strategy</div><div class="plan-value small">{strategy}</div></div>
           <div class="plan-box"><div class="plan-label">Confidence</div><div class="plan-value" style="color:{conf_color}">{confidence}%</div></div>
           <div class="plan-box"><div class="plan-label">Hold Period</div><div class="plan-value">{est_sessions} sessions</div></div>
+          <div class="plan-box" style="grid-column:1/-1"><div class="plan-label">Confidence Basis</div><div class="plan-value small">{confidence_basis}</div></div>
         </div>
         <div class="plan-grid">
           <div class="plan-box"><div class="plan-label">Entry (Buy Zone)</div><div class="plan-value" style="color:#6bcb77">{entry:.2f}</div></div>
@@ -495,6 +499,7 @@ def build_ticker_section(stats, price_chart, volume_chart, plan, mean_shift):
         price_chart=price_chart, volume_chart=volume_chart,
         action=action, action_color=action_color, action_bg=action_bg,
         strategy=plan['strategy'], confidence=confidence, conf_color=conf_color,
+        confidence_basis=plan.get('confidence_basis', 'heuristic'),
         est_sessions=plan['est_sessions'], entry=plan['entry'], exit_target=plan['exit_target'],
         stop_loss=plan['stop_loss'], fees_pct=plan['fees_pct'],
         gross_gain_pct=plan['gross_gain_pct'], net_gain_pct=plan['net_gain_pct'],
@@ -519,7 +524,7 @@ def build_combined_html(ticker_results, data_date='', backtest_html=''):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EGX Distribution Analysis - Combined Report</title>
-<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="plotly.min.js"></script>
 <style>
   * {{ margin: 0; padding: 0; box-sizing: border-box; }}
   body {{ font-family: 'Segoe UI', system-ui, sans-serif; background: #0f0f23; color: #e0e0e0; padding: 10px; }}
@@ -589,7 +594,7 @@ def build_combined_html(ticker_results, data_date='', backtest_html=''):
 <body>
 <h1>EGX Distribution Analysis Report</h1>
 <p class="data-date">Data retrieved: {data_date}</p>
-<p class="subtitle">Sorted by Signal: BUY (high conf) first, then WAIT, then AVOID | 5-min data | 1M + 5D overlay</p>
+<p class="subtitle">Sorted by Signal: BUY (high conf) first, then WAIT, then AVOID | 5-min data | full-window + 5D overlay</p>
 <div class="invest-bar">
   <label>Investment Amount:</label>
   <input type="number" id="investAmount" value="10000" min="1" oninput="calculateAll()">
@@ -661,11 +666,11 @@ def analyze_ticker(ticker, data):
     mean_shift = ((stats['mean_5d'] - stats['mean']) / stats['mean']) * 100
     price_chart = create_price_chart(data, stats)
     volume_chart = create_volume_chart(data, stats)
-    section = build_ticker_section(stats, price_chart, volume_chart, plan, mean_shift)
     return {
-        'stats': stats, 'plan': plan, 'section': section,
+        'stats': stats, 'plan': plan,
         'confidence': plan['confidence'], 'action': plan['action'],
-        'data': data,
+        'data': data, 'price_chart': price_chart,
+        'volume_chart': volume_chart, 'mean_shift': mean_shift,
     }
 
 
@@ -704,6 +709,39 @@ def main():
     bt_results, narrow_key, mid_key, loose_key = run_backtest(TICKERS, fetched_data=fetched_data)
     bt_html = backtest_fragment(bt_results, narrow_key, mid_key, loose_key)
 
+    # P3d: anchor BUY-signal confidence to the matching band's backtest win
+    # rate (50/50 blend). WAIT/AVOID and bands with too few trades stay
+    # heuristic-only, with the reason recorded in confidence_basis.
+    bt_by_ticker = {b['ticker']: b for b in bt_results}
+    for r in results:
+        p = r['plan']
+        ds = p['dist_sigma']
+        if 'BUY' not in p['action']:
+            p['confidence_basis'] = 'heuristic only (no entry signal to anchor)'
+            continue
+        band_key = loose_key if ds <= -2 else mid_key if ds <= -1 else narrow_key
+        bt = bt_by_ticker.get(r['stats']['ticker'])
+        sd = bt['strategies'].get(band_key) if bt else None
+        n_tr = sd['total_trades'] if sd else 0
+        if not sd or n_tr < 3:
+            p['confidence_basis'] = 'heuristic only ({} band: n={} trades)'.format(
+                band_key.split(' ')[0].lower(), n_tr)
+            continue
+        heur = p['confidence']
+        wr = sd['win_rate']
+        blended = int(min(max(round(0.5 * heur + 0.5 * wr), 25), 92))
+        p['confidence'] = blended
+        p['confidence_basis'] = 'heur {:.0f} + {:.0f}% {} wr (n={}) -> {:.0f}'.format(
+            heur, wr, band_key.split(' ')[0].lower(), n_tr, blended)
+
+    # rebuild sections + re-sort now that confidences are anchored
+    for r in results:
+        r['section'] = build_ticker_section(
+            r['stats'], r['price_chart'], r['volume_chart'], r['plan'], r['mean_shift'])
+        r['confidence'] = r['plan']['confidence']
+        r['action'] = r['plan']['action']
+    results.sort(key=sort_key)
+
     print("\nGenerating combined HTML...")
     html = build_combined_html(results, data_date=data_date, backtest_html=bt_html)
     output_path = os.path.join(OUTPUT_DIR, "index.html")
@@ -725,6 +763,7 @@ def main():
                 'narrow': {'buy': 'mean - 0.5*std', 'sell': 'mean + 0.5*std'},
                 'mid': {'buy': 'mean - 1*std', 'sell': 'mean + 1*std'},
                 'loose': {'buy': 'mean - 2*std', 'sell': 'mean + 2*std'},
+                'note': 'Levels use rolling 300-bar stats (no look-ahead). best_combo picks the best band per ticker in-sample (hindsight), not a forward-tested portfolio.',
             },
             'portfolio_totals_egp': {},
             'tickers': []
@@ -739,6 +778,7 @@ def main():
             'signal': p['action'],
             'strategy': p['strategy'],
             'confidence': p['confidence'],
+            'confidence_basis': p.get('confidence_basis', ''),
             'entry': round(p['entry'], 2),
             'exit_target': round(p['exit_target'], 2),
             'stop_loss': round(p['stop_loss'], 2),
