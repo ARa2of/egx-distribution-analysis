@@ -95,7 +95,7 @@
         "max_5d": 5.6,
         "cv_5d": 1.0,
         "cv_1m": 6.43,
-        "mean_shift": -5.95,
+        "mean_shift": -5.94,
         "period": "2026-09-10 to 2026-10-07",
         "sessions": 20,
         "bars": 1000
@@ -319,16 +319,16 @@
       "strategy": "Above Mean - Wait for Pullback",
       "confidence": 39,
       "confidence_basis": "heuristic only (no entry signal to anchor)",
-      "entry": 140.43,
+      "entry": 140.41,
       "exit_target": 157.74,
-      "stop_loss": 134.66,
-      "net_gain_pct": 11.73,
+      "stop_loss": 134.63,
+      "net_gain_pct": 11.74,
       "rr_ratio": 3.0,
       "hold_sessions": 0,
       "fees_pct": 0.6,
       "stats": {
-        "mean_5d": 146.2,
-        "std_5d": 5.77,
+        "mean_5d": 146.18,
+        "std_5d": 5.78,
         "min_5d": 134.01,
         "max_5d": 155.01,
         "cv_5d": 3.95,
@@ -339,10 +339,10 @@
         "bars": 1000
       },
       "levels": {
-        "support_2": 134.66,
-        "support_1": 140.43,
-        "mean": 146.2,
-        "resistance_1": 151.97,
+        "support_2": 134.63,
+        "support_1": 140.41,
+        "mean": 146.18,
+        "resistance_1": 151.96,
         "resistance_2": 157.74
       }
     },
@@ -509,16 +509,16 @@
       {
         "ticker": "ETEL",
         "current_price": 148.0,
-        "mean": 144.51,
-        "std": 6.95,
+        "mean": 144.46,
+        "std": 6.97,
         "best_strategy": "Loose (2s)",
         "ease_of_trading": "Moderate",
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 140.9739,
-            "sell_level": 147.9536,
-            "band_width": 6.9797,
+            "buy_level": 140.9045,
+            "sell_level": 147.9073,
+            "band_width": 7.0027,
             "completed_trades": 7,
             "open_trades": 0,
             "target_hits": 3,
@@ -533,8 +533,8 @@
             "crosses_sell": 8,
             "trades": [
               {
-                "entry_time": "2026-09-24 10:05",
-                "exit_time": "2026-09-27 07:00",
+                "entry_time": "2026-09-24 11:05",
+                "exit_time": "2026-09-27 08:00",
                 "entry_price": 133.0,
                 "exit_price": 137.17,
                 "shares": 75,
@@ -641,9 +641,9 @@
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 137.484,
-            "sell_level": 151.4435,
-            "band_width": 13.9595,
+            "buy_level": 137.4032,
+            "sell_level": 151.4086,
+            "band_width": 14.0054,
             "completed_trades": 2,
             "open_trades": 0,
             "target_hits": 1,
@@ -655,7 +655,7 @@
             "total_return_pct": 3.68,
             "win_rate_pct": 50.0,
             "crosses_buy": 6,
-            "crosses_sell": 12,
+            "crosses_sell": 13,
             "trades": [
               {
                 "entry_time": "2026-09-27 10:45",
@@ -691,9 +691,9 @@
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 130.5043,
-            "sell_level": 158.4232,
-            "band_width": 27.9189,
+            "buy_level": 130.4005,
+            "sell_level": 158.4113,
+            "band_width": 28.0109,
             "completed_trades": 1,
             "open_trades": 0,
             "target_hits": 1,
@@ -708,8 +708,8 @@
             "crosses_sell": 11,
             "trades": [
               {
-                "entry_time": "2026-09-28 07:00",
-                "exit_time": "2026-10-04 07:00",
+                "entry_time": "2026-09-28 08:00",
+                "exit_time": "2026-10-04 08:00",
                 "entry_price": 130.01,
                 "exit_price": 140.99,
                 "shares": 76,
@@ -1063,8 +1063,8 @@
             "crosses_sell": 18,
             "trades": [
               {
-                "entry_time": "2026-09-16 08:30",
-                "exit_time": "2026-09-17 07:20",
+                "entry_time": "2026-09-16 09:30",
+                "exit_time": "2026-09-17 08:20",
                 "entry_price": 535.0,
                 "exit_price": 539.98,
                 "shares": 7,
@@ -1078,8 +1078,8 @@
                 "open_position": false
               },
               {
-                "entry_time": "2026-09-17 07:30",
-                "exit_time": "2026-09-17 07:35",
+                "entry_time": "2026-09-17 08:30",
+                "exit_time": "2026-09-17 08:35",
                 "entry_price": 533.58,
                 "exit_price": 540.0,
                 "shares": 5,
@@ -1093,8 +1093,8 @@
                 "open_position": false
               },
               {
-                "entry_time": "2026-09-17 07:40",
-                "exit_time": "2026-09-17 07:45",
+                "entry_time": "2026-09-17 08:40",
+                "exit_time": "2026-09-17 08:45",
                 "entry_price": 533.85,
                 "exit_price": 538.77,
                 "shares": 11,
@@ -1108,8 +1108,8 @@
                 "open_position": false
               },
               {
-                "entry_time": "2026-09-17 07:55",
-                "exit_time": "2026-09-17 08:20",
+                "entry_time": "2026-09-17 08:55",
+                "exit_time": "2026-09-17 09:20",
                 "entry_price": 534.03,
                 "exit_price": 541.5,
                 "shares": 2,
@@ -1123,8 +1123,8 @@
                 "open_position": false
               },
               {
-                "entry_time": "2026-09-28 07:05",
-                "exit_time": "2026-09-29 07:55",
+                "entry_time": "2026-09-28 08:05",
+                "exit_time": "2026-09-29 08:55",
                 "entry_price": 557.01,
                 "exit_price": 571.5,
                 "shares": 18,
@@ -1158,8 +1158,8 @@
             "crosses_sell": 32,
             "trades": [
               {
-                "entry_time": "2026-09-16 10:00",
-                "exit_time": "2026-09-17 07:25",
+                "entry_time": "2026-09-16 11:00",
+                "exit_time": "2026-09-17 08:25",
                 "entry_price": 532.02,
                 "exit_price": 540.99,
                 "shares": 18,
@@ -1173,8 +1173,8 @@
                 "open_position": false
               },
               {
-                "entry_time": "2026-09-28 07:10",
-                "exit_time": "2026-09-29 07:55",
+                "entry_time": "2026-09-28 08:10",
+                "exit_time": "2026-09-29 08:55",
                 "entry_price": 550.2,
                 "exit_price": 571.5,
                 "shares": 18,
@@ -2937,8 +2937,8 @@
             "crosses_sell": 11,
             "trades": [
               {
-                "entry_time": "2026-09-21 08:35",
-                "exit_time": "2026-09-21 09:50",
+                "entry_time": "2026-09-21 09:35",
+                "exit_time": "2026-09-21 10:50",
                 "entry_price": 364.0,
                 "exit_price": 369.99,
                 "shares": 27,
@@ -4985,7 +4985,7 @@
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 5.3098,
+            "buy_level": 5.3117,
             "sell_level": 5.5167,
             "band_width": 0.2069,
             "completed_trades": 9,

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-07 23:29",
+  "generated": "2026-10-07 23:50",
   "budget": 10000,
   "max_trades_per_day": 3,
   "fees_per_side": 0.3,
@@ -381,20 +381,20 @@
       "ease_label": "Difficult",
       "strategies": {
         "Narrow (0.5s)": {
-          "buy_level": 341.3657,
-          "sell_level": 346.6186,
+          "buy_level": 341.3681,
+          "sell_level": 346.6204,
           "band_width_pct": 1.53,
           "total_trades": 6,
           "total_return_pct": -7.66,
           "total_profit": -766.44,
           "win_rate": 20.0,
           "avg_trades_per_day": 0.3,
-          "crosses_buy": 13,
+          "crosses_buy": 14,
           "crosses_sell": 11
         },
         "Mid (1s)": {
-          "buy_level": 338.7392,
-          "sell_level": 349.245,
+          "buy_level": 338.742,
+          "sell_level": 349.2465,
           "band_width_pct": 3.05,
           "total_trades": 5,
           "total_return_pct": -8.41,
@@ -405,8 +405,8 @@
           "crosses_sell": 2
         },
         "Loose (2s)": {
-          "buy_level": 333.4864,
-          "sell_level": 354.4979,
+          "buy_level": 333.4897,
+          "sell_level": 354.4988,
           "band_width_pct": 6.11,
           "total_trades": 4,
           "total_return_pct": -5.81,
@@ -473,8 +473,8 @@
       "ease_label": "Difficult",
       "strategies": {
         "Narrow (0.5s)": {
-          "buy_level": 35.7705,
-          "sell_level": 36.9649,
+          "buy_level": 35.7658,
+          "sell_level": 36.9592,
           "band_width_pct": 3.28,
           "total_trades": 6,
           "total_return_pct": -15.52,
@@ -485,9 +485,9 @@
           "crosses_sell": 6
         },
         "Mid (1s)": {
-          "buy_level": 35.1733,
-          "sell_level": 37.5622,
-          "band_width_pct": 6.57,
+          "buy_level": 35.1691,
+          "sell_level": 37.556,
+          "band_width_pct": 6.56,
           "total_trades": 6,
           "total_return_pct": -16.38,
           "total_profit": -1638.43,
@@ -497,9 +497,9 @@
           "crosses_sell": 2
         },
         "Loose (2s)": {
-          "buy_level": 33.9789,
-          "sell_level": 38.7566,
-          "band_width_pct": 13.14,
+          "buy_level": 33.9757,
+          "sell_level": 38.7494,
+          "band_width_pct": 13.13,
           "total_trades": 4,
           "total_return_pct": -7.93,
           "total_profit": -793.29,

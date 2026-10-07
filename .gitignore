@@ -17,4 +17,5 @@ HEARTBEAT.md
 
 # Local cache and scratch data
 _cache/
+_cache_long/
 _data_*.json
