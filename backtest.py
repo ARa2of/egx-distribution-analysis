@@ -58,10 +58,11 @@ STRATEGIES = {
 # Value = TOTAL shares multiplier applied from the ex-date onward
 # (bonus issue of B shares/share -> 1 + B). Bars strictly before the ex-date
 # get prices divided by the factor and volumes multiplied by it.
-# ORHD (Orascom Development Egypt): 2.2288508184 bonus shares per share,
-# effective from first trading session 2026-10-07 (EGX disclosure 2026-09-21).
+# NOTE: tvDatafeed already returns split-adjusted OHLCV for EGX tickers,
+# so only add entries here if the feed does NOT adjust for a given event.
+# ORHD 2026-10-07 bonus (2.2288508184 sh/share, factor 3.2288508184):
+# tvDatafeed already adjusts — adding it here caused double-adjustment.
 CORPORATE_ACTIONS = {
-    'ORHD': {'2026-10-07': 3.2288508184},
 }
 
 
@@ -97,7 +98,7 @@ def fetch_data(ticker, n_bars=1000):
             tv = get_tv()
             data = tv.get_hist(ticker, exchange='EGX', interval=Interval.in_5_minute, n_bars=n_bars)
             if data is not None and not data.empty:
-                _save_cache(ticker, data)  # cache keeps raw (unadjusted) prices
+                _save_cache(ticker, data)  # cache keeps tvDatafeed prices (may be pre-adjusted)
                 return adjust_for_corporate_actions(ticker, data)
         except Exception:
             if attempt < 2:
