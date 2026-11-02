@@ -6,7 +6,7 @@ import os
 import time
 
 TICKERS = ['MFPC', 'MASR', 'ETEL', 'EFIH', 'ORHD', 'CPCI', 'RMDA', 'ARCC', 'OBRI', 'EGAS', 'ADIB', 'EGAL', 'BONY', 'ENGC',
-           'ORAS', 'POUL', 'MBEG', 'AMOC', 'EFID', 'SAUD', 'SWDY', 'AXPH', 'ADCI', 'ISMQ', 'AMER', 'ARAB']
+           'ORAS', 'POUL', 'MBEG', 'AMOC', 'EFID', 'SAUD', 'SWDY', 'AXPH', 'ADCI', 'ISMQ', 'AMER', 'ARAB', 'ICFC']
 BUDGET = 10000
 FEE_PER_SIDE = 0.003
 ROUND_TRIP_FEE = FEE_PER_SIDE * 2
