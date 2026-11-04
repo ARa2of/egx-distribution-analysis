@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-04 13:23",
-  "data_date": "2026-11-04 13:23",
+  "generated": "2026-11-04 20:29",
+  "data_date": "2026-11-04 20:29",
   "fees_per_side_pct": 0.3,
   "round_trip_fees_pct": 0.6,
   "backtest_budget_egp": 10000,
@@ -1507,9 +1507,9 @@
         "strategies": {
           "narrow": {
             "label": "Narrow (0.5s)",
-            "buy_level": 46.487,
-            "sell_level": 47.5558,
-            "band_width": 1.0688,
+            "buy_level": 46.4876,
+            "sell_level": 47.5565,
+            "band_width": 1.0689,
             "completed_trades": 7,
             "open_trades": 0,
             "target_hits": 3,
@@ -1621,9 +1621,9 @@
                 "shares": 224,
                 "profit_egp": 139.48,
                 "return_pct": 1.9664,
-                "entry_buy_level": 45.7911,
-                "entry_sell_level": 46.6679,
-                "stop_level": 44.4759,
+                "entry_buy_level": 45.7913,
+                "entry_sell_level": 46.6688,
+                "stop_level": 44.4751,
                 "exit_reason": "target",
                 "hold_bars": 43,
                 "open_position": false
@@ -1632,9 +1632,9 @@
           },
           "mid": {
             "label": "Mid (1s)",
-            "buy_level": 45.9526,
-            "sell_level": 48.0902,
-            "band_width": 2.1376,
+            "buy_level": 45.9531,
+            "sell_level": 48.0909,
+            "band_width": 2.1378,
             "completed_trades": 6,
             "open_trades": 0,
             "target_hits": 3,
@@ -1732,8 +1732,8 @@
                 "profit_egp": 419.47,
                 "return_pct": 4.5796,
                 "entry_buy_level": 45.4084,
-                "entry_sell_level": 47.0978,
-                "stop_level": 44.5638,
+                "entry_sell_level": 47.099,
+                "stop_level": 44.563,
                 "exit_reason": "target",
                 "hold_bars": 45,
                 "open_position": false
@@ -1742,9 +1742,9 @@
           },
           "loose": {
             "label": "Loose (2s)",
-            "buy_level": 44.8838,
-            "sell_level": 49.159,
-            "band_width": 4.2752,
+            "buy_level": 44.8842,
+            "sell_level": 49.1598,
+            "band_width": 4.2756,
             "completed_trades": 1,
             "open_trades": 0,
             "target_hits": 1,
@@ -1756,7 +1756,7 @@
             "total_return_pct": 9.47,
             "win_rate_pct": 100.0,
             "crosses_buy": 4,
-            "crosses_sell": 4,
+            "crosses_sell": 5,
             "trades": [
               {
                 "entry_time": "2026-10-19 07:00",
