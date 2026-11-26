@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-26 15:54",
-  "data_date": "2026-11-26 15:54",
+  "generated": "2026-11-26 20:40",
+  "data_date": "2026-11-26 20:40",
   "fees_per_side_pct": 0.3,
   "round_trip_fees_pct": 0.6,
   "backtest_budget_egp": 10000,
@@ -957,6 +957,40 @@
         "resistance_1": 27.11,
         "resistance_2": 28.33
       }
+    },
+    {
+      "ticker": "LCSW",
+      "current_price": 43.34,
+      "signal": "AVOID",
+      "strategy": "Overbought - Too Expensive",
+      "confidence": 27,
+      "confidence_basis": "heuristic only (no entry signal to anchor)",
+      "entry": 38.89,
+      "exit_target": 41.94,
+      "stop_loss": 37.36,
+      "net_gain_pct": 7.26,
+      "rr_ratio": 2.0,
+      "hold_sessions": 0,
+      "fees_pct": 0.6,
+      "stats": {
+        "mean_5d": 40.42,
+        "std_5d": 1.53,
+        "min_5d": 37.1,
+        "max_5d": 43.35,
+        "cv_5d": 3.78,
+        "cv_1m": 5.96,
+        "mean_shift": 4.63,
+        "period": "2026-10-29 to 2026-11-26",
+        "sessions": 21,
+        "bars": 1000
+      },
+      "levels": {
+        "support_2": 37.36,
+        "support_1": 38.89,
+        "mean": 40.42,
+        "resistance_1": 41.94,
+        "resistance_2": 43.47
+      }
     }
   ],
   "backtest": {
@@ -976,12 +1010,187 @@
       "note": "Levels use rolling 300-bar stats (no look-ahead). best_combo picks the best band per ticker in-sample (hindsight), not a forward-tested portfolio. Exits: sell at the opposite band, stop at mean - 2 sigma frozen at entry (the live plan support_2); positions still open at the last bar are marked to market and excluded from the win rate."
     },
     "portfolio_totals_egp": {
-      "narrow_0_5sigma": -24071.61,
-      "mid_1sigma": -23020.97,
-      "loose_2sigma": -15094.65,
-      "best_combo": -13035.89
+      "narrow_0_5sigma": -24681.75,
+      "mid_1sigma": -22262.77,
+      "loose_2sigma": -13733.11,
+      "best_combo": -11674.35
     },
     "tickers": [
+      {
+        "ticker": "LCSW",
+        "current_price": 43.34,
+        "mean": 40.17,
+        "std": 1.47,
+        "best_strategy": "Loose (2s)",
+        "ease_of_trading": "Moderate",
+        "strategies": {
+          "narrow": {
+            "label": "Narrow (0.5s)",
+            "buy_level": 39.4292,
+            "sell_level": 40.889,
+            "band_width": 1.4598,
+            "completed_trades": 4,
+            "open_trades": 0,
+            "target_hits": 1,
+            "stop_hits": 3,
+            "stop_sigma": 2.0,
+            "total_profit_egp": -610.14,
+            "realized_profit_egp": -610.14,
+            "unrealized_profit_egp": 0,
+            "total_return_pct": -6.1,
+            "win_rate_pct": 25.0,
+            "crosses_buy": 13,
+            "crosses_sell": 6,
+            "trades": [
+              {
+                "entry_time": "2026-11-17 08:30",
+                "exit_time": "2026-11-22 11:45",
+                "entry_price": 39.28,
+                "exit_price": 37.1,
+                "shares": 254,
+                "profit_egp": -611.92,
+                "return_pct": -5.5499,
+                "entry_buy_level": 39.3264,
+                "entry_sell_level": 40.5107,
+                "stop_level": 37.5499,
+                "exit_reason": "stop",
+                "hold_bars": 182,
+                "open_position": false
+              },
+              {
+                "entry_time": "2026-11-22 11:50",
+                "exit_time": "2026-11-22 11:55",
+                "entry_price": 37.99,
+                "exit_price": 37.26,
+                "shares": 247,
+                "profit_egp": -236.07,
+                "return_pct": -1.9216,
+                "entry_buy_level": 39.1748,
+                "entry_sell_level": 40.3872,
+                "stop_level": 37.3561,
+                "exit_reason": "stop",
+                "hold_bars": 1,
+                "open_position": false
+              },
+              {
+                "entry_time": "2026-11-22 12:00",
+                "exit_time": "2026-11-22 12:05",
+                "entry_price": 37.45,
+                "exit_price": 37.31,
+                "shares": 244,
+                "profit_egp": -88.88,
+                "return_pct": -0.3738,
+                "entry_buy_level": 39.1484,
+                "entry_sell_level": 40.3707,
+                "stop_level": 37.315,
+                "exit_reason": "stop",
+                "hold_bars": 1,
+                "open_position": false
+              },
+              {
+                "entry_time": "2026-11-22 12:10",
+                "exit_time": "2026-11-23 12:15",
+                "entry_price": 38.8,
+                "exit_price": 40.44,
+                "shares": 233,
+                "profit_egp": 326.73,
+                "return_pct": 4.2268,
+                "entry_buy_level": 39.1199,
+                "entry_sell_level": 40.3548,
+                "stop_level": 37.2674,
+                "exit_reason": "target",
+                "hold_bars": 43,
+                "open_position": false
+              }
+            ]
+          },
+          "mid": {
+            "label": "Mid (1s)",
+            "buy_level": 38.6992,
+            "sell_level": 41.6189,
+            "band_width": 2.9197,
+            "completed_trades": 2,
+            "open_trades": 0,
+            "target_hits": 1,
+            "stop_hits": 1,
+            "stop_sigma": 2.0,
+            "total_profit_egp": 758.2,
+            "realized_profit_egp": 758.2,
+            "unrealized_profit_egp": 0,
+            "total_return_pct": 7.58,
+            "win_rate_pct": 50.0,
+            "crosses_buy": 10,
+            "crosses_sell": 5,
+            "trades": [
+              {
+                "entry_time": "2026-11-17 09:45",
+                "exit_time": "2026-11-22 11:40",
+                "entry_price": 38.5,
+                "exit_price": 37.6,
+                "shares": 259,
+                "profit_egp": -292.23,
+                "return_pct": -2.3377,
+                "entry_buy_level": 38.7976,
+                "entry_sell_level": 41.1128,
+                "stop_level": 37.64,
+                "exit_reason": "stop",
+                "hold_bars": 167,
+                "open_position": false
+              },
+              {
+                "entry_time": "2026-11-22 11:45",
+                "exit_time": "2026-11-24 08:40",
+                "entry_price": 37.1,
+                "exit_price": 41.36,
+                "shares": 261,
+                "profit_egp": 1050.43,
+                "return_pct": 11.4825,
+                "entry_buy_level": 38.5895,
+                "entry_sell_level": 40.9976,
+                "stop_level": 35.8959,
+                "exit_reason": "target",
+                "hold_bars": 58,
+                "open_position": false
+              }
+            ]
+          },
+          "loose": {
+            "label": "Loose (2s)",
+            "buy_level": 37.2394,
+            "sell_level": 43.0787,
+            "band_width": 5.8393,
+            "completed_trades": 1,
+            "open_trades": 0,
+            "target_hits": 1,
+            "stop_hits": 0,
+            "stop_sigma": 2.0,
+            "total_profit_egp": 1361.54,
+            "realized_profit_egp": 1361.54,
+            "unrealized_profit_egp": 0,
+            "total_return_pct": 13.62,
+            "win_rate_pct": 100.0,
+            "crosses_buy": 2,
+            "crosses_sell": 13,
+            "trades": [
+              {
+                "entry_time": "2026-11-22 11:45",
+                "exit_time": "2026-11-26 08:30",
+                "entry_price": 37.1,
+                "exit_price": 42.4,
+                "shares": 269,
+                "profit_egp": 1361.54,
+                "return_pct": 14.2857,
+                "entry_buy_level": 37.3854,
+                "entry_sell_level": 42.2016,
+                "stop_level": 35.8959,
+                "exit_reason": "target",
+                "hold_bars": 155,
+                "open_position": false
+              }
+            ]
+          }
+        }
+      },
       {
         "ticker": "EFID",
         "current_price": 21.3,
